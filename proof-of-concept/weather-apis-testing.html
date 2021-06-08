@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Apis</title>
+</head>
+<body>
+    <!-- the divs below are populated from the weather apis. The sunrise and sunset is populated
+    using the api at https://sunrise-sunset.org/api and the remainder are populated using the
+    stormglass api-->
+    <h3>Data from Stormglass API</h3>
+    <div class="temp"></div>
+    <div class="water-temp"></div>
+    <div class="precipitation"></div>
+    <div class="swell-height"></div>
+    <div class="wave-height"></div>
+    <div class="wave-direction"></div>
+    <div class="windspeed"></div>
+    <div class="wind-direction"></div>
+<script>
+
+    const lat = 52.9338; // these are the coordinated of the sea at Lahinch beach
+    const lng = -9.3499;
+
+    // the code below is based on the example code provided by Stormglass api 
+    const params = 'airTemperature,waterTemperature,precipitation,swellHeight,waveHeight,waveDirection,windSpeed,windDirection';
+
+    fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
+        headers: {
+            'Authorization': '9a759cae-c394-11eb-9f40-0242ac130002-9a759d26-c394-11eb-9f40-0242ac130002'
+        }
+    }).then((response) => response.json()).then((jsonData) => {
+        //using the response from the api to populate the divs above
+        document.getElementsByClassName('temp')[0].innerHTML = `The air temperature at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].airTemperature.dwd}`;
+        document.getElementsByClassName('water-temp')[0].innerHTML = `The water temperature at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].waterTemperature.meto}`;
+        document.getElementsByClassName('precipitation')[0].innerHTML = `The precipitation level at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].precipitation.dwd}`;
+        document.getElementsByClassName('swell-height')[0].innerHTML = `The swell height at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].swellHeight.dwd}`;
+        document.getElementsByClassName('wave-height')[0].innerHTML = `The wave height at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].waveHeight.dwd}`;
+        document.getElementsByClassName('wave-direction')[0].innerHTML = `The wave direction at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].waveDirection.meteo}`;
+        document.getElementsByClassName('windspeed')[0].innerHTML = `The windspeed at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].windSpeed.icon}`;
+        document.getElementsByClassName('wind-direction')[0].innerHTML = `The wind-direction at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].windDirection.icon}`;
+    });
+
+    /* The code below is based on the code institute tutorial for pulling data from an api. In future versions a callback function will 
+    be required so that the data can be inserted into the HTML */
+    
+    console.log('Data from sunrise-sunset.org API');
+    for (let i = 0; i < 7; i ++)
+    {
+    let day = i * 86400000; // constructing the full date for the next seven days in the format required by the api to function correctly
+    let today = Date.now()
+    let date = new Date(today + day);
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let dayOfWeek = date.getDay();
+    let daysArray = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']; 
+    dayOfWeek = daysArray[dayOfWeek]; // this is used for the template literal printed to the console
+    if (month < 10){
+        month = '0' + month;
+    }
+    let monthDate = date.getDate();
+    if(monthDate < 10){
+        monthDate = '0' + monthDate;
+    }
+
+    let fullDate = `${year}-${month}-${monthDate}`;
+    
+    var xhr = new XMLHttpRequest(); 
+    // getting the api information for the next seven days using the lahinch coordinates and the constructed date
+    xhr.open("GET", `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=${fullDate}`);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let sunInfo = JSON.parse(this.responseText);
+            let sR = sunInfo.results.sunrise; // extracting the sunrise info from the api
+            let sS = sunInfo.results.sunset; // extracting the sunset infor from the api
+            console.log(`sunrise at Lahinch on ${dayOfWeek} will be at ${sR}`);
+            console.log(`sunset at Lahinch on ${dayOfWeek} will be at ${sS}`);
+            
+        }
+    };
+}
+</script>
+</body>
+</html>
