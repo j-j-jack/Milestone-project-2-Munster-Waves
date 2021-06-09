@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailJS Test</title>
+</head>
+<body>
+    <div id='form-div'>
+        <form id='emailjs-form'>
+            <label for='name'>Your name:</label>
+            <input type='text' name='name' id='name'><br>
+            <label for='reply_to'>Your email</label>
+            <input type='email' name='email' id='email'><br>
+            <label for='message'>Your message</label>
+            <textarea name='message' id='message'></textarea><br>
+            <button type='submit'>Send</button>
+        </form>
+    </div>
+    <div id='response-div' style ='display: none;'>
+        <h2 style='font-weight: bold;'>Thank you!</h2>
+        <p id='name-response'></p>
+        <p id='email-response'></p>
+        <p id='message-response'></p>
+    </div>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
+
+    <script>
+        /*an event listener is added to the form submission. The form is prevented from submitting. 
+        the emailjs api is used to send the contents of the form via email to munsterwaves@tutanota.com. 
+        This is done using the sendForm method as documented on the emailjs website. The input names 
+        in the form respond to the variable names used in the template on by my user account on the 
+        emailjs website. The sender email is munsterwaves@outlook.com */
+        document.getElementById('emailjs-form').addEventListener('submit', function(event){
+            let pageForm = document.getElementById('emailjs-form');
+            event.preventDefault();
+            emailjs.sendForm('service_qcwv5hy', 'template_mwkm1ac', '#emailjs-form', 'user_G4jZs712zju74E5JnCbeM')
+            .then(function(response) { //protocol to deal with responses as documented on the emailjs website
+            console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+               console.log('FAILED...', error);
+            })
+           document.getElementById('form-div').style.display = 'none'; // this hides the form
+           document.getElementById('response-div').style.display = 'block';
+       /* The response div is shown. The user sees the message 'Thank' you and the following template 
+       literals which are created using their answers from the form */
+           document.getElementById('name-response').innerHTML = `Your name is: ${pageForm.elements['name'].value}`;
+           document.getElementById('email-response').innerHTML = `Your email is: ${pageForm.elements['email'].value}`;
+           document.getElementById('message-response').innerHTML = `Your message is ${pageForm.elements['name'].value}`;
+           });
+</script>
+</body>
+</html>
