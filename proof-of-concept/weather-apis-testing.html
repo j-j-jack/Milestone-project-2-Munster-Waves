@@ -31,20 +31,19 @@
         headers: {
             'Authorization': '9a759cae-c394-11eb-9f40-0242ac130002-9a759d26-c394-11eb-9f40-0242ac130002'
         }
-    }).then((response) => response.json()).then((jsonData) => {
+    }).then((WeatherResponse) => WeatherResponse.json()).then((weatherData) => {
         //using the response from the api to populate the divs above
-        document.getElementsByClassName('temp')[0].innerHTML = `The air temperature at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].airTemperature.dwd}`;
-        document.getElementsByClassName('water-temp')[0].innerHTML = `The water temperature at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].waterTemperature.meto}`;
-        document.getElementsByClassName('precipitation')[0].innerHTML = `The precipitation level at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].precipitation.dwd}`;
-        document.getElementsByClassName('swell-height')[0].innerHTML = `The swell height at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].swellHeight.dwd}`;
-        document.getElementsByClassName('wave-height')[0].innerHTML = `The wave height at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].waveHeight.dwd}`;
-        document.getElementsByClassName('wave-direction')[0].innerHTML = `The wave direction at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].waveDirection.meteo}`;
-        document.getElementsByClassName('windspeed')[0].innerHTML = `The windspeed at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].windSpeed.icon}`;
-        document.getElementsByClassName('wind-direction')[0].innerHTML = `The wind-direction at Lahinch at 12pm today was/will be/is ${jsonData.hours[12].windDirection.icon}`;
+        document.getElementsByClassName('temp')[0].innerHTML = `The air temperature at Lahinch at 12pm today was/will be/is ${weatherData.hours[12].airTemperature.dwd}`;
+        document.getElementsByClassName('water-temp')[0].innerHTML = `The water temperature at Lahinch at 12pm today was/will be/is ${weatherData.hours[12].waterTemperature.meto}`;
+        document.getElementsByClassName('precipitation')[0].innerHTML = `The precipitation level at Lahinch at 12pm today was/will be/is ${weatherData.hours[12].precipitation.dwd}`;
+        document.getElementsByClassName('swell-height')[0].innerHTML = `The swell height at Lahinch at 12pm today was/will be/is ${weatherData.hours[12].swellHeight.dwd}`;
+        document.getElementsByClassName('wave-height')[0].innerHTML = `The wave height at Lahinch at 12pm today was/will be/is ${weatherData.hours[12].waveHeight.dwd}`;
+        document.getElementsByClassName('wave-direction')[0].innerHTML = `The wave direction at Lahinch at 12pm today was/will be/is ${weatherData.hours[12].waveDirection.meteo}`;
+        document.getElementsByClassName('windspeed')[0].innerHTML = `The windspeed at Lahinch at 12pm today was/will be/is ${weatherData.hours[12].windSpeed.icon}`;
+        document.getElementsByClassName('wind-direction')[0].innerHTML = `The wind-direction at Lahinch at 12pm today was/will be/is ${weatherData.hours[12].windDirection.icon}`;
     });
 
-    /* The code below is based on the code institute tutorial for pulling data from an api. In future versions a callback function will 
-    be required so that the data can be inserted into the HTML */
+    
     
     console.log('Data from sunrise-sunset.org API');
     for (let i = 0; i < 7; i ++)
@@ -64,24 +63,17 @@
     if(monthDate < 10){
         monthDate = '0' + monthDate;
     }
-
     let fullDate = `${year}-${month}-${monthDate}`;
+    fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=${fullDate}`).then((sunResponse) => sunResponse.json()).then((sunData) => {
     
-    var xhr = new XMLHttpRequest(); 
     // getting the api information for the next seven days using the lahinch coordinates and the constructed date
-    xhr.open("GET", `https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=${fullDate}`);
-    xhr.send();
-    xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            let sunInfo = JSON.parse(this.responseText);
-            let sR = sunInfo.results.sunrise; // extracting the sunrise info from the api
-            let sS = sunInfo.results.sunset; // extracting the sunset infor from the api
-            console.log(`sunrise at Lahinch on ${dayOfWeek} will be at ${sR}`);
+            let sR = sunData.results.sunrise; // extracting the sunrise info from the api
+            let sS = sunData.results.sunset; // extracting the sunset infor from the api
+            console.log(`sunrise at Lahinch on ${dayOfWeek} will be at ${sR}`); // logging responses to console
             console.log(`sunset at Lahinch on ${dayOfWeek} will be at ${sS}`);
             
-        }
-    };
-}
+        
+});}
 </script>
 </body>
 </html>
