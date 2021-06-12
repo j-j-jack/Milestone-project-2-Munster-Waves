@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Api Test</title>
+    <!-- leaflet's requres the developer to link to their stylesheet first-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <!-- leaflets script file taken from its site online-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+</head>
+<body>
+    <!-- leaflet requires a div with a unique identifier to be used as a container for the map-->
+    <div id="test-map" style="height: 600px; width: 80vw; border: 1px solid black; margin: 10vh auto;">
+    </div>
+
+<script>
+    var testMap = L.map('test-map').setView([52.40, -8.45], 8);
+    // code taken from the leaflet provider tool 
+    var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    subdomains: 'abcd',
+    minZoom: 1,
+    maxZoom: 20,
+    ext: 'jpg'
+    }).addTo(testMap);
+    var myIcon = L.icon({
+    iconUrl: '../assets/images/surfboard.png', // creating a custom surfboard icon to be used as a marker
+    iconSize: [96, 38],
+    iconAnchor: [48, 19],
+    popupAnchor: [0, 0]
+    });
+
+    var myMarker= L.marker([52.9338, -9.3499], // coordinates of Lahinch
+    {icon: myIcon, 
+    title: 'Lahinch',
+    alt: 'surfboard icon', 
+    opacity: 1.0});
+    myMarker.addTo(testMap);
+    /*demonstrating the popup that leaflet has available. This mimics the desired functionality
+    that the real site will use. The popup simply contains an anchor tag that directs the user
+    to Lahinch's wikipedia page */
+    var testPopup = L.popup({className: 'Lahinch'});
+    testPopup.setContent("<a href ='https://en.wikipedia.org/wiki/Lahinch' target='_blank'>Lahinch on Wikipedia!'</a>");
+    myMarker.bindPopup(testPopup);
+</script>
+</body>
+</html>
