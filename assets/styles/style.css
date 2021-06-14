@@ -1,0 +1,28 @@
+/* Font imports -------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+/* Root Variable ------------------------------------------------------*/
+:root {
+    --bg-color: rgb(132, 178, 194);
+    --announcement-bar-bg-color: rgb(0, 168, 76);
+    --announcement-bar-font-color: rgb(240, 193, 247);
+}
+
+/* General Styling ----------------------------------------------------*/
+body{
+    font-family: "original surfer";
+    background: var(--bg-color);
+    padding: 0;
+    margin: 0;
+}
+
+.announcement-bar{
+    background: var(--announcement-bar-bg-color);
+    color: var(--announcement-bar-font-color);
+    width: 100vw;
+    border: 1px solid black;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
