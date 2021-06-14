@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
 /* Root Variable ------------------------------------------------------*/
 :root {
-    --bg-color: rgb(132, 178, 194);
+    --bg-color: rgb(189, 231, 245);
     --announcement-bar-bg-color: rgb(0, 168, 76);
     --announcement-bar-font-color: rgb(240, 193, 247);
 }
@@ -25,4 +25,11 @@ body{
     margin: 0;
     padding-top: 2vh;
     padding-bottom: 2vh;
+}
+
+.company-logo{
+    padding-left: 15vw;
+    padding-right: 15vw;
+    margin: 0;
+
 }
