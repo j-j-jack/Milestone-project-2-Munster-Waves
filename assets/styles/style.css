@@ -18,8 +18,7 @@ body{
 .announcement-bar{
     background: var(--announcement-bar-bg-color);
     color: var(--announcement-bar-font-color);
-    width: 100vw;
-    border: 1px solid black;
+    outline: 1px solid black;
     text-align: center;
     text-transform: uppercase;
     margin: 0;
@@ -28,8 +27,30 @@ body{
 }
 
 .company-logo{
+    max-width: 100%;
     padding-left: 15vw;
     padding-right: 15vw;
     margin: 0;
 
+}
+
+.home-page-map{
+    padding: 2vw 15vw 2vw 2vw;
+    border: 5px solid blue;
+    display: flex;
+    margin: 2vw;
+    max-width: 96%;
+}
+
+.click-icon{
+    position: relative;
+    left: 70vw;
+    font-size: 5em;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.no-surfing-notification{
+    visibility: hidden;
 }
