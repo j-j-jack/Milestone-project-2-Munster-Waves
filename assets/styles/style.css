@@ -1,10 +1,17 @@
 /* Font imports -------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+@import url('assets/fonts/celtic.tff');
 /* Root Variable ------------------------------------------------------*/
 :root {
     --bg-color: rgb(189, 231, 245);
     --announcement-bar-bg-color: rgb(0, 168, 76);
     --announcement-bar-font-color: rgb(240, 193, 247);
+    --clare-yellow: rgb(244, 196, 48);
+    --kerry-green: rgb(0, 153, 0);
+    --waterford-blue: rgb(0, 0, 255);
+    --cork-red: rgb(255, 0, 0);
+
+
 }
 
 /* General Styling ----------------------------------------------------*/
@@ -54,3 +61,67 @@ body{
 .no-surfing-notification{
     visibility: hidden;
 }
+ /* Navbar ------------------------------------------------------------------------*/
+
+ .nav-outer{
+    margin: 0;
+    padding: 0;
+ }
+ .large-screen-navbar{
+    display: flex;
+ }
+
+ .clare-nav{
+    font-family: 'Celtic';
+    font-size: 3vw;
+    font-weight: bold;
+    background: var(--clare-yellow);
+    flex: 1;
+    text-align: center;
+    padding: 2%;
+    cursor: pointer;
+ }
+
+ .kerry-nav{
+    font-family: 'Celtic';
+    font-size: 3vw;
+    font-weight: bold;
+    background: var(--kerry-green);
+    flex: 1;
+    text-align: center;
+    padding: 2%;
+    cursor: pointer;
+ }
+
+ .cork-nav{
+     font-family: 'Celtic';
+     font-size: 3vw;
+     font-weight: bold;
+     background: var(--cork-red);
+     flex: 1;
+     text-align: center;
+     padding: 2%;
+     cursor: pointer;
+ }
+
+ .waterford-nav{
+    font-family: 'Celtic';
+    font-size: 3vw;
+    font-weight: bold;
+    background: var(--waterford-blue);
+    flex: 1;
+    text-align: center;
+    padding: 2%;
+    cursor: pointer;
+ }
+
+ .signup-nav{
+    font-family: 'Celtic';
+    font-size: 3vw;
+    font-weight: bold;
+    background: silver;
+    flex: 1;
+    text-align: center;
+    padding: 2%;
+    cursor: pointer;
+ }
