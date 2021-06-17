@@ -1,15 +1,19 @@
 /* Font imports -------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
-@import url('assets/fonts/celtic.tff');
+/*@import url('assets/fonts/celtic.tff');*/
 /* Root Variable ------------------------------------------------------*/
 :root {
-    --bg-color: rgb(189, 231, 245);
+    --bg-color: rgb(157, 177, 245);
     --announcement-bar-bg-color: rgb(0, 168, 76);
     --announcement-bar-font-color: rgb(240, 193, 247);
     --clare-yellow: rgb(244, 196, 48);
     --kerry-green: rgb(0, 153, 0);
     --waterford-blue: rgb(0, 0, 255);
     --cork-red: rgb(255, 0, 0);
+    --munster: rgb(255, 72, 72);
+    --waves: rgb(28, 193, 201);
+    --small-nav: rgb(199, 214, 243);
 
 
 }
@@ -29,8 +33,8 @@ body{
     text-align: center;
     text-transform: uppercase;
     margin: 0;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
 }
 
 .company-logo{
@@ -56,6 +60,7 @@ body{
     display: inline;
     margin: 0;
     padding: 0;
+    z-index: -20;
 }
 
 .no-surfing-notification{
@@ -63,9 +68,34 @@ body{
 }
  /* Navbar ------------------------------------------------------------------------*/
 
- .nav-outer{
-    margin: 0;
-    padding: 0;
+ .small-screen-navbar{
+     font-family: 'pacifico';
+     font-size: 5vw;
+     display: none;
+     width: 96%;
+     max-width: 100%;
+     background: var(--small-nav);
+     padding: 2vw;
+ }
+ .small-screen-navbar-container{
+     width: 100%;
+     position: fixed;
+ }
+ .small-nav-munster{
+     color: var(--munster);
+ }
+ .small-nav-waves{
+     color: var(--waves);
+ }
+ .burger{
+     position: absolute;
+     right: 2vw;
+ }
+ .small-screen-nav-dropdown{
+    display: none;
+    width: 50vw;
+    float: right;
+    background: grey;
  }
  .large-screen-navbar{
     display: flex;
@@ -124,4 +154,15 @@ body{
     text-align: center;
     padding: 2%;
     cursor: pointer;
+ }
+
+ /* media queries -------------------------------------- */
+
+ @media only screen and (max-width: 768px) {
+    .small-screen-navbar{
+        display: block;
+    }
+    .large-screen-navbar{
+        display: none;
+    }
  }

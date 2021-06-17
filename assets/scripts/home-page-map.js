@@ -1,5 +1,6 @@
-let cork = document.getElementsByClassName('cork'); // targeting the paths in the svg with the class name of cork
+ // targeting the paths in the svg with the class name of cork
 
+let cork = document.getElementsByClassName('cork');
 for(let i in cork){
     if(cork[i].nodeName == 'path' || cork[i].nodeName == 'text')
     {
@@ -16,7 +17,6 @@ for(let i in cork){
 }
 	
 for(let i in cork){
-    console.log(cork[i].nodeName);
     if(cork[i].nodeName == 'path' || cork[i].nodeName == 'text')
     {
 	    cork[i].addEventListener('mouseleave', function(){
