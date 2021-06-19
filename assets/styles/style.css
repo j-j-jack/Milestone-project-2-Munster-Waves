@@ -56,16 +56,17 @@ body{
     display: flex;
     margin: 2vw;
     max-width: 96%;
+    position: relative;
 }
 
 .click-icon{
-    position: relative;
-    left: 70vw;
-    font-size: 5em;
+    position: absolute;
+    left: 3vw;
+    font-size: 4vw;
     display: inline;
     margin: 0;
     padding: 0;
-    z-index: -20;
+    z-index: 10;
 }
 
 .no-surfing-notification{
