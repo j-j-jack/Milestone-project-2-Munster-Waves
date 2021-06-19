@@ -15,6 +15,11 @@
     --waves: rgb(28, 193, 201);
     --small-nav: rgb(199, 214, 243);
     --dropdown-curtain-color: rgba(51, 51, 51, .3);
+    --footer-color: rgb(174 ,143 ,96);
+    --facebook: rgb(6, 118, 232);
+    --twitter: rgb(93,169,221);
+    --youtube: rgb(255, 0, 0);
+    --instagram: rgb(221, 42, 123);
 
 }
 
@@ -197,6 +202,51 @@ body{
     padding: 2%;
     cursor: pointer;
  }
+
+ /* footer ------------------------------------------------------------------------*/
+ .footer{
+     background: var(--footer-color);
+ }
+
+ .social-icons{
+     display: flex;
+ }
+ .social-icons > div{
+     font-size: 5vw;
+     text-align: center;
+ }
+
+ .facebook{
+     flex: 1;
+ }
+ .twitter{
+    flex: 1;
+}
+.youtube{
+    flex: 1;
+}
+.instagram{
+    flex: 1;
+}
+.facebook:hover{
+    flex: 1;
+    color: var(--facebook);
+}
+.twitter:hover{
+   flex: 1;
+   color: var(--twitter); 
+}
+.youtube:hover{
+   flex: 1;
+   color: var(--youtube);
+}
+.instagram:hover{
+   flex: 1;
+   color: var(--instagram);
+}
+.copyright{
+    text-align: center;
+}
 
  /* media queries -------------------------------------- */
 
