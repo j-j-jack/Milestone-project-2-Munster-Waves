@@ -14,7 +14,7 @@
     --munster: rgb(255, 72, 72);
     --waves: rgb(28, 193, 201);
     --small-nav: rgb(199, 214, 243);
-
+    --dropdown-curtain-color: rgba(51, 51, 51, .3);
 
 }
 
@@ -77,9 +77,23 @@ body{
      background: var(--small-nav);
      padding: 2vw;
  }
+
+ .small-screen-navbar-content-disabler{
+     pointer-events: auto;
+ }
+ .small-screen-navbar-dropdown-curtain{
+     background: var(--dropdown-curtain-color);
+     display: none;
+     position: fixed;
+     height: 100vh;
+     width: 100vw;
+     z-index: 20;
+     pointer-events: none;
+ }
  .small-screen-navbar-container{
      width: 100%;
      position: fixed;
+     z-index: 40;
  }
  .small-nav-munster{
      color: var(--munster);
@@ -91,11 +105,22 @@ body{
      position: absolute;
      right: 2vw;
  }
- .small-screen-nav-dropdown{
-    display: none;
-    width: 50vw;
-    float: right;
-    background: grey;
+ .small-screen-navbar-dropdown-container{
+     display: none;
+     padding: 0;
+     margin: 0;
+ }
+ .small-screen-navbar-dropdown-filler{
+     display: inline-block;
+     position: absolute;
+     width: 50%;
+     height: 0;
+ }
+ .small-screen-navbar-dropdown-components{
+    display: inline-block;
+    width: 50%;
+    position: absolute;
+    right: 0;
  }
  .large-screen-navbar{
     display: flex;
@@ -134,6 +159,23 @@ body{
      cursor: pointer;
  }
 
+ .clare-nav:hover{
+    color: white;
+ }
+
+ .kerry-nav:hover{
+    color: white;
+ }
+ .cork-nav:hover{
+    color: white;
+ }
+ .waterford-nav:hover{
+    color: white;
+ }
+ .signup-nav:hover{
+    color: white;
+ }
+
  .waterford-nav{
     font-family: 'Celtic';
     font-size: 3vw;
@@ -165,4 +207,12 @@ body{
     .large-screen-navbar{
         display: none;
     }
+ }
+
+ @media only screen and (min-width: 769px) {
+    .small-screen-navbar-container{
+        display: none; /* for cases when the screen is resized and the small screen navbar disappears
+                          while the dropdown is open */
+    }
+    
  }

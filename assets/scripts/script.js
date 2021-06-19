@@ -10,8 +10,42 @@ window.addEventListener('resize', function(){
 
      jQuery.noConflict();
      jQuery(document).ready(function(){
-        jQuery('.burger').click(function(){jQuery('.small-screen-nav-dropdown').toggle('slow')});
+        jQuery('.burger').click(function(){
+           jQuery('.small-screen-navbar-dropdown-container').toggle('slow');
+           let smallScreenNavbarDropdownCurtain = document.getElementsByClassName('small-screen-navbar-dropdown-curtain')[0];
+           let smallScreenNavbarContentDisabler = document.getElementsByClassName('small-screen-navbar-content-disabler')[0];
+           if(window.getComputedStyle(smallScreenNavbarDropdownCurtain,
+            null).getPropertyValue('display') == 'none'){
+              smallScreenNavbarDropdownCurtain.style.display = 'block';
+              smallScreenNavbarContentDisabler.style.pointerEvents = 'none';
+              smallScreenNavbarDropdownCurtain.style.pointerEvents = 'auto';
+           }
+           else{
+            smallScreenNavbarDropdownCurtain.style.display = 'none';
+            smallScreenNavbarContentDisabler.style.pointerEvents = 'auto';
+           }
+           console.log(window.getComputedStyle(smallScreenNavbarDropdownCurtain,
+            null).getPropertyValue('display') == 'none');
+            
+      });
      });  
+
+     jQuery('.small-screen-navbar-dropdown-curtain').click(function(){
+      jQuery('.small-screen-navbar-dropdown-container').toggle('slow');
+      let smallScreenNavbarDropdownCurtain = document.getElementsByClassName('small-screen-navbar-dropdown-curtain')[0];
+      let smallScreenNavbarContentDisabler = document.getElementsByClassName('small-screen-navbar-content-disabler')[0];
+           if(window.getComputedStyle(smallScreenNavbarDropdownCurtain,
+            null).getPropertyValue('display') == 'none'){
+              smallScreenNavbarDropdownCurtain.style.display = 'block';
+              smallScreenNavbarContentDisabler.style.pointerEvents = 'none';
+           }
+           else{
+            smallScreenNavbarDropdownCurtain.style.display = 'none';
+            smallScreenNavbarContentDisabler.style.pointerEvents = 'auto';
+           }
+           console.log(window.getComputedStyle(smallScreenNavbarDropdownCurtain,
+            null).getPropertyValue('display') == 'none');
+     });
 
      
 
