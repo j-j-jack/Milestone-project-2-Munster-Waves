@@ -65,3 +65,45 @@ window.addEventListener('resize', function(){
      
    });
      
+  
+
+  let clareNav = document.getElementsByClassName('clare-nav'); 
+  clareNav[0].addEventListener('click', function(){
+              window.location.href = "clare.html";
+         });
+         clareNav[1].addEventListener('click', function(){
+            window.location.href = "clare.html";
+       });
+
+       let kerryNav = document.getElementsByClassName('kerry-nav'); 
+       kerryNav[0].addEventListener('click', function(){
+              window.location.href = "kerry.html";
+         });
+         kerryNav[1].addEventListener('click', function(){
+            window.location.href = "kerry.html";
+       });
+
+       let corkNav = document.getElementsByClassName('cork-nav'); 
+         corkNav[0].addEventListener('click', function(){
+              window.location.href = "cork.html";
+         });
+         corkNav[1].addEventListener('click', function(){
+            window.location.href = "cork.html";
+       });
+      
+       let waterfordNav = document.getElementsByClassName('waterford-nav'); 
+       waterfordNav[0].addEventListener('click', function(){
+              window.location.href = "waterford.html";
+         });
+         waterfordNav[1].addEventListener('click', function(){
+            window.location.href = "waterford.html";
+       });
+
+       let signupNav = document.getElementsByClassName('signup-nav'); 
+       signupNav[0].addEventListener('click', function(){
+              window.location.href = "signup.html";
+         });
+         signupNav[1].addEventListener('click', function(){
+            window.location.href = "signup.html";
+       });
+
