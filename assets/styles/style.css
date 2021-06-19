@@ -267,8 +267,15 @@ body{
         margin: 2vw;
         max-width: 96%;
         position: relative;
-    
-}
+    }
+        #cork-map{
+            height: 60vw;
+            border: 5px solid blue;
+            display: flex;
+            margin: 2vw;
+            max-width: 96%;
+            position: relative;
+    }
  /* media queries -------------------------------------- */
 
  @media only screen and (max-width: 768px) {
