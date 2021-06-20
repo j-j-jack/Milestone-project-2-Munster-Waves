@@ -223,7 +223,10 @@ body{
     width: 70%;
     padding-left: 15%;
 }
-
+#beach-map{
+    height: 15vw;
+    margin: 2vw;
+}
  /* footer ------------------------------------------------------------------------*/
  .footer{
      background: var(--footer-color);
