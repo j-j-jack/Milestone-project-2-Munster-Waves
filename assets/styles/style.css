@@ -99,7 +99,7 @@ body{
  .small-screen-navbar-container{
      width: 100%;
      position: fixed;
-     z-index: 40;
+     z-index: 1100;
  }
  .small-nav-munster{
      color: var(--munster);
