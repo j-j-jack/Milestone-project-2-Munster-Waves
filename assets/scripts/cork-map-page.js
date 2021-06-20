@@ -58,21 +58,21 @@ var inchCorkMarker = L.marker([51.786432, -8.183083],{ // coordinates of Inch
 //popups
 
 var longStrandPopup = L.popup();
-longStrandPopup.setContent("<p></p><a href='long-strand.html'>View surf forecast for Long Strand</a>");
+longStrandPopup.setContent("<p>Excellent rips and a long, peeling right-hander</p><a href='long-strand.html'>View surf forecast for Long Strand</a>");
 longStrandMarker.bindPopup(longStrandPopup);
 
 var redStrandPopup = L.popup();
-redStrandPopup.setContent("<p></p><a href='red-strand.html'>View surf forecast for Red Strand</a>");
+redStrandPopup.setContent("<p>Sheltered reef break with reasonably consistent surf</p><a href='red-strand.html'>View surf forecast for Red Strand</a>");
 redStrandMarker.bindPopup(redStrandPopup);
 
 var inchydoneyPopup = L.popup();
-inchydoneyPopup.setContent("<p></p><a href='inchydoney.html'>View surf forecast for Inchydoney</a>");
+inchydoneyPopup.setContent("<p>Lots of different types of waves depending on the spot you choose to paddle out to</p><a href='inchydoney.html'>View surf forecast for Inchydoney</a>");
 inchydoneyMarker.bindPopup(inchydoneyPopup);
 
 var garretstownPopup = L.popup();
-garretstownPopup.setContent("<p></p><a href='garretstown.html'>View surf forecast for Garretstown</a>");
+garretstownPopup.setContent("<p>Exposed beach and point break with reliable surf</p><a href='garretstown.html'>View surf forecast for Garretstown</a>");
 garretstownMarker.bindPopup(garretstownPopup);
 
 var inchCorkPopup = L.popup();
-inchCorkPopup.setContent("<p></p><a href='inch-cork.html'>View surf forecast for Inch</a>");
+inchCorkPopup.setContent("<p>Consistant waves in the summer but can host some delicious bigger waves in the Autumn months</p><a href='inch-cork.html'>View surf forecast for Inch</a>");
 inchCorkMarker.bindPopup(inchCorkPopup);

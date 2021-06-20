@@ -58,21 +58,21 @@ ballyskelligsMarker.addTo(kerryMap);
 //popups
 
 var ballybunionPopup = L.popup();
-ballybunionPopup.setContent("<p></p><a href='ballybunion.html'>View surf forecast for Ballybunion</a>");
+ballybunionPopup.setContent("<p>Powerful right handers fire in all tidal conditions</p><a href='ballybunion.html'>View surf forecast for Ballybunion</a>");
 ballybunionMarker.bindPopup(ballybunionPopup);
 
 var castlegregoryPopup = L.popup();
-castlegregoryPopup.setContent("<p></p><a href='castlegregory.html'>View surf forecast for Castlegregory</a>");
+castlegregoryPopup.setContent("<p>Long rolling swells create exceptional surf</p><a href='castlegregory.html'>View surf forecast for Castlegregory</a>");
 castlegregoryMarker.bindPopup(castlegregoryPopup);
 
 var coumeenolePopup = L.popup();
-coumeenolePopup.setContent("<p></p><a href='coumeenole.html'>View surf forecast for Coumeenole</a>");
+coumeenolePopup.setContent("<p>Powerful sand bottomed waves not suitable for beginners</p><a href='coumeenole.html'>View surf forecast for Coumeenole</a>");
 coumeenoleMarker.bindPopup(coumeenolePopup);
 
 var inchKerryPopup = L.popup();
-inchKerryPopup.setContent("<p></p><a href='doughmore.html'>View surf forecast for Inch</a>");
+inchKerryPopup.setContent("<p>Good sized waves which handle all types of swells really well</p><a href='doughmore.html'>View surf forecast for Inch</a>");
 inchKerryMarker.bindPopup(inchKerryPopup);
 
 var ballyskelligsPopup = L.popup();
-ballyskelligsPopup.setContent("<p></p><a href='doughmore.html'>View surf forecast for Ballyskelligs</a>");
+ballyskelligsPopup.setContent("<p>Smooth gentle sloping beach with the possibility for challenging waves</p><a href='doughmore.html'>View surf forecast for Ballyskelligs</a>");
 ballyskelligsMarker.bindPopup(ballyskelligsPopup);

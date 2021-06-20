@@ -58,21 +58,21 @@ kilkeeMarker.addTo(clareMap);
 //popups
 
 var doolinPointPopup = L.popup();
-doolinPointPopup.setContent("<p></p><a href='spanish-point.html'>View surf forecast for Doolin Point</a>");
+doolinPointPopup.setContent("<p>One of Ireland's biggest waves is here under the Cliffs of Moher</p><a href='doolin-point.html'>View surf forecast for Doolin Point</a>");
 doolinPointMarker.bindPopup(doolinPointPopup);
 
 var lahinchPopup = L.popup();
-lahinchPopup.setContent("<p>Extremely popular surfing town. Good waves and great evenings here.</p><a href='lahinch.html'>View surf forecast for Lahinch</a>");
+lahinchPopup.setContent("<p>Consistent waves and an idyllic location make it one of the best surf spots in the country.</p><a href='lahinch.html'>View surf forecast for Lahinch</a>");
 lahinchMarker.bindPopup(lahinchPopup);
 
 var spanishPointPopup = L.popup();
-spanishPointPopup.setContent("<p></p><a href='spanish-point.html'>View surf forecast for Spanish Point</a>");
+spanishPointPopup.setContent("<p>Great variety of waves here allow for all levels of ability</p><a href='spanish-point.html'>View surf forecast for Spanish Point</a>");
 spanishPointMarker.bindPopup(spanishPointPopup);
 
 var doughmorePopup = L.popup();
-doughmorePopup.setContent("<p></p><a href='doughmore.html'>View surf forecast for Doughmore</a>");
+doughmorePopup.setContent("<p>Reliably sized waves even when everywhere else is flat</p><a href='doughmore.html'>View surf forecast for Doughmore</a>");
 doughmoreMarker.bindPopup(doughmorePopup);
 
 var kilkeePopup = L.popup();
-kilkeePopup.setContent("<p></p><a href='doughmore.html'>View surf forecast for kilkee</a>");
+kilkeePopup.setContent("<p>Protected bay with a golden sandy beach ideal for learners</p><a href='doughmore.html'>View surf forecast for kilkee</a>");
 kilkeeMarker.bindPopup(kilkeePopup);

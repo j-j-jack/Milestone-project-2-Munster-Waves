@@ -58,21 +58,21 @@ var tramoreMarker = L.marker([52.148639, -7.131580],{ // coordinates of Tramore
 //popups
 
 var ardmorePopup = L.popup();
-ardmorePopup.setContent("<p></p><a href='ardmore.html'>View surf forecast for Ardmore</a>");
+ardmorePopup.setContent("<p>Gentler breaks for the whole family here most of the time</p><a href='ardmore.html'>View surf forecast for Ardmore</a>");
 ardmoreMarker.bindPopup(ardmorePopup);
 
 var bunmahonPopup = L.popup();
-bunmahonPopup.setContent("<p></p><a href='bunmahon.html'>View surf forecast for Bunmahon</a>");
+bunmahonPopup.setContent("<p>Hollow powerful waves with strong rips when conditions are right</p><a href='bunmahon.html'>View surf forecast for Bunmahon</a>");
 bunmahonMarker.bindPopup(bunmahonPopup);
 
 var perfectWavePopup = L.popup();
-perfectWavePopup.setContent("<p></p><a href='perfect-wave.html'>View surf forecast for Perfect Wave</a>");
+perfectWavePopup.setContent("<p>Tasty Hollows with great consistency</p><a href='perfect-wave.html'>View surf forecast for Perfect Wave</a>");
 perfectWaveMarker.bindPopup(perfectWavePopup);
 
 var annestownPopup = L.popup();
-annestownPopup.setContent("<p></p><a href='annestown.html'>View surf forecast for Annestown</a>");
+annestownPopup.setContent("<p>Gentler waves in general but it can transform on occasion</p><a href='annestown.html'>View surf forecast for Annestown</a>");
 annestownMarker.bindPopup(annestownPopup);
 
 var tramorePopup = L.popup();
-tramorePopup.setContent("<p></p><a href='tramore.html'>View surf forecast for Tramore</a>");
+tramorePopup.setContent("<p>Ideal for learners with smaller waves for the most part</p><a href='tramore.html'>View surf forecast for Tramore</a>");
 tramoreMarker.bindPopup(tramorePopup);
