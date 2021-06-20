@@ -93,7 +93,7 @@ body{
      position: fixed;
      height: 100vh;
      width: 100vw;
-     z-index: 20;
+     z-index: 1099;
      pointer-events: none;
  }
  .small-screen-navbar-container{
@@ -203,6 +203,26 @@ body{
     padding: 2%;
     cursor: pointer;
  }
+
+/* Beach pages --------------------------------------------------------------------------------*/
+
+.beach-page-content-container{
+    display: flex;
+}
+
+.supplementary-content{
+    flex: 3;
+    background: orange;
+}
+.surf-forecast{
+    flex: 4;
+    background: purple;
+}
+
+.beach-photo{
+    width: 70%;
+    padding-left: 15%;
+}
 
  /* footer ------------------------------------------------------------------------*/
  .footer{
