@@ -1,7 +1,7 @@
 /* Font imports -------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
-/*@import url('assets/fonts/celtic.tff');*/
+@import url('assets/fonts/Celtic.tff');
 /* Root Variable ------------------------------------------------------*/
 :root {
     --bg-color: rgb(157, 177, 245);
@@ -228,26 +228,17 @@ body{
     height: 15vw;
     margin: 2vw;
 }
-.forecast-icons{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 8%;
-    row-gap: 2vw;
-    font-size: 7vw;
-    color: lightblue;
-    background: grey;
-    padding: 5%;
-}
 
 .beach-page-container {
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-rows: .5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: .5fr .5fr .5fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
       "A A A A A"
       "B B E E E"
       "B B F F F"
+      "B B G G G"
       "B B G G G"
       "C C G G G"
       "C C G G G"
@@ -259,12 +250,15 @@ body{
      }
   .day-selector { 
       grid-area: E; 
+      pointer-events: none; /* make the selector unclickable until the apis load */
 }
   .beach-info { 
       grid-area: B; 
+      padding: 5%;
     }
   .time-selector{
        grid-area: F; 
+       pointer-events: none; /* make the selector unclickable until the apis load */
     }
   .beach-photo-box {
        grid-area: C; 
@@ -314,6 +308,41 @@ body{
   text-align: center;
   font-size: 5vw;
 }
+
+.hours-left:hover{
+    cursor: pointer;
+}
+.hours-right:hover{
+    cursor: pointer;
+}
+.days-small-screen-container{
+    display: none;
+}
+
+.day-selector-left{
+    flex: 1;
+    text-align: center;
+    font-size: 5vw;
+    pointer-events: none;
+}
+.day-selector-center{
+    flex: 1;
+    text-align: center;
+    font-size: 3vw;
+}
+.day-selector-right{
+    flex: 1;
+    text-align: center;
+    font-size: 5vw;
+}
+
+.day-right:hover{
+    cursor: pointer;
+}
+.day-left:hover{
+    cursor: pointer;
+}
+
 
 .days-large-screen-container{
     display: flex;
@@ -488,6 +517,13 @@ body{
     .forecast-icons{
         grid-template-columns: auto;
     }
+    .days-large-screen-container{
+        display: none;
+    }
+        
+    .days-small-screen-container{
+        display: flex;
+    }
  }
 
  @media only screen and (min-width: 769px) {
@@ -496,4 +532,23 @@ body{
                           while the dropdown is open */
     }
     
+ }
+
+ @media only screen and (max-width: 992px) {
+    .beach-page-container {
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto;
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "A A A A A A"
+          "E E E E E E"
+          "F F F F F F"
+          "G G G G G G"
+          "B B B B B B"
+          "C C C D D D"
+          "C C C D D D"
+          
+          ; 
+      }
  }
