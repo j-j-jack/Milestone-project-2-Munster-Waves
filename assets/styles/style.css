@@ -1,7 +1,11 @@
 /* Font imports -------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
-@import url('assets/fonts/Celtic.tff');
+@font-face {
+    font-family: 'Celtic';
+    src:  url('../fonts/Celtic.ttf') format('woff2'),
+          url('../fonts/Celtic.ttf') format('woff');
+  }
 /* Root Variable ------------------------------------------------------*/
 :root {
     --bg-color: rgb(157, 177, 245);

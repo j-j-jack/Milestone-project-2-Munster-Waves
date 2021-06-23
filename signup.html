@@ -74,17 +74,17 @@
         <p>Fill out the form below if you would like to be contacted once the Munster Waves shop opens</p>
     </div>
     <div class="form">
-    <form>
+    <form id = 'email-form'>
         <label for="name">Your Full Name:</label><br>
         <input name="name" type="text" required><br>
         <label for="email">Your Email:</label><br>
         <input name="email" type="email" required><br>
         <label for="feedback">Give us your suggestions on how to improve the site:</label><br>
         <textarea name='feedback'></textarea><br>
-        <label for="feedback">Give us your suggestions on how to improve the site:</label><br>
-        <textarea name='feedback'></textarea><br>
+        <label for="requests">Let us know about any products you would like to see once the shop opens</label><br>
+        <textarea name='requests'></textarea><br>
         <label for="check">I would like to be contacted when the shop opens</label>
-        <input type="checkbox" name="contact"><br><br>
+        <input type="checkbox" name="contact" value="hello"><br><br>
             <button type='submit'>Send</button>
     </form>
     </div>
@@ -104,6 +104,9 @@
 <script src="assets/scripts/home-page-map.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="assets/scripts/script.js"></script>
-    <script src="assets/scripts/cork-map-page.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
+    <script src="assets/scripts/email-script.js"></script>
 </body>
 </html>
