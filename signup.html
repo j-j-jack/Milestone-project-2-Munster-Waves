@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <!-- leaflets script file taken from its site online-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script src="https://kit.fontawesome.com/87b203f956.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    
+</head>
+<body>
+    <a href="signup.html" style="text-decoration: none;">
+        <div class="announcement-bar">
+            big news! munster waves shop is coming soon click here to signup to be alerted via email when the time comes!
+        </div>
+    </a>
+    <div class=small-screen-navbar-container>
+    <div class="small-screen-navbar">
+      <span class="small-nav-munster">Munster</span>
+      <span class="small-nav-waves">Waves</span>
+      <span class="burger"><i class="fas fa-bars"></i></span>
+    </div>
+    <div class="small-screen-navbar-dropdown-container"> 
+    <div class="small-screen-navbar-dropdown-components">
+      <div class="clare-nav">Clare</div>
+      <div class="kerry-nav">Kerry</div>
+      <div class="cork-nav">Cork</div>
+      <div class="waterford-nav">Waterford</div>
+      <div class="signup-nav">Signup/About</div>
+    </div>
+    </div>
+    </div>
+
+    <div class="small-screen-navbar-dropdown-curtain"></div>
+    <div class="small-screen-navbar-content-disabler">
+    <div class="company-logo">
+        <img src="assets/images/munster-waves-logo.svg" alt="munster waves logo">
+    </div>
+    <div class="nav-outer">
+    <div class = "large-screen-navbar">
+      <div class="clare-nav">Clare</div>
+      <div class="kerry-nav">Kerry</div>
+      <div class="cork-nav">Cork</div>
+      <div class="waterford-nav">Waterford</div>
+      <div class="signup-nav">Signup/About</div>
+    </div>
+    </div>
+<div class="signup-page-container">
+    <div class = "about-us-title"><h2>About Munster Waves</h2></div>
+    <div class="munster-waves-info">
+        <p>Munster Waves is the new surf shop coming to the Munster region very soon.
+        introduced this weather app for the convenience of all the surfers in the province of Munster. It is our belief 
+        that Munster is one of the greatest places on Earth to catch a wave and we can't wait to arm all to go out 
+        and tackle those monsters.</p>
+        <p>We're proud of our Munster roots and it is our plan to stock products that reflect this in our 
+            shop such as county styled surfboards and wetsuits, as well as apparel related to the individual 
+            surfing towns and villages. If you would like to see a particular product when the shop opens, why
+            not drop us a suggestion using the form on this page. Also make sure to check the box to sign up
+            to an email alert once we open so you don't miss our opening sale!
+        </p>
+        <p></p>
+
+    </div>
+    <div class = "form-instructions">
+        <p>Fill out the form below if you would like to be contacted once the Munster Waves shop opens</p>
+    </div>
+    <div class="form">
+    <form>
+        <label for="name">Your Full Name:</label><br>
+        <input name="name" type="text" required><br>
+        <label for="email">Your Email:</label><br>
+        <input name="email" type="email" required><br>
+        <label for="feedback">Give us your suggestions on how to improve the site:</label><br>
+        <textarea name='feedback'></textarea><br>
+        <label for="feedback">Give us your suggestions on how to improve the site:</label><br>
+        <textarea name='feedback'></textarea><br>
+        <label for="check">I would like to be contacted when the shop opens</label>
+        <input type="checkbox" name="contact"><br><br>
+            <button type='submit'>Send</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    
+  <div class="footer">
+    <div class="social-icons">
+      <div class="facebook"><i class="fab fa-facebook-square"></i></div>
+      <div class="twitter"><i class="fab fa-twitter-square"></i></div>
+      <div class="youtube"><i class="fab fa-youtube-square"></i></div>
+      <div class="instagram"><i class="fab fa-instagram-square"></i></div>
+    </div>
+    <div class="copyright">Munster Waves © 2021</div>
+  </div>
+  </div>
+<script src="assets/scripts/home-page-map.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/cork-map-page.js"></script>
+</body>
+</html>

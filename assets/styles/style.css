@@ -504,6 +504,34 @@ body{
         max-width: 96%;
         position: relative;
 }
+/* signup page -------------------------------------- */
+.signup-page-container{
+    margin-top: 3vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "A B"
+    "C D";
+}
+.about-us-title{
+    grid-area: A;
+    text-align: center;
+}
+.form-instructions{
+    grid-area: B;
+}
+.munster-waves-info{
+    grid-area: C;
+    padding: 5%;
+}
+.form{
+    grid-Area: D;
+}
+textarea{
+    width: 80%;
+}
+
  /* media queries -------------------------------------- */
 
  @media only screen and (max-width: 992px) {
