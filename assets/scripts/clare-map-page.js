@@ -31,7 +31,7 @@ var lahinchMarker = L.marker([52.9338, -9.3499],{ // coordinates of Lahinch
 );
 lahinchMarker.addTo(clareMap);
 
-var spanishPointMarker = L.marker([52.847969, -9.456138],{
+var spanishPointMarker = L.marker([52.847969, -9.456138],{ //coordinates of Spanish Point
     icon: myIcon, 
     title: 'Spanish Point',
     alt: 'surfboard icon showing Spanish Point', 
@@ -47,7 +47,7 @@ var doughmoreMarker = L.marker([52.806895, -9.499054],{ // coordinates of Doughm
 );
 doughmoreMarker.addTo(clareMap);
     
-var kilkeeMarker = L.marker([52.681758, -9.648977],{
+var kilkeeMarker = L.marker([52.681758, -9.648977],{ //coordinates of Kilkee
     icon: myIcon, 
     title: 'Kilkee',
     alt: 'surfboard icon showing Kilkee', 
