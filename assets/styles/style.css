@@ -443,32 +443,50 @@ body{
 
  .facebook{
      flex: 1;
+     color: black;
+ }
+ .facebook-link:visited{
+    color: black;
+}
+ .facebook-link:hover{
+     color: var(--facebook);
  }
  .twitter{
     flex: 1;
 }
+.twitter-link{
+    color: black;
+}
+.twitter-link:visited{
+    color: black;
+}
+ .twitter-link:hover{
+     color: var(--twitter);
+ }
 .youtube{
     flex: 1;
 }
+.youtube-link{
+    color: black;
+}
+.youtube-link:visited{
+    color: black;
+}
+ .youtube-link:hover{
+     color: var(--youtube);
+ }
 .instagram{
     flex: 1;
 }
-.facebook:hover{
-    flex: 1;
-    color: var(--facebook);
+.instagram-link{
+    color: black;
 }
-.twitter:hover{
-   flex: 1;
-   color: var(--twitter); 
+.instagram-link:visited{
+    color: black;
 }
-.youtube:hover{
-   flex: 1;
-   color: var(--youtube);
-}
-.instagram:hover{
-   flex: 1;
-   color: var(--instagram);
-}
+ .instagram-link:hover{
+     color: var(--facebook);
+ }
 .copyright{
     text-align: center;
 }
