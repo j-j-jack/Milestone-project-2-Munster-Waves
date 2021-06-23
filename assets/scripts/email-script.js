@@ -17,7 +17,7 @@ document.getElementById('email-form').addEventListener('submit', function(event)
     if(document.getElementById('contact').checked){
         document.getElementsByClassName('form')[0].innerHTML = 
         `<h2>Thank you!</h2><p>Your response has been sent.</p>
-        <p>We will send an email to ${pageForm.elements['email'].value} once the shop opens :)</p> 
+        <p>We will send an email to ${pageForm.elements['email'].value} once the shop opensgit  :)</p> 
         <p>click <a href ="index.html">here to go back to home page</a></p>
         `;
     }
@@ -31,7 +31,6 @@ document.getElementById('email-form').addEventListener('submit', function(event)
     }
     console.log(pageForm.elements['contact'].value);
     }, function(error) {
-       console.log('FAILED...', error);
        document.getElementsByClassName('form')[0].innerHTML = 
        `<h2>Oops... Something went wrong</h2><p>Your response wasn't sent</p>
        <a href="signup.html">reload the page here</a> to try again <br>
