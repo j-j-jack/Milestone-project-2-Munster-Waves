@@ -54,8 +54,14 @@
       <div class="signup-nav">Signup/About</div>
     </div>
     </div>
-    <div class='beach-page-content-container'>
-        <div class="supplementary-content">
+    <div class='beach-page-container'>
+        <div class="beach-title">
+            <div class="beach-title-content-container">
+            <div class='beach-title-left'>Previous Beach</div>
+            <div class='beach-title-center'>Doolin Point</div>
+            <div class='beach-title-right'>Next Beach</div>
+            </div>
+        </div>
             <div class="beach-info">
                 <p>The Cliffs of Moher provide a breath taking and intimidating backdrop here. 
                     Doolin Point is an exposed reef break that has quite reliable surf 
@@ -69,27 +75,42 @@
                     'Aill na Searrach', is just off the Cliffs of Moher. The wave features 
                     in the movie Waveriders.</p>
             </div>
-            <div class="beach-photo-container">
+            <div class="beach-photo-box">
                <img class="beach-photo" src="assets/images/doolin.jpg" alt="Landscape photo of the tower at Doolin Point">
             </div>
             <div id="beach-map">
 
             </div>      
-    </div>
-    <div class="surf-forecast">
-        <div class="beach-name">
-            Doolin Point
+        
+        <div class="day-selector">
+            <div class="days-large-screen-container">
+                <div class="days-large-screen" data-day="0"></div>
+                <div class="days-large-screen" data-day="1"></div>
+                <div class="days-large-screen" data-day="2"></div>
+                <div class="days-large-screen" data-day="3"></div>
+                <div class="days-large-screen" data-day="4"></div>
+                <div class="days-large-screen" data-day="5"></div>
+                <div class="days-large-screen" data-day="6"></div>
+            </div>
         </div>
-        <div class="days">
-
+        <div class="time-selector">
+            Hours
         </div>
-        <div class="hours">
-
+        <div class="surf-forecast">
+            <div class="forecast-icons-container">
+            <div class="sunrise"><i class="fas fa-sun"></i></i><span class="sunrise-value">Loading...</span></div>
+            <div class="sunset"><i class="fas fa-moon"></i><span class="sunset-value">Loading...</span></div>
+            <div class="temperature"><i class="fas fa-thermometer-three-quarters"></i><span class="temperature-value">Loading...</span></div>
+            <div class="water-temperature"><i class="fas fa-hot-tub"></i><span class="water-temperature-value">Loading...</span></div>
+            <div class="precipitation"><i class="fas fa-tint"></i><span class="precipitation-value">Loading...</span></div>
+            <div class="swell-height"><i class="fas fa-water"></i><span class="swell-height-value">Loading...</span></div>
+            <div class="wave-height"><img class='wave-height-icon' src='assets/images/wave-height.svg'><span class="wave-height-value">Loading...</span></div> <!--https://iconify.design/-->
+            <div class="wave-direction"><img class='wave-direction-icon' src='assets/images/wave-direction.svg'><span class="wave-direction-value">Loading...</span></div>
+            <div class="wind-speed"><i class="fas fa-wind"></i><span class="wind-speed-value">Loading...</span></div>
+            <div class="wind-direction"><img class='wind-direction-icon' src='assets/images/wind-direction.svg'><span class="wind-direction-value">Loading...</span></div>
+            </div>
         </div>
-        <div class="forecast-icons">
-
         </div>
-    </div>
 </div>
   <div class="footer">
     <div class="social-icons">
@@ -103,6 +124,6 @@
   </div>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="assets/scripts/script.js"></script>
-    <script src="assets/scripts/beach-map.js"></script>
+    <script src="assets/scripts/beach-pages-script.js"></script>
 </body>
 </html>

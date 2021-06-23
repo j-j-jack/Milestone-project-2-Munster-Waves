@@ -206,17 +206,18 @@ body{
 
 /* Beach pages --------------------------------------------------------------------------------*/
 
-.beach-page-content-container{
-    display: flex;
+.wave-height-icon{
+    height: 100%;
 }
 
-.supplementary-content{
-    flex: 3;
-    background: orange;
+.wave-direction-icon{
+    height: 100%;
+    position: absolute;
+    top: 0;
 }
-.surf-forecast{
-    flex: 4;
-    background: purple;
+
+.wind-direction-icon{
+    height: 100%;
 }
 
 .beach-photo{
@@ -227,6 +228,180 @@ body{
     height: 15vw;
     margin: 2vw;
 }
+.forecast-icons{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 8%;
+    row-gap: 2vw;
+    font-size: 7vw;
+    color: lightblue;
+    background: grey;
+    padding: 5%;
+}
+.sunrise-value{
+    font-size: 2vw;
+    margin-left: 5%;
+}
+.sunset-value{
+    font-size: 2vw;
+    margin-left: 5%;
+}
+.temperature-value{
+    font-size: 2vw;
+    margin-left: 5%;
+}
+.water-temperature-value{
+    font-size: 2vw;
+    margin-left: 5%;
+}
+.precipitation-value{
+    font-size: 2vw;
+    margin-left: 5%;
+}
+.swell-height-value{
+    font-size: 2vw;
+    margin-left: 5%;
+}
+.wave-height-value{
+    font-size: 2vw;
+    margin-left: 5%;
+}
+.wave-direction-value{
+    font-size: 2vw;
+    margin-left: 37%;  /* needed to manually position class because of irregular size of wind-direction icon */
+}
+.wind-speed-value{
+    font-size: 2vw;
+    margin-left: 5%;
+}
+.wind-direction-value{
+    font-size: 2vw;
+    margin-left: 5%;
+}
+
+
+.beach-page-container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: .5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "A A A A A"
+      "B B E E E"
+      "B B F F F"
+      "B B G G G"
+      "C C G G G"
+      "C C G G G"
+      "D D G G G"
+      "D D G G G"; 
+  }
+  .beach-title { 
+      grid-area: A;
+     }
+  .day-selector { 
+      grid-area: E; 
+}
+  .beach-info { 
+      grid-area: B; 
+    }
+  .time-selector{
+       grid-area: F; 
+    }
+  .beach-photo-box {
+       grid-area: C; 
+    }
+  #beach-map { 
+      grid-area: D; 
+}
+  .surf-forecast { 
+      margin-left: 5vw;
+      grid-area: G;
+  }
+
+  .beach-title-content-container{
+      display: flex;
+  }
+  .beach-title-left{
+    flex: 1;
+    text-align: left;
+}
+  .beach-title-center{
+      flex: 1;
+      text-align: center;
+  }
+
+  .beach-title-right{
+    flex: 1;
+    text-align: right;
+}
+.days-large-screen-container{
+    display: flex;
+}
+
+.days-large-screen-container > div {
+    flex: 1;
+    margin: 2%;
+    background:salmon;
+    text-align: center;
+}
+
+.forecast-icons-container{
+    font-size: 7vw;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 3vw 3vw; 
+    grid-template-areas: 
+      "A B"
+      "C D"
+      "E F"
+      "G H"
+      "I J"; 
+  }
+
+  .sunrise{
+      grid-area: A;
+  }
+
+  .sunset{
+    grid-area: B;
+}
+
+.temperature{
+    grid-area: C;
+}
+
+.water-temperature{
+    grid-area: D;
+}
+
+.precipitation{
+    grid-area: E;
+}
+
+.swell-height{
+    grid-area: F;
+}
+
+.wave-height{
+    grid-area: G;
+}
+
+.wave-direction{
+    grid-area: H;
+    position: relative;
+}
+
+.wind-speed{
+    grid-area: I;
+}
+
+.wind-direction{
+    grid-area: J;
+}
+
+
+
  /* footer ------------------------------------------------------------------------*/
  .footer{
      background: var(--footer-color);
@@ -316,6 +491,10 @@ body{
     }
     .large-screen-navbar{
         display: none;
+    }
+
+    .forecast-icons{
+        grid-template-columns: auto;
     }
  }
 
