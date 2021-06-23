@@ -12,6 +12,9 @@ let sunriseTimes = [];
 let sunsetTimes = [];
 let stormGlassData = {};
 let daysLargeScreen = document.getElementsByClassName('days-large-screen');
+let dayDisplayedSmallScreen = document.getElementsByClassName('day-selector-center')[0];
+let daysArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']; 
+let firstDayInSelector;
 console.log(daysLargeScreen);
 for (let i = 0; i < 7; i ++)
     {
@@ -21,14 +24,19 @@ for (let i = 0; i < 7; i ++)
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
     let dayOfWeek = date.getDay();
-    let daysArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']; 
-    dayOfWeek = daysArray[dayOfWeek]; // this is used for the template literal printed to the console
+    if(i==0){
+        firstDayInSelector=dayOfWeek;
+    }
     if (month < 10){
         month = '0' + month;
     }
     let monthDate = date.getDate();
     if(monthDate < 10){
         monthDate = '0' + monthDate;
+    }
+    dayOfWeek = daysArray[dayOfWeek]; // this is used for the template literal printed to the console
+    if(i == 0){
+        dayDisplayedSmallScreen.innerHTML = `${dayOfWeek}<br>${monthDate}`;
     }
     daysLargeScreen[i].innerHTML = `${dayOfWeek}<br>${monthDate}`;
 
@@ -41,7 +49,15 @@ for (let i = 0; i < 7; i ++)
             sunriseTimes[i] = sR;
             sunsetTimes[i] = sS;   
 });}
+for (let i = firstDayInSelector; i < (firstDayInSelector+7); i ++){
+    console.log(i%7);
+    daysArray.push(daysArray[i%7]);
+}
 
+for(let i = 0; i < 7; i ++){
+    daysArray.shift();
+}
+console.log(daysArray);
 // the code below is based on the example code provided by Stormglass api 
 const params = 'airTemperature,waterTemperature,precipitation,swellHeight,waveHeight,waveDirection,windSpeed,windDirection';
 
@@ -62,6 +78,8 @@ let timesList = ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am',
                    '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
 let hoursLeft = document.getElementsByClassName('hours-left')[0];
 let hoursRight = document.getElementsByClassName('hours-right')[0];
+let dayLeft = document.getElementsByClassName('day-left')[0];
+let dayRight = document.getElementsByClassName('day-right')[0];
 let timeDisplayed = document.getElementsByClassName('time-selector-center')[0];
 hoursLeft.addEventListener('click', function(){
         currentHourSelected--;
@@ -96,11 +114,59 @@ hoursRight.addEventListener('click', function(){
     setWeatherDataOnPage();
 });
 
+dayLeft.addEventListener('click', function(){
+    if (currentDaySelected==0){
+        dayLeft.style.pointerEvents = 'none';
+            dayLeft.innerHTML = '';
+    }
+    else{
+        dayLeft.style.pointerEvents = 'auto';
+        dayLeft.innerHTML = '<i class="fas fa-caret-left"></i>';
+        currentDaySelected--;
+    }
+    dayRight.innerHTML = '<i class="fas fa-caret-right"></i>'
+    dayRight.style.pointerEvents = 'auto';
+    dayDisplayedSmallScreen.innerHTML = daysArray[currentDaySelected];
+    setWeatherDataOnPage();
+});
+
+dayRight.addEventListener('click', function(){
+    if (currentDaySelected==6){
+        dayRight.style.pointerEvents = 'none';
+            dayRight.innerHTML = '';
+    }
+    else{
+        dayRight.style.pointerEvents = 'auto';
+        dayRight.innerHTML = '<i class="fas fa-caret-right"></i>';
+        currentDaySelected++;
+    }
+    dayLeft.innerHTML = '<i class="fas fa-caret-left"></i>'
+    dayLeft.style.pointerEvents = 'auto';
+    dayDisplayedSmallScreen.innerHTML = daysArray[currentDaySelected];
+    setWeatherDataOnPage();
+});
 for(let i =0; i<7; i++){
     daysLargeScreen[i].addEventListener('click', function(){
         currentDaySelected = this.dataset.day;
+        dayDisplayedSmallScreen.innerHTML = daysArray[currentDaySelected];
+        if (currentDaySelected == 0){
+            dayLeft.style.pointerEvents = 'none';
+            dayLeft.innerHTML = '';
+        }
+        else{
+            dayLeft.style.pointerEvents = 'auto';
+            dayLeft.innerHTML = '<i class="fas fa-caret-left"></i>'
+        }
+        if (currentDaySelected == 6){
+            dayRight.style.pointerEvents = 'none';
+            dayRight.innerHTML = '';
+        }
+        else{
+            dayRight.style.pointerEvents = 'auto';
+            dayRight.innerHTML = '<i class="fas fa-caret-right"></i>'
+        }
         setWeatherDataOnPage();     
-        console.log(this.dataset.day*24);
+        console.log(currentDaySelected*24);
     });
 }
 
