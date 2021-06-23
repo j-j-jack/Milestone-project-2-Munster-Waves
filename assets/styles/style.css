@@ -99,6 +99,7 @@ body{
      width: 100vw;
      z-index: 1099;
      pointer-events: none;
+     top: 0;
  }
  .small-screen-navbar-container{
      width: 100%;
@@ -531,6 +532,8 @@ body{
 }
 .form{
     grid-Area: D;
+    text-align: center;
+    margin-bottom: 3vw;
 }
 textarea{
     width: 80%;
@@ -598,6 +601,15 @@ textarea{
     .beach-photo{
         height: 40vw;
         padding-left: 20vw;
+    }
+    .signup-page-container{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        "A"
+        "C"
+        "B"
+        "D";
     }
  }
 
