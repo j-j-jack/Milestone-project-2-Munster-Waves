@@ -15,7 +15,10 @@ let daysLargeScreen = document.getElementsByClassName('days-large-screen');
 let dayDisplayedSmallScreen = document.getElementsByClassName('day-selector-center')[0];
 let daysArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']; 
 let firstDayInSelector;
-console.log(daysLargeScreen);
+
+let fetchedSun = 0;
+let fetchedStorm = false;
+
 for (let i = 0; i < 7; i ++)
     {
     let day = i * 86400000; // constructing the full date for the next seven days in the format required by the api to function correctly
@@ -34,7 +37,7 @@ for (let i = 0; i < 7; i ++)
     if(monthDate < 10){
         monthDate = '0' + monthDate;
     }
-    dayOfWeek = daysArray[dayOfWeek]; // this is used for the template literal printed to the console
+    dayOfWeek = daysArray[dayOfWeek]; 
     if(i == 0){
         dayDisplayedSmallScreen.innerHTML = `${dayOfWeek}<br>${monthDate}`;
     }
@@ -43,21 +46,30 @@ for (let i = 0; i < 7; i ++)
     let fullDate = `${year}-${month}-${monthDate}`;
     fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=${fullDate}`).then((sunResponse) => sunResponse.json()).then((sunData) => {
     
-    // getting the api information for the next seven days using the lahinch coordinates and the constructed date
+    // getting the api information for the next seven days using the dictionary coordinates and the constructed date
             let sR = sunData.results.sunrise; // extracting the sunrise info from the api
             let sS = sunData.results.sunset; // extracting the sunset infor from the api
             sunriseTimes[i] = sR;
             sunsetTimes[i] = sS;   
-});}
+            
+            if(sunData.status=='OK'){ // checking status code supplied by api to check for errors
+                fetchedSun++;
+                fetchComplete(); // if the status ok: fetch was successful; run fetch complete
+            }
+            else{
+                errorHandler();
+            }
+        
+}).catch(error => 
+    errorHandler());
+}
 for (let i = firstDayInSelector; i < (firstDayInSelector+7); i ++){
-    console.log(i%7);
     daysArray.push(daysArray[i%7]);
 }
 
 for(let i = 0; i < 7; i ++){
     daysArray.shift();
 }
-console.log(daysArray);
 // the code below is based on the example code provided by Stormglass api 
 const params = 'airTemperature,waterTemperature,precipitation,swellHeight,waveHeight,waveDirection,windSpeed,windDirection';
 
@@ -66,9 +78,18 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
         'Authorization': '9a759cae-c394-11eb-9f40-0242ac130002-9a759d26-c394-11eb-9f40-0242ac130002'
     }
 }).then((WeatherResponse) => WeatherResponse.json()).then((weatherData) => {
-    console.log(weatherData);
     stormGlassData = weatherData;
-});
+    if('errors' in weatherData){
+        errorHandler(); // checking for errors in the object. 
+    }
+    else{
+    fetchedStorm = true; // no errors: call the fetch complete object
+    fetchComplete();
+}
+}).catch(error => 
+    errorHandler()); // handling errors if the fetch fails completely
+
+
 let currentDaySelected = 0;
 let currentHourSelected = 12;
 let timeReachedStart = false;
@@ -145,9 +166,15 @@ dayRight.addEventListener('click', function(){
     dayDisplayedSmallScreen.innerHTML = daysArray[currentDaySelected];
     setWeatherDataOnPage();
 });
+
+daysLargeScreen[0].style.borderBottom = '3px solid yellow';
 for(let i =0; i<7; i++){
     daysLargeScreen[i].addEventListener('click', function(){
+        for (let i = 0; i < 7; i ++){
+            daysLargeScreen[i].style.borderBottom = 'none';
+        }
         currentDaySelected = this.dataset.day;
+        daysLargeScreen[currentDaySelected].style.borderBottom = '4px solid yellow';
         dayDisplayedSmallScreen.innerHTML = daysArray[currentDaySelected];
         if (currentDaySelected == 0){
             dayLeft.style.pointerEvents = 'none';
@@ -166,10 +193,15 @@ for(let i =0; i<7; i++){
             dayRight.innerHTML = '<i class="fas fa-caret-right"></i>'
         }
         setWeatherDataOnPage();     
-        console.log(currentDaySelected*24);
     });
 }
-
+function fetchComplete(){
+    if(fetchedSun == 7 && fetchedStorm == true){
+        document.getElementsByClassName('day-selector')[0].style.pointerEvents = 'auto';
+        document.getElementsByClassName('time-selector')[0].style.pointerEvents = 'auto';
+        setWeatherDataOnPage();
+    }
+}
 function setWeatherDataOnPage(){
     document.getElementsByClassName('sunrise-value')[0].innerHTML = sunriseTimes[currentDaySelected];
         document.getElementsByClassName('sunset-value')[0].innerHTML = sunsetTimes[currentDaySelected];
@@ -181,6 +213,22 @@ function setWeatherDataOnPage(){
         document.getElementsByClassName('wave-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveDirection.noaa;
         document.getElementsByClassName('wind-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windSpeed.noaa;
         document.getElementsByClassName('wind-speed-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windDirection.noaa; 
+}
+
+function errorHandler(){
+    document.getElementsByClassName('day-selector')[0].innerHTML = 
+    '<h2 style="text-align: center;">Oops... there was a problem :(</h2>';
+    document.getElementsByClassName('time-selector')[0].innerHTML = 
+    '<h2 style="text-align: center;">We\'re really sorry, we\'re working on it.</h2>';
+    document.getElementsByClassName('sunset-value')[0].innerHTML = 'unavailable';
+        document.getElementsByClassName('temperature-value')[0].innerHTML = 'unavailable';
+        document.getElementsByClassName('water-temperature-value')[0].innerHTML = 'unavailable';
+        document.getElementsByClassName('precipitation-value')[0].innerHTML = 'unavailable';
+        document.getElementsByClassName('swell-height-value')[0].innerHTML = 'unavailable';
+        document.getElementsByClassName('wave-height-value')[0].innerHTML = 'unavailable';
+        document.getElementsByClassName('wave-direction-value')[0].innerHTML = 'unavailable';
+        document.getElementsByClassName('wind-direction-value')[0].innerHTML = 'unavailable';
+        document.getElementsByClassName('wind-speed-value')[0].innerHTML = 'unavailable';
 }
 /* Map section of script------------------------------------------------------------------------ */
 
