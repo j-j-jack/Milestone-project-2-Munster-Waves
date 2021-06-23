@@ -24,8 +24,6 @@ window.addEventListener('resize', function(){
             smallScreenNavbarDropdownCurtain.style.display = 'none';
             smallScreenNavbarContentDisabler.style.pointerEvents = 'auto';
            }
-           console.log(window.getComputedStyle(smallScreenNavbarDropdownCurtain,
-            null).getPropertyValue('display') == 'none');
             
       });
      });  
@@ -43,15 +41,11 @@ window.addEventListener('resize', function(){
             smallScreenNavbarDropdownCurtain.style.display = 'none';
             smallScreenNavbarContentDisabler.style.pointerEvents = 'auto';
            }
-           console.log(window.getComputedStyle(smallScreenNavbarDropdownCurtain,
-            null).getPropertyValue('display') == 'none');
      });
 
      
 
      document.addEventListener('scroll', function(){
-      //document.getElementsByClassName('announcement-bar')[0].style.display = 'none';
-     // console.log(document.getElementsByTagName('body')[0].style.display);
      let aHeight = document.getElementsByClassName('announcement-bar')[0].offsetHeight;
      if ((aHeight-window.scrollY) > 0){
         document.getElementsByClassName('small-screen-navbar-container')[0].style.top = `${aHeight - window.scrollY}px`;
@@ -59,10 +53,7 @@ window.addEventListener('resize', function(){
      }
      else{
       document.getElementsByClassName('small-screen-navbar-container')[0].style.top = '0px';
-   }
-      console.log(aHeight - window.scrollY);
-      
-     
+   } 
    });
      
   
