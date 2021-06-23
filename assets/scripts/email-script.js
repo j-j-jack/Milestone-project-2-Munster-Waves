@@ -10,7 +10,7 @@ document.getElementById('email-form').addEventListener('submit', function(event)
     let pageForm = document.getElementById('email-form');
     document.getElementById('form-submission').style.pointerEvents = 'none';
     emailjs.sendForm(
-        'service_qcwv5hy', 'template_mwkm1ac', '#email-form', 'user_G4jZs712zju74E5JnCbeM')
+        'service_qwv5hy', 'template_mwkm1ac', '#email-form', 'user_G4jZs712zju74E5JnCbeM')
     .then(function(response) { //protocol to deal with responses as documented on the emailjs website
     console.log('SUCCESS!', response.status, response.text);
     
@@ -23,12 +23,15 @@ document.getElementById('email-form').addEventListener('submit', function(event)
     else {
         document.getElementsByClassName('form')[0].innerHTML = 
         `<h2>Thank you!</h2><p>Your response has been sent.</p>
-        If you want to sign up for the email notification feel free to reload the page
-        and resubmit the form :)`
+        <p>If you want to sign up for the email notification feel free to reload the page
+        and resubmit the form :)</p>`
     }
     console.log(pageForm.elements['contact'].value);
     }, function(error) {
        console.log('FAILED...', error);
+       document.getElementsByClassName('form')[0].innerHTML = 
+       `<h2>Oops... Something went wrong</h2><p>Your response wasn't sent</p>
+        reload the page <a href="signup.html">here</a> to try again`
     })
     
    });
