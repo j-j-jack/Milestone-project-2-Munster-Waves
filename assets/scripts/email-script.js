@@ -10,28 +10,32 @@ document.getElementById('email-form').addEventListener('submit', function(event)
     let pageForm = document.getElementById('email-form');
     document.getElementById('form-submission').style.pointerEvents = 'none';
     emailjs.sendForm(
-        'service_qwv5hy', 'template_mwkm1ac', '#email-form', 'user_G4jZs712zju74E5JnCbeM')
+        'service_qcwv5hy', 'template_mwkm1ac', '#email-form', 'user_G4jZs712zju74E5JnCbeM')
     .then(function(response) { //protocol to deal with responses as documented on the emailjs website
     console.log('SUCCESS!', response.status, response.text);
     
     if(document.getElementById('contact').checked){
         document.getElementsByClassName('form')[0].innerHTML = 
         `<h2>Thank you!</h2><p>Your response has been sent.</p>
-        We will send an email to ${pageForm.elements['email'].value}
-        once the shop is open :)`;
+        <p>We will send an email to ${pageForm.elements['email'].value} once the shop opens :)</p> 
+        <p>click <a href ="index.html">here to go back to home page</a></p>
+        `;
     }
     else {
         document.getElementsByClassName('form')[0].innerHTML = 
         `<h2>Thank you!</h2><p>Your response has been sent.</p>
-        <p>If you want to sign up for the email notification feel free to reload the page
-        and resubmit the form :)</p>`
+        <p><a href="signup.html">reload the page here</a> to resubmit the form 
+        and register your email <br>
+        or click <a href ="index.html">here to go back to home page</a> :)
+        `;
     }
     console.log(pageForm.elements['contact'].value);
     }, function(error) {
        console.log('FAILED...', error);
        document.getElementsByClassName('form')[0].innerHTML = 
        `<h2>Oops... Something went wrong</h2><p>Your response wasn't sent</p>
-        reload the page <a href="signup.html">here</a> to try again`
+       <a href="signup.html">reload the page here</a> to try again <br>
+       or click <a href ="index.html">here to go back to home page</a> :)`
     })
     
    });
