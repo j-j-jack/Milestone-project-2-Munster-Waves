@@ -53,25 +53,69 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
     console.log(weatherData);
     stormGlassData = weatherData;
 });
+let currentDaySelected = 0;
+let currentHourSelected = 12;
+let timeReachedStart = false;
+let timeReachedEnd = false;
+let timesList = ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am',
+                  '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',
+                   '6pm', '7pm', '8pm', '9pm', '10pm', '11pm']
+let hoursLeft = document.getElementsByClassName('hours-left')[0];
+let hoursRight = document.getElementsByClassName('hours-right')[0];
+let timeDisplayed = document.getElementsByClassName('time-selector-center')[0];
+hoursLeft.addEventListener('click', function(){
+        currentHourSelected--;
+        if(timeReachedEnd){
+            hoursRight.style.pointerEvents='auto';
+            hoursRight.innerHTML='<i class="fas fa-caret-right"></i>';
+            timeReachedEnd=false;
+        }
+        if(currentHourSelected == 0){
+            hoursLeft.style.pointerEvents='none';
+            hoursLeft.innerHTML='';
+            timeReachedStart='true';
+        }
+        timeDisplayed.innerHTML = timesList[currentHourSelected];
+        setWeatherDataOnPage();
+});
 
-
+hoursRight.addEventListener('click', function(){
+    currentHourSelected++;
+    if(timeReachedStart){
+        hoursLeft.style.pointerEvents='auto';
+        hoursLeft.innerHTML='<i class="fas fa-caret-left"></i>';
+        timeReachedStart=false;
+    }
+        
+    if(currentHourSelected == 23){
+        hoursRight.style.pointerEvents='none';
+        hoursRight.innerHTML='';
+        timeReachedEnd=true;
+        }
+    timeDisplayed.innerHTML = timesList[currentHourSelected];
+    setWeatherDataOnPage();
+});
 
 for(let i =0; i<7; i++){
     daysLargeScreen[i].addEventListener('click', function(){
-        document.getElementsByClassName('sunrise-value')[0].innerHTML = sunriseTimes[this.dataset.day];
-        document.getElementsByClassName('sunset-value')[0].innerHTML = sunsetTimes[this.dataset.day];
-        document.getElementsByClassName('temperature-value')[0].innerHTML = stormGlassData.hours[(this.dataset.day*24)+12].airTemperature.noaa;
-        document.getElementsByClassName('water-temperature-value')[0].innerHTML = stormGlassData.hours[(this.dataset.day*24)+12].waterTemperature.noaa;
-        document.getElementsByClassName('precipitation-value')[0].innerHTML = stormGlassData.hours[(this.dataset.day*24)+12].precipitation.noaa;
-        document.getElementsByClassName('swell-height-value')[0].innerHTML = stormGlassData.hours[(this.dataset.day*24)+12].swellHeight.noaa;
-        document.getElementsByClassName('wave-height-value')[0].innerHTML = stormGlassData.hours[(this.dataset.day*24)+12].waveHeight.noaa;
-        document.getElementsByClassName('wave-direction-value')[0].innerHTML = stormGlassData.hours[(this.dataset.day*24)+12].waveDirection.noaa;
-        document.getElementsByClassName('wind-direction-value')[0].innerHTML = stormGlassData.hours[(this.dataset.day*24)+12].windSpeed.noaa;
-        document.getElementsByClassName('wind-speed-value')[0].innerHTML = stormGlassData.hours[(this.dataset.day*24)+12].windDirection.noaa;      
+        currentDaySelected = this.dataset.day;
+        setWeatherDataOnPage();     
         console.log(this.dataset.day*24);
     });
 }
 
+function setWeatherDataOnPage(){
+    document.getElementsByClassName('sunrise-value')[0].innerHTML = sunriseTimes[currentDaySelected];
+        document.getElementsByClassName('sunset-value')[0].innerHTML = sunsetTimes[currentDaySelected];
+        document.getElementsByClassName('temperature-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].airTemperature.noaa;
+        document.getElementsByClassName('water-temperature-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waterTemperature.noaa;
+        document.getElementsByClassName('precipitation-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].precipitation.noaa;
+        document.getElementsByClassName('swell-height-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].swellHeight.noaa;
+        document.getElementsByClassName('wave-height-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveHeight.noaa;
+        document.getElementsByClassName('wave-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveDirection.noaa;
+        document.getElementsByClassName('wind-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windSpeed.noaa;
+        document.getElementsByClassName('wind-speed-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windDirection.noaa; 
+}
 /* Map section of script------------------------------------------------------------------------ */
 
 var beachMap = L.map('beach-map').setView([beachDict[beachName][2],beachDict[beachName][3]], 9);
