@@ -238,47 +238,6 @@ body{
     background: grey;
     padding: 5%;
 }
-.sunrise-value{
-    font-size: 2vw;
-    margin-left: 5%;
-}
-.sunset-value{
-    font-size: 2vw;
-    margin-left: 5%;
-}
-.temperature-value{
-    font-size: 2vw;
-    margin-left: 5%;
-}
-.water-temperature-value{
-    font-size: 2vw;
-    margin-left: 5%;
-}
-.precipitation-value{
-    font-size: 2vw;
-    margin-left: 5%;
-}
-.swell-height-value{
-    font-size: 2vw;
-    margin-left: 5%;
-}
-.wave-height-value{
-    font-size: 2vw;
-    margin-left: 5%;
-}
-.wave-direction-value{
-    font-size: 2vw;
-    margin-left: 37%;  /* needed to manually position class because of irregular size of wind-direction icon */
-}
-.wind-speed-value{
-    font-size: 2vw;
-    margin-left: 5%;
-}
-.wind-direction-value{
-    font-size: 2vw;
-    margin-left: 5%;
-}
-
 
 .beach-page-container {
     display: grid; 
@@ -345,6 +304,7 @@ body{
     text-align: center;
 }
 
+
 .forecast-icons-container{
     font-size: 7vw;
     display: grid; 
@@ -358,6 +318,17 @@ body{
       "G H"
       "I J"; 
   }
+
+  .forecast-icons-container > div{
+      position: relative;
+  }
+
+  .forecast-icons-container > div > span{
+    font-size: 2vw;
+    position: absolute;
+    left: 37%;
+    top: 10%;
+}
 
   .sunrise{
       grid-area: A;
@@ -389,7 +360,6 @@ body{
 
 .wave-direction{
     grid-area: H;
-    position: relative;
 }
 
 .wind-speed{
