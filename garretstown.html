@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garretstown</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <!-- leaflets script file taken from its site online-->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script src="https://kit.fontawesome.com/87b203f956.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+</head>
+
+<body>
+    <a href="signup.html" style="text-decoration: none;">
+        <div class="announcement-bar">
+            big news! munster waves shop is coming soon click here to signup to be alerted via email when the time
+            comes!
+        </div>
+    </a>
+    <div class=small-screen-navbar-container>
+        <div class="small-screen-navbar">
+            <a href="index.html">
+                <span class="small-nav-munster">Munster</span>
+                <span class="small-nav-waves">Waves</span>
+            </a>
+            <span class="burger"><i class="fas fa-bars"></i></span>
+        </div>
+        <div class="small-screen-navbar-dropdown-container">
+            <div class="small-screen-navbar-dropdown-components">
+                <div class="clare-nav">Clare</div>
+                <div class="kerry-nav">Kerry</div>
+                <div class="cork-nav">Cork</div>
+                <div class="waterford-nav">Waterford</div>
+                <div class="signup-nav">Signup/About</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-screen-navbar-dropdown-curtain"></div>
+    <div class="small-screen-navbar-content-disabler">
+        <div class="company-logo">
+            <a href="index.html">
+                <img src="assets/images/munster-waves-logo.svg" alt="munster waves logo">
+            </a>
+        </div>
+        <div class="nav-outer">
+            <div class="large-screen-navbar">
+                <div class="clare-nav">Clare</div>
+                <div class="kerry-nav">Kerry</div>
+                <div class="cork-nav">Cork</div>
+                <div class="waterford-nav">Waterford</div>
+                <div class="signup-nav">Signup/About</div>
+            </div>
+        </div>
+        <div class='beach-page-container'>
+            <!--used as grid container-->
+            <div class="beach-title">
+                <!--to select between beaches-->
+                <div class="beach-title-content-container">
+                    <div class='beach-title-left'>
+                        <a href="inchydoney.html"><i class="fas fa-caret-left"></i> Previous Beach</a>
+                    </div>
+                    <div class='beach-title-center'>Garretstown</div>
+                    <div class='beach-title-right'>
+                        <a href="inch-cork.html">Next Beach <i class="fas fa-caret-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="beach-info">
+                <h2 class='beach-info-title'>Info</h2>
+                <p>Garrettstown in County Cork is an exposed beach and point break that has quite reliable surf, although summer tends
+                    to be mostly flat.</p>
+                
+                <p>Works best in offshore winds from the north. The best swell direction is from the southwest. The beach break offers
+                    both left and right hand waves. A word of warning, the surf here can be a bit dangerous at high tide and take care
+                    of submerged obstacles,groynes and rocks.</p>
+                
+                <p>Ireland’s Wild Atlantic Way truly is a surfer’s paradise and it's unlikely to be too crowded here, even when the surf
+                    is up. When you’re successfully 'wiped out', why not head to Hurley’s for a bit of comfort food. They serve soup to
+                    steak which you can enjoy in front of a roaring fire and it tends to be a very cosy set up after a day chasing
+                    waves.</p>
+            </div>
+            <div class="beach-photo-box">
+                <img class="beach-photo" src="assets/images/doolin.jpg"
+                    alt="Landscape photo of the tower at Doolin Point">
+            </div>
+            <div id="beach-map">
+                <!--unique id to be populated by leaflet api-->
+
+            </div>
+
+            <div class="day-selector">
+                <div class="days-large-screen-container">
+                    <!--large screen container. Only visible on larger screens data-day is important
+                in the javascript code to change the data displayed on the screen-->
+                    <div class="days-large-screen" data-day="0"></div>
+                    <div class="days-large-screen" data-day="1"></div>
+                    <div class="days-large-screen" data-day="2"></div>
+                    <div class="days-large-screen" data-day="3"></div>
+                    <div class="days-large-screen" data-day="4"></div>
+                    <div class="days-large-screen" data-day="5"></div>
+                    <div class="days-large-screen" data-day="6"></div>
+                </div>
+                <div class="days-small-screen-container">
+                    <!--smaller screen container. only visible on smaller screens. can be used
+                to navigate left and right between the days-->
+                    <div class='day-selector-left'><span class="day-left"></span></div>
+                    <div class='day-selector-center'></div>
+                    <div class='day-selector-right'><span class="day-right"><i class="fas fa-caret-right"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="time-selector">
+                <!--time selector that can be used to navigate between the times using the left and right
+            arrow icons-->
+                <div class="time-selector-content-container">
+                    <div class='time-selector-left'><span class="hours-left"><i class="fas fa-caret-left"></i></span>
+                    </div>
+                    <div class='time-selector-center'>12pm</div>
+                    <div class='time-selector-right'><span class="hours-right"><i class="fas fa-caret-right"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="surf-forecast">
+                <div>
+                    <div class="forecast-icons-container">
+                        <!-- the icons are sourced from font awesome and also from iconify.design the spans adjacent to the 
+                icons are populated in the script using the data fetched from the apis-->
+                        <div class="sunrise"><i class="fas fa-sun"></i></i><span class="sunrise-value">Loading...</span>
+                        </div>
+                        <div class="sunset"><i class="fas fa-moon"></i><span class="sunset-value">Loading...</span>
+                        </div>
+                        <div class="temperature"><i class="fas fa-thermometer-three-quarters"></i><span
+                                class="temperature-value">Loading...</span></div>
+                        <div class="water-temperature"><i class="fas fa-hot-tub"></i><span
+                                class="water-temperature-value">Loading...</span></div>
+                        <div class="precipitation"><i class="fas fa-tint"></i><span
+                                class="precipitation-value">Loading...</span></div>
+                        <div class="swell-height"><i class="fas fa-water"></i><span
+                                class="swell-height-value">Loading...</span></div>
+                        <div class="wave-height"><img class='wave-height-icon' src='assets/images/wave-height.svg'><span
+                                class="wave-height-value">Loading...</span></div>
+                        <!--https://iconify.design/-->
+                        <div class="wave-direction"><img class='wave-direction-icon'
+                                src='assets/images/wave-direction.svg'><span
+                                class="wave-direction-value">Loading...</span></div>
+                        <div class="wind-speed"><i class="fas fa-wind"></i><span
+                                class="wind-speed-value">Loading...</span></div>
+                        <div class="wind-direction"><img class='wind-direction-icon'
+                                src='assets/images/wind-direction.svg'><span
+                                class="wind-direction-value">Loading...</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="social-icons">
+            <div class="facebook">
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer" class='facebook-link'>
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </div>
+            <div class="twitter">
+                <a href="https://www.twitter.com" target="_blank" rel="noreferrer" class='twitter-link'>
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </div>
+            <div class="youtube">
+                <a href="https://www.youtube.com" target="_blank" rel="noreferrer" class='youtube-link'>
+                    <i class="fab fa-youtube-square"></i>
+                </a>
+            </div>
+            <div class="instagram">
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer" class='instagram-link'>
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">Munster Waves © 2021</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/beach-pages-script.js"></script>
+</body>
+
+</html>

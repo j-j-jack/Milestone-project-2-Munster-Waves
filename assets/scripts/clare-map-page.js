@@ -74,5 +74,5 @@ doughmorePopup.setContent("<p>Reliably sized waves even when everywhere else is 
 doughmoreMarker.bindPopup(doughmorePopup);
 
 var kilkeePopup = L.popup();
-kilkeePopup.setContent("<p>Protected bay with a golden sandy beach ideal for learners</p><a href='doughmore.html'>View surf forecast for kilkee</a>");
+kilkeePopup.setContent("<p>Protected bay with a golden sandy beach ideal for learners</p><a href='kilkee.html'>View surf forecast for kilkee</a>");
 kilkeeMarker.bindPopup(kilkeePopup);

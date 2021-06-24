@@ -27,6 +27,9 @@
   --map-outline-color: rgb(46, 147, 230);
   --form-instructions: rgb(3, 63, 23);
   --about-munster-waves-title: rgb(63, 0, 47);
+  --beach-title-color: rgb(1, 53, 18);
+  --beach-info-title: rgb(73, 31, 31);
+  --beach-image-border: rgb(112, 56, 56);
 }
 
 /* General Styling ----------------------------------------------------*/
@@ -157,6 +160,7 @@ body {
 }
 .large-screen-navbar {
   display: flex;
+  margin-bottom: 2vw;
 }
 
 .clare-nav {
@@ -249,11 +253,13 @@ body {
 
 .beach-photo {
   height: 20vw;
-  padding-left: 5vw;
+  margin-left: 5vw;
+  border: 5px solid var(--beach-image-border);
 }
 #beach-map {
   height: 15vw;
   margin: 2vw;
+  border: 5px solid var(--map-outline-color);
 }
 
 .beach-page-container {
@@ -273,6 +279,11 @@ body {
     "D D G G G";
 }
 .beach-title {
+  font-family: "Celtic";
+  color: var(--beach-title-color);
+  font-size: 200%;
+  font-weight: 600;
+  text-shadow: 1px 1px black;
   grid-area: A;
 }
 .day-selector {
@@ -302,8 +313,15 @@ body {
   display: flex;
 }
 .beach-title-left {
+  padding-top: 1%;
   flex: 1;
-  text-align: left;
+  text-align: center;
+  font-size: 70%;
+  margin-left: 5%;
+}
+.beach-title-left > a {
+  text-decoration: none;
+  color: black;
 }
 .beach-title-center {
   flex: 1;
@@ -311,8 +329,22 @@ body {
 }
 
 .beach-title-right {
+  padding-top: 1%;
   flex: 1;
-  text-align: right;
+  text-align: center;
+  font-size: 70%;
+  margin-right: 5%;
+}
+
+.beach-title-right > a {
+  text-decoration: none;
+  color: black;
+}
+
+.beach-info-title {
+  color: var(--beach-info-title);
+  text-align: center;
+  text-decoration: underline;
 }
 
 .time-selector-content-container {
