@@ -1,645 +1,642 @@
 /* Font imports -------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap");
 @font-face {
-    font-family: 'Celtic';
-    src:  url('../fonts/Celtic.ttf') format('woff2'),
-          url('../fonts/Celtic.ttf') format('woff');
-  }
+  font-family: "Celtic";
+  src: url("../fonts/Celtic.ttf") format("woff2"),
+    url("../fonts/Celtic.ttf") format("woff");
+}
 /* Root Variable ------------------------------------------------------*/
 :root {
-    --bg-color: rgb(157, 177, 245);
-    --announcement-bar-bg-color: rgb(0, 168, 76);
-    --announcement-bar-font-color: rgb(240, 193, 247);
-    --clare-yellow: rgb(244, 196, 48);
-    --kerry-green: rgb(0, 153, 0);
-    --waterford-blue: rgb(0, 0, 255);
-    --cork-red: rgb(255, 0, 0);
-    --munster: rgb(255, 72, 72);
-    --waves: rgb(28, 193, 201);
-    --small-nav: rgb(199, 214, 243);
-    --dropdown-curtain-color: rgba(51, 51, 51, .3);
-    --footer-color: rgb(174 ,143 ,96);
-    --facebook: rgb(6, 118, 232);
-    --twitter: rgb(93,169,221);
-    --youtube: rgb(255, 0, 0);
-    --instagram: rgb(221, 42, 123);
-
+  --bg-color: rgb(157, 177, 245);
+  --announcement-bar-bg-color: rgb(0, 168, 76);
+  --announcement-bar-font-color: rgb(240, 193, 247);
+  --clare-yellow: rgb(244, 196, 48);
+  --kerry-green: rgb(0, 153, 0);
+  --waterford-blue: rgb(0, 0, 255);
+  --cork-red: rgb(255, 0, 0);
+  --munster: rgb(255, 72, 72);
+  --waves: rgb(28, 193, 201);
+  --small-nav: rgb(199, 214, 243);
+  --dropdown-curtain-color: rgba(51, 51, 51, 0.3);
+  --footer-color: rgb(174, 143, 96);
+  --facebook: rgb(6, 118, 232);
+  --twitter: rgb(93, 169, 221);
+  --youtube: rgb(255, 0, 0);
+  --instagram: rgb(221, 42, 123);
 }
 
 /* General Styling ----------------------------------------------------*/
-body{
-    font-family: "original surfer";
-    background: var(--bg-color);
-    padding: 0;
-    margin: 0;
+body {
+  font-family: "original surfer";
+  background: var(--bg-color);
+  padding: 0;
+  margin: 0;
 }
 
-.announcement-bar{
-    background: var(--announcement-bar-bg-color);
-    color: var(--announcement-bar-font-color);
-    outline: 1px solid black;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 0;
-    padding-top: 2vw;
-    padding-bottom: 2vw;
+.announcement-bar {
+  background: var(--announcement-bar-bg-color);
+  color: var(--announcement-bar-font-color);
+  outline: 2px solid black;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
 }
 
-.company-logo{
-    max-width: 100%;
-    padding-left: 15vw;
-    padding-right: 15vw;
-    margin: 0;
-
+.company-logo {
+  max-width: 100%;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  margin: 0;
 }
 
-.home-page-map{
-    padding: 2vw 15vw 2vw 2vw;
-    border: 5px solid blue;
-    display: flex;
-    margin: 2vw;
-    max-width: 96%;
-    position: relative;
+.home-page-map {
+  padding: 2vw 15vw 2vw 2vw;
+  border: 5px solid blue;
+  display: flex;
+  margin: 2vw;
+  max-width: 96%;
+  position: relative;
 }
 
-.click-icon{
-    position: absolute;
-    left: 3vw;
-    font-size: 4vw;
-    display: inline;
-    margin: 0;
-    padding: 0;
-    z-index: 10;
+.click-icon {
+  position: absolute;
+  left: 3vw;
+  font-size: 4vw;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
 }
 
-.no-surfing-notification{
-    visibility: hidden;
+.no-surfing-notification {
+  visibility: hidden;
 }
- /* Navbar ------------------------------------------------------------------------*/
+/* Navbar ------------------------------------------------------------------------*/
 
- .small-screen-navbar{
-     font-family: 'pacifico';
-     font-size: 5vw;
-     display: none;
-     width: 96%;
-     max-width: 100%;
-     background: var(--small-nav);
-     padding: 2vw;
- }
+.small-screen-navbar {
+  font-family: "pacifico";
+  font-size: 5vw;
+  display: none;
+  width: 96%;
+  max-width: 100%;
+  background: var(--small-nav);
+  padding: 2vw;
+}
 
- .small-screen-navbar-content-disabler{
-     pointer-events: auto;
- }
- .small-screen-navbar-dropdown-curtain{
-     background: var(--dropdown-curtain-color);
-     display: none;
-     position: fixed;
-     height: 100vh;
-     width: 100vw;
-     z-index: 1099;
-     pointer-events: none;
-     top: 0;
- }
- .small-screen-navbar-container{
-     width: 100%;
-     position: fixed;
-     z-index: 1100;
- }
- .small-nav-munster{
-     color: var(--munster);
- }
- .small-nav-waves{
-     color: var(--waves);
- }
- .burger{
-     position: absolute;
-     right: 2vw;
- }
- .small-screen-navbar-dropdown-container{
-     display: none;
-     padding: 0;
-     margin: 0;
- }
- .small-screen-navbar-dropdown-filler{
-     display: inline-block;
-     position: absolute;
-     width: 50%;
-     height: 0;
- }
- .small-screen-navbar-dropdown-components{
-    display: inline-block;
-    width: 50%;
-    position: absolute;
-    right: 0;
- }
- .large-screen-navbar{
-    display: flex;
- }
+.small-screen-navbar > a {
+  text-decoration: none;
+}
 
- .clare-nav{
-    font-family: 'Celtic';
-    font-size: 3vw;
-    font-weight: bold;
-    background: var(--clare-yellow);
-    flex: 1;
-    text-align: center;
-    padding: 2%;
-    cursor: pointer;
- }
+.small-screen-navbar-content-disabler {
+  pointer-events: auto;
+}
+.small-screen-navbar-dropdown-curtain {
+  background: var(--dropdown-curtain-color);
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1099;
+  pointer-events: none;
+  top: 0;
+}
+.small-screen-navbar-container {
+  width: 100%;
+  position: fixed;
+  z-index: 1100; /* needed to appear above the zoom bar on leaflet maps */
+}
+.small-nav-munster {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: var(--munster);
+}
+.small-nav-waves {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: var(--waves);
+}
+.burger {
+  position: absolute;
+  right: 2vw;
+}
+.small-screen-navbar-dropdown-container {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+.small-screen-navbar-dropdown-filler {
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  height: 0;
+}
+.small-screen-navbar-dropdown-components {
+  display: inline-block;
+  width: 50%;
+  position: absolute;
+  right: 0;
+}
+.large-screen-navbar {
+  display: flex;
+}
 
- .kerry-nav{
-    font-family: 'Celtic';
-    font-size: 3vw;
-    font-weight: bold;
-    background: var(--kerry-green);
-    flex: 1;
-    text-align: center;
-    padding: 2%;
-    cursor: pointer;
- }
+.clare-nav {
+  font-family: "Celtic";
+  font-size: 3vw;
+  font-weight: bold;
+  background: var(--clare-yellow);
+  flex: 1;
+  text-align: center;
+  padding: 2%;
+  cursor: pointer;
+}
 
- .cork-nav{
-     font-family: 'Celtic';
-     font-size: 3vw;
-     font-weight: bold;
-     background: var(--cork-red);
-     flex: 1;
-     text-align: center;
-     padding: 2%;
-     cursor: pointer;
- }
+.kerry-nav {
+  font-family: "Celtic";
+  font-size: 3vw;
+  font-weight: bold;
+  background: var(--kerry-green);
+  flex: 1;
+  text-align: center;
+  padding: 2%;
+  cursor: pointer;
+}
 
- .clare-nav:hover{
-    color: white;
- }
+.cork-nav {
+  font-family: "Celtic";
+  font-size: 3vw;
+  font-weight: bold;
+  background: var(--cork-red);
+  flex: 1;
+  text-align: center;
+  padding: 2%;
+  cursor: pointer;
+}
 
- .kerry-nav:hover{
-    color: white;
- }
- .cork-nav:hover{
-    color: white;
- }
- .waterford-nav:hover{
-    color: white;
- }
- .signup-nav:hover{
-    color: white;
- }
+.clare-nav:hover {
+  color: white;
+}
 
- .waterford-nav{
-    font-family: 'Celtic';
-    font-size: 3vw;
-    font-weight: bold;
-    background: var(--waterford-blue);
-    flex: 1;
-    text-align: center;
-    padding: 2%;
-    cursor: pointer;
- }
+.kerry-nav:hover {
+  color: white;
+}
+.cork-nav:hover {
+  color: white;
+}
+.waterford-nav:hover {
+  color: white;
+}
+.signup-nav:hover {
+  color: white;
+}
 
- .signup-nav{
-    font-family: 'Celtic';
-    font-size: 3vw;
-    font-weight: bold;
-    background: silver;
-    flex: 1;
-    text-align: center;
-    padding: 2%;
-    cursor: pointer;
- }
+.waterford-nav {
+  font-family: "Celtic";
+  font-size: 3vw;
+  font-weight: bold;
+  background: var(--waterford-blue);
+  flex: 1;
+  text-align: center;
+  padding: 2%;
+  cursor: pointer;
+}
+
+.signup-nav {
+  font-family: "Celtic";
+  font-size: 3vw;
+  font-weight: bold;
+  background: silver;
+  flex: 1;
+  text-align: center;
+  padding: 2%;
+  cursor: pointer;
+}
 
 /* Beach pages --------------------------------------------------------------------------------*/
 
-.wave-height-icon{
-    height: 100%;
+.wave-height-icon {
+  height: 100%;
 }
 
-.wave-direction-icon{
-    height: 100%;
-    position: absolute;
-    top: 0;
+.wave-direction-icon {
+  height: 100%;
+  position: absolute;
+  top: 0;
 }
 
-.wind-direction-icon{
-    height: 100%;
+.wind-direction-icon {
+  height: 100%;
 }
 
-.beach-photo{
-    height: 20vw;
-    padding-left: 5vw;
+.beach-photo {
+  height: 20vw;
+  padding-left: 5vw;
 }
-#beach-map{
-    height: 15vw;
-    margin: 2vw;
+#beach-map {
+  height: 15vw;
+  margin: 2vw;
 }
 
 .beach-page-container {
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-    grid-template-rows: .5fr .5fr .5fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "A A A A A"
-      "B B E E E"
-      "B B F F F"
-      "B B G G G"
-      "B B G G G"
-      "C C G G G"
-      "C C G G G"
-      "D D G G G"
-      "D D G G G"; 
-  }
-  .beach-title { 
-      grid-area: A;
-     }
-  .day-selector { 
-      grid-area: E; 
-      pointer-events: none; /* make the selector unclickable until the apis load */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "A A A A A"
+    "B B E E E"
+    "B B F F F"
+    "B B G G G"
+    "B B G G G"
+    "C C G G G"
+    "C C G G G"
+    "D D G G G"
+    "D D G G G";
 }
-  .beach-info { 
-      grid-area: B; 
-      padding: 5%;
-    }
-  .time-selector{
-       grid-area: F; 
-       pointer-events: none; /* make the selector unclickable until the apis load */
-    }
-  .beach-photo-box {
-       grid-area: C; 
-    }
-  #beach-map { 
-      grid-area: D; 
+.beach-title {
+  grid-area: A;
 }
-  .surf-forecast { 
-      margin-left: 5vw;
-      grid-area: G;
-  }
-
-  .beach-title-content-container{
-      display: flex;
-  }
-  .beach-title-left{
-    flex: 1;
-    text-align: left;
+.day-selector {
+  grid-area: E;
+  pointer-events: none; /* make the selector unclickable until the apis load */
 }
-  .beach-title-center{
-      flex: 1;
-      text-align: center;
-  }
-
-  .beach-title-right{
-    flex: 1;
-    text-align: right;
+.beach-info {
+  grid-area: B;
+  padding: 5%;
+}
+.time-selector {
+  grid-area: F;
+  pointer-events: none; /* make the selector unclickable until the apis load */
+}
+.beach-photo-box {
+  grid-area: C;
+}
+#beach-map {
+  grid-area: D;
+}
+.surf-forecast {
+  margin-left: 5vw;
+  grid-area: G;
 }
 
-.time-selector-content-container{
-    display: flex;
+.beach-title-content-container {
+  display: flex;
 }
-.time-selector-left{
+.beach-title-left {
+  flex: 1;
+  text-align: left;
+}
+.beach-title-center {
+  flex: 1;
+  text-align: center;
+}
+
+.beach-title-right {
+  flex: 1;
+  text-align: right;
+}
+
+.time-selector-content-container {
+  display: flex;
+}
+.time-selector-left {
   flex: 1;
   text-align: center;
   font-size: 5vw;
 }
-.time-selector-center{
-    flex: 1;
-    text-align: center;
-    font-size: 3vw;
-    padding-top: 1vw;
+.time-selector-center {
+  flex: 1;
+  text-align: center;
+  font-size: 3vw;
+  padding-top: 1vw;
 }
 
-.time-selector-right{
+.time-selector-right {
   flex: 1;
   text-align: center;
   font-size: 5vw;
 }
 
-.hours-left:hover{
-    cursor: pointer;
+.hours-left:hover {
+  cursor: pointer;
 }
-.hours-right:hover{
-    cursor: pointer;
+.hours-right:hover {
+  cursor: pointer;
 }
-.days-small-screen-container{
-    display: none;
-}
-
-.day-selector-left{
-    flex: 1;
-    text-align: center;
-    font-size: 5vw;
-    pointer-events: none;
-}
-.day-selector-center{
-    flex: 1;
-    text-align: center;
-    font-size: 3vw;
-}
-.day-selector-right{
-    flex: 1;
-    text-align: center;
-    font-size: 5vw;
+.days-small-screen-container {
+  display: none;
 }
 
-.day-right:hover{
-    cursor: pointer;
+.day-selector-left {
+  flex: 1;
+  text-align: center;
+  font-size: 5vw;
+  pointer-events: none;
 }
-.day-left:hover{
-    cursor: pointer;
+.day-selector-center {
+  flex: 1;
+  text-align: center;
+  font-size: 3vw;
+}
+.day-selector-right {
+  flex: 1;
+  text-align: center;
+  font-size: 5vw;
 }
 
+.day-right:hover {
+  cursor: pointer;
+}
+.day-left:hover {
+  cursor: pointer;
+}
 
-.days-large-screen-container{
-    display: flex;
+.days-large-screen-container {
+  display: flex;
 }
 
 .days-large-screen-container > div {
-    flex: 1;
-    margin: 2%;
-    background:salmon;
-    text-align: center;
+  flex: 1;
+  margin: 2%;
+  background: salmon;
+  text-align: center;
 }
 
-
-.forecast-icons-container{
-    font-size: 7vw;
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
-    gap: 3vw 3vw; 
-    grid-template-areas: 
-      "A B"
-      "C D"
-      "E F"
-      "G H"
-      "I J"; 
-  }
-
-  .forecast-icons-container > div{
-      position: relative;
-  }
-
-  .forecast-icons-container > div > span{
-    font-size: 2vw;
-    position: absolute;
-    left: 37%;
-    top: 10%;
+.forecast-icons-container {
+  font-size: 7vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 3vw 3vw;
+  grid-template-areas:
+    "A B"
+    "C D"
+    "E F"
+    "G H"
+    "I J";
 }
 
-  .sunrise{
-      grid-area: A;
-  }
-
-  .sunset{
-    grid-area: B;
+.forecast-icons-container > div {
+  position: relative;
 }
 
-.temperature{
-    grid-area: C;
+.forecast-icons-container > div > span {
+  font-size: 2vw;
+  position: absolute;
+  left: 37%;
+  top: 10%;
 }
 
-.water-temperature{
-    grid-area: D;
+.sunrise {
+  grid-area: A;
 }
 
-.precipitation{
-    grid-area: E;
+.sunset {
+  grid-area: B;
 }
 
-.swell-height{
-    grid-area: F;
+.temperature {
+  grid-area: C;
 }
 
-.wave-height{
-    grid-area: G;
+.water-temperature {
+  grid-area: D;
 }
 
-.wave-direction{
-    grid-area: H;
+.precipitation {
+  grid-area: E;
 }
 
-.wind-speed{
-    grid-area: I;
+.swell-height {
+  grid-area: F;
 }
 
-.wind-direction{
-    grid-area: J;
+.wave-height {
+  grid-area: G;
 }
 
+.wave-direction {
+  grid-area: H;
+}
 
+.wind-speed {
+  grid-area: I;
+}
 
- /* footer ------------------------------------------------------------------------*/
- .footer{
-     background: var(--footer-color);
- }
+.wind-direction {
+  grid-area: J;
+}
 
- .social-icons{
-     display: flex;
- }
- .social-icons > div{
-     font-size: 5vw;
-     text-align: center;
- }
+/* footer ------------------------------------------------------------------------*/
+.footer {
+  background: var(--footer-color);
+}
 
- .facebook{
-     flex: 1;
-     color: black;
- }
- .facebook-link:visited{
-    color: black;
+.social-icons {
+  display: flex;
 }
- .facebook-link:hover{
-     color: var(--facebook);
- }
- .twitter{
-    flex: 1;
+.social-icons > div {
+  font-size: 5vw;
+  text-align: center;
 }
-.twitter-link{
-    color: black;
+
+.facebook {
+  flex: 1;
+  color: black;
 }
-.twitter-link:visited{
-    color: black;
+.facebook-link:visited {
+  color: black;
 }
- .twitter-link:hover{
-     color: var(--twitter);
- }
-.youtube{
-    flex: 1;
+.facebook-link:hover {
+  color: var(--facebook);
 }
-.youtube-link{
-    color: black;
+.twitter {
+  flex: 1;
 }
-.youtube-link:visited{
-    color: black;
+.twitter-link {
+  color: black;
 }
- .youtube-link:hover{
-     color: var(--youtube);
- }
-.instagram{
-    flex: 1;
+.twitter-link:visited {
+  color: black;
 }
-.instagram-link{
-    color: black;
+.twitter-link:hover {
+  color: var(--twitter);
 }
-.instagram-link:visited{
-    color: black;
+.youtube {
+  flex: 1;
 }
- .instagram-link:hover{
-     color: var(--facebook);
- }
-.copyright{
-    text-align: center;
+.youtube-link {
+  color: black;
+}
+.youtube-link:visited {
+  color: black;
+}
+.youtube-link:hover {
+  color: var(--youtube);
+}
+.instagram {
+  flex: 1;
+}
+.instagram-link {
+  color: black;
+}
+.instagram-link:visited {
+  color: black;
+}
+.instagram-link:hover {
+  color: var(--facebook);
+}
+.copyright {
+  text-align: center;
 }
 
 /* Maps------------------------------------------------------------*/
-    #clare-map{
-            height: 60vw;
-            border: 5px solid blue;
-            display: flex;
-            margin: 2vw;
-            max-width: 96%;
-            position: relative;
-        
-    }
+#clare-map {
+  height: 60vw;
+  border: 5px solid blue;
+  display: flex;
+  margin: 2vw;
+  max-width: 96%;
+  position: relative;
+}
 
-    #kerry-map{
-        height: 60vw;
-        border: 5px solid blue;
-        display: flex;
-        margin: 2vw;
-        max-width: 96%;
-        position: relative;
-    }
-        #cork-map{
-            height: 60vw;
-            border: 5px solid blue;
-            display: flex;
-            margin: 2vw;
-            max-width: 96%;
-            position: relative;
-    }
+#kerry-map {
+  height: 60vw;
+  border: 5px solid blue;
+  display: flex;
+  margin: 2vw;
+  max-width: 96%;
+  position: relative;
+}
+#cork-map {
+  height: 60vw;
+  border: 5px solid blue;
+  display: flex;
+  margin: 2vw;
+  max-width: 96%;
+  position: relative;
+}
 
-    #waterford-map{
-        height: 60vw;
-        border: 5px solid blue;
-        display: flex;
-        margin: 2vw;
-        max-width: 96%;
-        position: relative;
+#waterford-map {
+  height: 60vw;
+  border: 5px solid blue;
+  display: flex;
+  margin: 2vw;
+  max-width: 96%;
+  position: relative;
 }
 /* signup page -------------------------------------- */
-.signup-page-container{
-    margin-top: 3vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: 
+.signup-page-container {
+  margin-top: 3vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
     "A B"
     "C D";
 }
-.about-us-title{
-    grid-area: A;
-    text-align: center;
+.about-us-title {
+  grid-area: A;
+  text-align: center;
 }
-.form-instructions{
-    grid-area: B;
-    text-align: center;
+.form-instructions {
+  grid-area: B;
+  text-align: center;
 }
-.munster-waves-info{
-    grid-area: C;
-    padding-left: 10%;
-    padding-right: 10%;
+.munster-waves-info {
+  grid-area: C;
+  padding-left: 10%;
+  padding-right: 10%;
 }
-.form{
-    padding-left: 10%;
-    padding-right: 10%;
-    grid-Area: D;
-    text-align: center;
-    margin-bottom: 3vw;
+.form {
+  padding-left: 10%;
+  padding-right: 10%;
+  grid-area: D;
+  text-align: center;
+  margin-bottom: 3vw;
 }
-textarea{
-    width: 80%;
+textarea {
+  width: 80%;
 }
 
- /* media queries -------------------------------------- */
+/* media queries -------------------------------------- */
 
- @media only screen and (max-width: 992px) {
-    .beach-page-container {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto auto auto auto auto;
-        grid-template-areas: 
-          "A A A A A A"
-          "E E E E E E"
-          "F F F F F F"
-          "G G G G G G"
-          "B B B B B B"
-          "C C C D D D"
-          "C C C D D D"
-          ; 
-      }
-      #beach-map{
-          height: 25vw;
-          padding-top: 0;
-      }
-      .beach-photo{
-          height: 25vw;
-          padding-top: 3.8%;
-      }
- }
- @media only screen and (max-width: 768px) {
-    .small-screen-navbar{
-        display: block;
-    }
-    .large-screen-navbar{
-        display: none;
-    }
+@media only screen and (max-width: 992px) {
+  .beach-page-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-areas:
+      "A A A A A A"
+      "E E E E E E"
+      "F F F F F F"
+      "G G G G G G"
+      "B B B B B B"
+      "C C C D D D"
+      "C C C D D D";
+  }
+  #beach-map {
+    height: 25vw;
+    padding-top: 0;
+  }
+  .beach-photo {
+    height: 25vw;
+    padding-top: 3.8%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .small-screen-navbar {
+    display: block;
+  }
+  .large-screen-navbar {
+    display: none;
+  }
 
-    .forecast-icons{
-        grid-template-columns: auto;
-    }
-    .days-large-screen-container{
-        display: none;
-    }
-        
-    .days-small-screen-container{
-        display: flex;
-    }
-    .beach-page-container {
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto auto auto auto;
-        grid-template-areas: 
-          "A"
-          "E"
-          "F"
-          "G"
-          "B"
-          "C"
-          "D"
-          ; 
-      }
-      #beach-map{
-        height: 40vw;
-    }
-    .beach-photo{
-        height: 40vw;
-        padding-left: 20vw;
-    }
-    .signup-page-container{
-        grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto;
-        grid-template-areas: 
-        "A"
-        "C"
-        "B"
-        "D";
-    }
- }
+  .forecast-icons {
+    grid-template-columns: auto;
+  }
+  .days-large-screen-container {
+    display: none;
+  }
 
- @media only screen and (min-width: 769px) {
-    .small-screen-navbar-container{
-        display: none; /* for cases when the screen is resized and the small screen navbar disappears
+  .days-small-screen-container {
+    display: flex;
+  }
+  .beach-page-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-areas:
+      "A"
+      "E"
+      "F"
+      "G"
+      "B"
+      "C"
+      "D";
+  }
+  #beach-map {
+    height: 40vw;
+  }
+  .beach-photo {
+    height: 40vw;
+    padding-left: 20vw;
+  }
+  .signup-page-container {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "A"
+      "C"
+      "B"
+      "D";
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .small-screen-navbar-container {
+    display: none; /* for cases when the screen is resized and the small screen navbar disappears
                           while the dropdown is open */
-    }
-    
- }
-
+  }
+}
