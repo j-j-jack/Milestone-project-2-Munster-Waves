@@ -252,9 +252,13 @@ body {
 }
 
 .beach-photo {
+  top: 0;
+  left: 0;
   height: 20vw;
-  margin-left: 5vw;
   border: 5px solid var(--beach-image-border);
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 2vw;
 }
 #beach-map {
   height: 15vw;
@@ -704,7 +708,8 @@ textarea {
   }
   .beach-photo {
     height: 40vw;
-    padding-left: 20vw;
+    margin-left: 10vw;
+    padding-top: 0;
   }
   .signup-page-container {
     grid-template-columns: auto;
