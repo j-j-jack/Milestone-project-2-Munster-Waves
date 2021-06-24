@@ -521,6 +521,13 @@ body {
   max-width: 96%;
   position: relative;
 }
+.clare-title {
+  font-family: "Celtic";
+  text-align: center;
+  color: var(--clare-yellow);
+  font-size: 400%;
+  text-shadow: 2px 2px black;
+}
 
 #kerry-map {
   height: 45vw;
@@ -530,6 +537,13 @@ body {
   max-width: 96%;
   position: relative;
 }
+.kerry-title {
+  font-family: "Celtic";
+  text-align: center;
+  color: var(--kerry-green);
+  font-size: 400%;
+  text-shadow: 2px 2px black;
+}
 #cork-map {
   height: 45vw;
   border: 5px solid var(--map-outline-color);
@@ -537,6 +551,13 @@ body {
   margin: 2vw 15vw;
   max-width: 96%;
   position: relative;
+}
+.cork-title {
+  font-family: "Celtic";
+  text-align: center;
+  color: var(--cork-red);
+  font-size: 400%;
+  text-shadow: 2px 2px black;
 }
 
 #waterford-map {
@@ -546,6 +567,13 @@ body {
   margin: 2vw 15vw;
   max-width: 96%;
   position: relative;
+}
+.waterford-title {
+  font-family: "Celtic";
+  text-align: center;
+  color: var(--waterford-blue);
+  font-size: 400%;
+  text-shadow: 2px 2px black;
 }
 /* signup page -------------------------------------- */
 .signup-page-container {
