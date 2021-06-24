@@ -33,7 +33,7 @@ let stormGlassData = {}; // empty object to be assigned once fetch is complete
 let daysLargeScreen = document.getElementsByClassName('days-large-screen');
 let dayDisplayedSmallScreen = document.getElementsByClassName('day-selector-center')[0];
 let daysArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']; 
-let datArray = [];
+let dateArray = [];
 let firstDayInSelector;
 /* when the fetchedSun variable is 7 (the sunrise sunset api needs to be contacted 7 times succsessfully 
 for this to occur) and the fetchedStorm variable is true (the stormGlass api is contacted successfully)
@@ -62,6 +62,7 @@ for (let i = 0; i < 7; i ++)
     if(monthDate < 10){
         monthDate = '0' + monthDate;
     }
+    dateArray.push(monthDate);
     dayOfWeek = daysArray[dayOfWeek]; 
     if(i == 0){
         // initialising contenct of small screen interface
@@ -182,7 +183,8 @@ dayLeft.addEventListener('click', function(){ // left day arrow on small screen
     }
     dayRight.innerHTML = '<i class="fas fa-caret-right"></i>'
     dayRight.style.pointerEvents = 'auto';
-    dayDisplayedSmallScreen.innerHTML = daysArray[currentDaySelected];
+    dayDisplayedSmallScreen.innerHTML = `${daysArray[currentDaySelected]} <br>
+            ${dateArray[currentDaySelected]}`;
     setWeatherDataOnPage(); // changing the day also changes the weather data displayed on screen
 });
 
@@ -198,7 +200,8 @@ dayRight.addEventListener('click', function(){ // same code but for right arrow
     }
     dayLeft.innerHTML = '<i class="fas fa-caret-left"></i>'
     dayLeft.style.pointerEvents = 'auto';
-    dayDisplayedSmallScreen.innerHTML = daysArray[currentDaySelected];
+    dayDisplayedSmallScreen.innerHTML = `${daysArray[currentDaySelected]} <br>
+            ${dateArray[currentDaySelected]}`;
     setWeatherDataOnPage();
 });
 
@@ -211,7 +214,8 @@ for(let i =0; i<7; i++){
         }
         currentDaySelected = this.dataset.day;
         daysLargeScreen[currentDaySelected].style.borderBottom = '4px solid yellow'; //higlighting day clicked for feedback to the user
-        dayDisplayedSmallScreen.innerHTML = daysArray[currentDaySelected];
+        dayDisplayedSmallScreen.innerHTML = `${daysArray[currentDaySelected]} <br>
+            ${dateArray[currentDaySelected]}`;
        
        /* the code below was added to update the smaller screen days interface even though it is not seen
        this is incase of a screen resize such as a table rotating */
@@ -239,7 +243,6 @@ function fetchComplete(){
         document.getElementsByClassName('day-selector')[0].style.pointerEvents = 'auto'; // allow the interface to be clicked
         document.getElementsByClassName('time-selector')[0].style.pointerEvents = 'auto';
         setWeatherDataOnPage(); 
-        console.log(stormGlassData);// initialise the weather data 
     }
 }
 function setWeatherDataOnPage(){
