@@ -238,7 +238,8 @@ function fetchComplete(){
     if(fetchedSun == 7 && fetchedStorm == true){ // once fetch has worked correctly for both apis
         document.getElementsByClassName('day-selector')[0].style.pointerEvents = 'auto'; // allow the interface to be clicked
         document.getElementsByClassName('time-selector')[0].style.pointerEvents = 'auto';
-        setWeatherDataOnPage(); // initialise the weather data 
+        setWeatherDataOnPage(); 
+        console.log(stormGlassData);// initialise the weather data 
     }
 }
 function setWeatherDataOnPage(){
@@ -247,14 +248,14 @@ function setWeatherDataOnPage(){
     */
     document.getElementsByClassName('sunrise-value')[0].innerHTML = sunriseTimes[currentDaySelected];
     document.getElementsByClassName('sunset-value')[0].innerHTML = sunsetTimes[currentDaySelected];
-    document.getElementsByClassName('temperature-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].airTemperature.noaa;
-    document.getElementsByClassName('water-temperature-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waterTemperature.noaa;
-    document.getElementsByClassName('precipitation-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].precipitation.noaa;
-    document.getElementsByClassName('swell-height-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].swellHeight.noaa;
-    document.getElementsByClassName('wave-height-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveHeight.noaa;
-    document.getElementsByClassName('wave-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveDirection.noaa;
-    document.getElementsByClassName('wind-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windSpeed.noaa;
-    document.getElementsByClassName('wind-speed-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windDirection.noaa; 
+    document.getElementsByClassName('temperature-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].airTemperature.sg;
+    document.getElementsByClassName('water-temperature-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waterTemperature.sg;
+    document.getElementsByClassName('precipitation-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].precipitation.sg;
+    document.getElementsByClassName('swell-height-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].swellHeight.sg;
+    document.getElementsByClassName('wave-height-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveHeight.sg;
+    document.getElementsByClassName('wave-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveDirection.sg;
+    document.getElementsByClassName('wind-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windSpeed.sg;
+    document.getElementsByClassName('wind-speed-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windDirection.sg; 
 }
 
 function errorHandler(){ // this is called if the fetches fails or there is an error within the fetches
