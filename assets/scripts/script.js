@@ -16,6 +16,18 @@ document.getElementsByClassName('company-logo')[0].style.marginTop
 window.addEventListener('resize', function(){
    document.getElementsByClassName('company-logo')[0].style.marginTop
    = `${document.getElementsByClassName('small-screen-navbar-container')[0].offsetHeight}px`;
+   if(window.innerWidth>768){
+      console.log(window.innerWidth);
+      document.getElementsByClassName('small-screen-navbar-dropdown-curtain')[0]
+      .style.display = 'none';
+      document.getElementsByClassName('small-screen-navbar-content-disabler')[0]
+      .style.pointerEvents = 'auto';
+   }
+   aHeight = document.getElementsByClassName('announcement-bar')[0].offsetHeight;
+   document.getElementsByClassName('small-screen-navbar-container')[0].style.top 
+    = `${aHeight - window.scrollY}px`;
+    document.getElementsByClassName('small-screen-navbar-dropdown-curtain')[0].style.top 
+    = `${aHeight - window.scrollY}px`;
 }
 );
 
@@ -58,7 +70,7 @@ window.addEventListener('resize', function(){
      
 
      document.addEventListener('scroll', function(){
-     
+      aHeight = document.getElementsByClassName('announcement-bar')[0].offsetHeight;
      if ((aHeight-window.scrollY) > 0){
         document.getElementsByClassName('small-screen-navbar-container')[0].style.top = `${aHeight - window.scrollY}px`;
         document.getElementsByClassName('small-screen-navbar-dropdown-curtain')[0].style.top = `${aHeight - window.scrollY}px`;
