@@ -33,7 +33,7 @@ for(let i in cork){
 for(let i in cork){
     if(cork[i].nodeName == 'path' || cork[i].nodeName == 'text')
     {
-	    cork[i].addEventListener('click', function(){
+	    cork[i].addEventListener('click', function(){ // clicking takes the user to the cork page
             window.location.href = "cork.html";
 	    });
     }
@@ -44,7 +44,7 @@ let kerry = document.getElementsByClassName('kerry'); // the same task was compl
 for(let i in kerry){
     if(kerry[i].nodeName == 'path' || kerry[i].nodeName == 'text')
     {
-        kerry[i].style.cursor = 'pointer';
+        kerry[i].style.cursor = 'pointer'; 
 	    kerry[i].addEventListener('mouseover', function(){
             for (let i in kerry){
                 if(kerry[i].nodeName == 'path')
@@ -214,15 +214,15 @@ for(let i in tipperary){
 
 let placeNameColor = 'blue';
 
-let doolin = document.getElementsByClassName('doolin');
+let doolin = document.getElementsByClassName('doolin'); // also text and surfboards with classes are targeted
 for(let i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
 	    doolin[i].addEventListener('mouseover', function(){
-            doolin[0].style="paint-order: stroke markers; fill: url(#alt-surfboard-gradient);"
-            doolin[0].style.cursor="pointer"
-            doolin[1].style.fill=placeNameColor; 
-            doolin[1].style.cursor="pointer";
+            doolin[0].style="paint-order: stroke markers; fill: url(#alt-surfboard-gradient);" //highlight board
+            doolin[0].style.cursor="pointer" //cursor to pointer
+            doolin[1].style.fill=placeNameColor;  //highlight the text
+            doolin[1].style.cursor="pointer"; //hover over text is pointer
 	    });
     }
 }
@@ -230,7 +230,7 @@ for(let i in doolin){
 for(let i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
-	    doolin[i].addEventListener('mouseleave', function(){
+	    doolin[i].addEventListener('mouseleave', function(){ // return to normal on mouse leave
             doolin[0].style="paint-order: stroke markers; fill: url(#gradient-2);"
             doolin[1].style.fill='rgb(51, 51, 51)'; 
 	    });
@@ -241,7 +241,7 @@ for(let i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
 	    doolin[i].addEventListener('click', function(){
-            window.location.href = "doolin-point.html";
+            window.location.href = "doolin-point.html"; //clicking takes user to page
 	    });
     }
 }
@@ -853,9 +853,3 @@ for(let i in tramore){
 	    });
     }
 }
-
-/* 
-The concept has been proven to work so can be included in the project. There needs to be surfboards 
-edited into the svg which represent the individual beaches. These will be targeted using the 
-getElementById function in the script. The svg may also require additional styling.
-*/
