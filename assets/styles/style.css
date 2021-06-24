@@ -76,6 +76,9 @@ body {
 }
 /* Navbar ------------------------------------------------------------------------*/
 
+.active {
+  text-decoration: underline;
+}
 .small-screen-navbar {
   font-family: "pacifico";
   font-size: 5vw;
