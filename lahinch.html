@@ -18,6 +18,7 @@
     
 </head>
 <body>
+  <header>
     <a href="signup.html" style="text-decoration: none;">
         <div class="announcement-bar">
             big news! munster waves shop is coming soon click here to signup to be alerted via email when the time comes!
@@ -43,9 +44,10 @@
     </div>
     </div>
     </div>
-
+</header>
     <div class="small-screen-navbar-dropdown-curtain"></div>
     <div class="small-screen-navbar-content-disabler">
+      <header>
       <div class="company-logo">
         <a href="index.html">
           <img src="assets/images/munster-waves-logo.svg" alt="munster waves logo">
@@ -60,6 +62,8 @@
       <div class="signup-nav">Signup/About</div>
     </div>
     </div>
+    </header>
+    <main>
     <div class='beach-page-container'> <!--used as grid container-->
         <div class="beach-title"> <!--to select between beaches-->
             <div class="beach-title-content-container">
@@ -127,22 +131,36 @@
             <div class="forecast-icons-container">
                 <!-- the icons are sourced from font awesome and also from iconify.design the spans adjacent to the 
                 icons are populated in the script using the data fetched from the apis-->
-                <div class="sunrise"><i class="fas fa-sun"></i></i><span class="sunrise-value">Loading...</span></div>
-                <div class="sunset"><i class="fas fa-moon"></i><span class="sunset-value">Loading...</span></div>
-                <div class="temperature"><i class="fas fa-thermometer-three-quarters"></i><span class="temperature-value">Loading...</span></div>
-                <div class="water-temperature"><i class="fas fa-hot-tub"></i><span class="water-temperature-value">Loading...</span></div>
-                <div class="precipitation"><i class="fas fa-tint"></i><span class="precipitation-value">Loading...</span></div>
-                <div class="swell-height"><i class="fas fa-water"></i><span class="swell-height-value">Loading...</span></div>
-                <div class="wave-height"><img class='wave-height-icon' src='assets/images/wave-height.svg'><span class="wave-height-value">Loading...</span></div> <!--https://iconify.design/-->
-                <div class="wave-direction"><img class='wave-direction-icon' src='assets/images/wave-direction.svg'><span class="wave-direction-value">Loading...</span></div>
-                <div class="wind-speed"><i class="fas fa-wind"></i><span class="wind-speed-value">Loading...</span></div>
-                <div class="wind-direction"><img class='wind-direction-icon' src='assets/images/wind-direction.svg'><span class="wind-direction-value">Loading...</span></div>
+                <div class="sunrise"><i class="fas fa-sun"></i><span class="sunrise-value">Loading...</span>
+                        </div>
+                        <div class="sunset"><i class="fas fa-moon"></i><span class="sunset-value">Loading...</span>
+                        </div>
+                        <div class="temperature"><i class="fas fa-thermometer-three-quarters"></i><span
+                                class="temperature-value">Loading...</span></div>
+                        <div class="water-temperature"><i class="fas fa-hot-tub"></i><span
+                                class="water-temperature-value">Loading...</span></div>
+                        <div class="precipitation"><i class="fas fa-tint"></i><span
+                                class="precipitation-value">Loading...</span></div>
+                        <div class="swell-height"><i class="fas fa-water"></i><span
+                                class="swell-height-value">Loading...</span></div>
+                        <div class="wave-height"><img class='wave-height-icon' src='assets/images/wave-height.svg' alt='wave-height-icon'><span
+                                class="wave-height-value">Loading...</span></div>
+                        <!--https://iconify.design/-->
+                        <div class="wave-direction"><img class='wave-direction-icon'
+                                src='assets/images/wave-direction.svg' alt='wave-direction-icon'><span
+                                class="wave-direction-value">Loading...</span></div>
+                        <div class="wind-speed"><i class="fas fa-wind"></i><span
+                                class="wind-speed-value">Loading...</span></div>
+                        <div class="wind-direction"><img class='wind-direction-icon'
+                                src='assets/images/wind-direction.svg' alt='wind-direction-icon'><span
+                                class="wind-direction-value">Loading...</span></div>
             </div>
             </div>
         </div>
         </div>
-</div>
+</main>
   </div>
+  <footer>
   <div class="footer">
     <div class="social-icons">
       <div class="facebook">
@@ -168,6 +186,7 @@
       </div>
     <div class="copyright">Munster Waves © 2021</div>
   </div>
+  </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="assets/scripts/script.js"></script>
     <script src="assets/scripts/beach-pages-script.js"></script>
