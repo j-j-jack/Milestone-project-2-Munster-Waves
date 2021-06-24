@@ -25,6 +25,8 @@
   --youtube: rgb(255, 0, 0);
   --instagram: rgb(221, 42, 123);
   --map-outline-color: rgb(46, 147, 230);
+  --form-instructions: rgb(3, 63, 23);
+  --about-munster-waves-title: rgb(63, 0, 47);
 }
 
 /* General Styling ----------------------------------------------------*/
@@ -558,10 +560,14 @@ body {
 .about-us-title {
   grid-area: A;
   text-align: center;
+  color: var(--about-munster-waves-title);
 }
 .form-instructions {
+  padding-left: 10%;
+  padding-right: 10%;
   grid-area: B;
   text-align: center;
+  color: var(--form-instructions);
 }
 .munster-waves-info {
   grid-area: C;
