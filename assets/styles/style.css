@@ -6,7 +6,7 @@
   src: url("../fonts/Celtic.ttf") format("woff2"),
     url("../fonts/Celtic.ttf") format("woff");
 }
-/* Root Variable ------------------------------------------------------*/
+/* Root Variables ------------------------------------------------------*/
 :root {
   --bg-color: rgb(157, 177, 245);
   --announcement-bar-bg-color: rgb(0, 168, 76);
@@ -30,6 +30,7 @@
   --beach-title-color: rgb(1, 53, 18);
   --beach-info-title: rgb(73, 31, 31);
   --beach-image-border: rgb(112, 56, 56);
+  --forecast-icons-color: rgb(14, 71, 33);
 }
 
 /* General Styling ----------------------------------------------------*/
@@ -433,6 +434,7 @@ body {
 
 .forecast-icons-container > div {
   position: relative;
+  color: var(--forecast-icons-color);
 }
 
 .forecast-icons-container > div > span {
@@ -440,6 +442,7 @@ body {
   position: absolute;
   left: 37%;
   top: 10%;
+  color: black;
 }
 
 .sunrise {
