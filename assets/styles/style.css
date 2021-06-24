@@ -163,7 +163,13 @@ body {
 }
 .large-screen-navbar {
   display: flex;
-  margin-bottom: 2vw;
+  margin: 1vw;
+}
+
+.large-screen-navbar > div {
+  border: 3px ridge white;
+  border-radius: 1vw;
+  margin: 0.15vw;
 }
 
 .clare-nav {
