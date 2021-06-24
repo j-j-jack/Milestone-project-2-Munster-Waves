@@ -1,10 +1,12 @@
 let aHeight = document.getElementsByClassName('announcement-bar')[0].offsetHeight;
+let nHeight = document.getElementsByClassName('small-screen-navbar-container')[0].offsetHeight;
+
+
+
 /* the line of code below is necessary to prevent a gap from appearing between the announcement bar 
 and the navbar. If the page was refreshed when the announcement bar was only partially in view the 
 initial positioning of the navbar caused it to appear where under where the announcement bar would
 have been if the page was scrolled to the top (fixed positioning) */
-document.getElementsByClassName('small-screen-navbar-container')[0].style.top 
-    = `${aHeight - window.scrollY}px`;
 /* the line of code below is used to calculate where the dropdown curtain that is used to darken
 the screen and toggle the navbar dropdown is placed initially. this prevents it from covering the
 announcement bar when the burger icon is clicked */
@@ -17,7 +19,6 @@ window.addEventListener('resize', function(){
    document.getElementsByClassName('company-logo')[0].style.marginTop
    = `${document.getElementsByClassName('small-screen-navbar-container')[0].offsetHeight}px`;
    if(window.innerWidth>768){
-      console.log(window.innerWidth);
       document.getElementsByClassName('small-screen-navbar-dropdown-curtain')[0]
       .style.display = 'none';
       document.getElementsByClassName('small-screen-navbar-content-disabler')[0]
@@ -51,7 +52,6 @@ window.addEventListener('resize', function(){
             
       });
      });  
-
      jQuery('.small-screen-navbar-dropdown-curtain').click(function(){
       jQuery('.small-screen-navbar-dropdown-container').toggle('slow');
       let smallScreenNavbarDropdownCurtain = document.getElementsByClassName('small-screen-navbar-dropdown-curtain')[0];
@@ -79,6 +79,8 @@ window.addEventListener('resize', function(){
      else{
       document.getElementsByClassName('small-screen-navbar-container')[0].style.top = '0px';
    } 
+   console.log(jQuery(document).height());
+   documentHeight = jQuery(document).height(1500);
    });
      
   

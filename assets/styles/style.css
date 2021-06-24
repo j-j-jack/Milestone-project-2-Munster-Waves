@@ -28,11 +28,15 @@
 }
 
 /* General Styling ----------------------------------------------------*/
+
 body {
   font-family: "original surfer";
+  position: relative;
   background: var(--bg-color);
   padding: 0;
   margin: 0;
+  min-height: 100vh;
+  height: auto;
 }
 
 .announcement-bar {
@@ -61,6 +65,7 @@ body {
   margin: 2vw;
   width: 56vw;
   position: relative;
+  margin-bottom: 20vh;
 }
 
 .click-icon {
@@ -97,6 +102,10 @@ body {
 
 .small-screen-navbar-content-disabler {
   pointer-events: auto;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 10%;
+  top: 0;
 }
 .small-screen-navbar-dropdown-curtain {
   background: var(--dropdown-curtain-color);
@@ -438,6 +447,9 @@ body {
 /* footer ------------------------------------------------------------------------*/
 .footer {
   background: var(--footer-color);
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
 }
 
 .social-icons {
@@ -492,7 +504,7 @@ body {
   color: black;
 }
 .instagram-link:hover {
-  color: var(--facebook);
+  color: var(--instagram);
 }
 .copyright {
   text-align: center;
