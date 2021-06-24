@@ -66,7 +66,7 @@ window.addEventListener('resize', function(){
     = `${aHeight - window.scrollY}px`;
     document.getElementsByClassName('small-screen-navbar-dropdown-curtain')[0].style.top 
     = `${aHeight - window.scrollY}px`;
-}
+} 
 );
      
 /* the code below makes the small screen nav menu appear under the announcement bar in its initial position
