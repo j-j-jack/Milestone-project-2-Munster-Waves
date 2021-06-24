@@ -24,6 +24,7 @@
   --twitter: rgb(93, 169, 221);
   --youtube: rgb(255, 0, 0);
   --instagram: rgb(221, 42, 123);
+  --map-outline-color: rgb(46, 147, 230);
 }
 
 /* General Styling ----------------------------------------------------*/
@@ -54,10 +55,11 @@ body {
 
 .home-page-map {
   padding: 2vw 15vw 2vw 2vw;
-  border: 5px solid blue;
-  display: flex;
+  left: 11vw;
+  border: 5px solid var(--map-outline-color);
+  display: inline-block;
   margin: 2vw;
-  max-width: 96%;
+  width: 56vw;
   position: relative;
 }
 
@@ -498,36 +500,36 @@ body {
 
 /* Maps------------------------------------------------------------*/
 #clare-map {
-  height: 60vw;
-  border: 5px solid blue;
+  height: 45vw;
+  border: 5px solid var(--map-outline-color);
   display: flex;
-  margin: 2vw;
+  margin: 2vw 15vw;
   max-width: 96%;
   position: relative;
 }
 
 #kerry-map {
-  height: 60vw;
-  border: 5px solid blue;
+  height: 45vw;
+  border: 5px solid var(--map-outline-color);
   display: flex;
-  margin: 2vw;
+  margin: 2vw 15vw;
   max-width: 96%;
   position: relative;
 }
 #cork-map {
-  height: 60vw;
-  border: 5px solid blue;
+  height: 45vw;
+  border: 5px solid var(--map-outline-color);
   display: flex;
-  margin: 2vw;
+  margin: 2vw 15vw;
   max-width: 96%;
   position: relative;
 }
 
 #waterford-map {
-  height: 60vw;
-  border: 5px solid blue;
+  height: 45vw;
+  border: 5px solid var(--map-outline-color);
   display: flex;
-  margin: 2vw;
+  margin: 2vw 15vw;
   max-width: 96%;
   position: relative;
 }
