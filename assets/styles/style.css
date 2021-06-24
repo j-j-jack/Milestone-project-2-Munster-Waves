@@ -31,6 +31,8 @@
   --beach-info-title: rgb(73, 31, 31);
   --beach-image-border: rgb(112, 56, 56);
   --forecast-icons-color: rgb(14, 71, 33);
+  --current-time-color: rgb(59, 43, 71);
+  --day-selector-color: rgb(77, 27, 0);
 }
 
 /* General Styling ----------------------------------------------------*/
@@ -365,6 +367,7 @@ body {
   text-align: center;
   font-size: 3vw;
   padding-top: 1vw;
+  color: var(--current-time-color);
 }
 
 .time-selector-right {
@@ -393,6 +396,7 @@ body {
   flex: 1;
   text-align: center;
   font-size: 3vw;
+  color: var(--day-selector-color);
 }
 .day-selector-right {
   flex: 1;
