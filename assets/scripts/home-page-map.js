@@ -241,7 +241,7 @@ for(let i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
 	    doolin[i].addEventListener('click', function(){
-            window.location.href = "doolin.html";
+            window.location.href = "doolin-point.html";
 	    });
     }
 }

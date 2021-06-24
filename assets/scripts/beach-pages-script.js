@@ -274,7 +274,7 @@ function errorHandler(){ // this is called if the fetches fails or there is an e
 }
 /* Map section of script------------------------------------------------------------------------ */
 
-var beachMap = L.map('beach-map').setView([beachDict[beachName][2],beachDict[beachName][3]], 9);
+var beachMap = L.map('beach-map').setView([beachDict[beachName][2],beachDict[beachName][3]], 7);
 // code taken from the leaflet provider tool 
 var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
