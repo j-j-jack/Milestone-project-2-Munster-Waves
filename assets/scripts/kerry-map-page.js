@@ -47,13 +47,13 @@ var inchKerryMarker = L.marker([52.111918, -9.980602],{ // coordinates of Inch
 );
 inchKerryMarker.addTo(kerryMap);
     
-var ballyskelligsMarker = L.marker([51.826181, -10.204100],{
+var ballinskelligsMarker = L.marker([51.826181, -10.204100],{
     icon: myIcon, 
-    title: 'Ballyskelligs',
-    alt: 'surfboard icon showing Ballyskelligs', 
+    title: 'Ballinskelligs',
+    alt: 'surfboard icon showing Ballinskelligs', 
     opacity: 1.0}
     );
-ballyskelligsMarker.addTo(kerryMap);
+ballinskelligsMarker.addTo(kerryMap);
 
 //popups
 
@@ -70,9 +70,9 @@ coumeenolePopup.setContent("<p>Powerful sand bottomed waves not suitable for beg
 coumeenoleMarker.bindPopup(coumeenolePopup);
 
 var inchKerryPopup = L.popup();
-inchKerryPopup.setContent("<p>Good sized waves which handle all types of swells really well</p><a href='doughmore.html'>View surf forecast for Inch</a>");
+inchKerryPopup.setContent("<p>Good sized waves which handle all types of swells really well</p><a href='inch-kerry.html'>View surf forecast for Inch</a>");
 inchKerryMarker.bindPopup(inchKerryPopup);
 
-var ballyskelligsPopup = L.popup();
-ballyskelligsPopup.setContent("<p>Smooth gentle sloping beach with the possibility for challenging waves</p><a href='doughmore.html'>View surf forecast for Ballyskelligs</a>");
-ballyskelligsMarker.bindPopup(ballyskelligsPopup);
+var ballinskelligsPopup = L.popup();
+ballinskelligsPopup.setContent("<p>Smooth gentle sloping beach with the possibility for challenging waves</p><a href='ballinskelligs.html'>View surf forecast for Ballinskelligs</a>");
+ballinskelligsMarker.bindPopup(ballinskelligsPopup);
