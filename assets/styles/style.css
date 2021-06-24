@@ -33,6 +33,7 @@
   --forecast-icons-color: rgb(14, 71, 33);
   --current-time-color: rgb(59, 43, 71);
   --day-selector-color: rgb(77, 27, 0);
+  --days-large-screen: salmon;
 }
 
 /* General Styling ----------------------------------------------------*/
@@ -83,7 +84,7 @@ body {
   display: inline;
   margin: 0;
   padding: 0;
-  z-index: 10;
+  z-index: 10; /*to appear above home page map */
 }
 
 .no-surfing-notification {
@@ -112,7 +113,7 @@ body {
   pointer-events: auto;
   min-height: 100%;
   position: relative;
-  padding-bottom: 10%;
+  padding-bottom: 10%; /* helps to keep footer down past end of content */
   top: 0;
 }
 .small-screen-navbar-dropdown-curtain {
@@ -121,7 +122,7 @@ body {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  z-index: 1099;
+  z-index: 1099; /* just under the navbar but above the leaflet maps */
   pointer-events: none;
   top: 0;
 }
@@ -149,18 +150,7 @@ body {
   padding: 0;
   margin: 0;
 }
-.small-screen-navbar-dropdown-filler {
-  display: inline-block;
-  position: absolute;
-  width: 50%;
-  height: 0;
-}
-.small-screen-navbar-dropdown-components {
-  display: inline-block;
-  width: 50%;
-  position: absolute;
-  right: 0;
-}
+
 .large-screen-navbar {
   display: flex;
   margin: 1vw;
@@ -276,6 +266,7 @@ body {
 }
 
 .beach-page-container {
+  /* using css gruds for page layout to match wireframes */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -424,7 +415,7 @@ body {
 .days-large-screen-container > div {
   flex: 1;
   margin: 2%;
-  background: salmon;
+  background: var(--days-large-screen);
   text-align: center;
 }
 
