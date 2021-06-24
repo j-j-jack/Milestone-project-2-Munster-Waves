@@ -1,12 +1,12 @@
  // targeting the paths in the svg with the class name of cork
-
+let i;
 let cork = document.getElementsByClassName('cork');
-for(let i in cork){
+for(i in cork){
     if(cork[i].nodeName == 'path' || cork[i].nodeName == 'text')
     {
         cork[i].style.cursor = 'pointer';
 	    cork[i].addEventListener('mouseover', function(){ // adds a mouseover event listener to each path with the class of cork
-            for (let i in cork){
+            for (i in cork){
                 if(cork[i].nodeName == 'path')
                 {
                     cork[i].style.fill = 'yellow'; // when the mouse is over cork it lights up in yellow
@@ -15,12 +15,12 @@ for(let i in cork){
 	    });
     }
 }
-	
-for(let i in cork){
+
+for(i in cork){
     if(cork[i].nodeName == 'path' || cork[i].nodeName == 'text')
     {
 	    cork[i].addEventListener('mouseleave', function(){
-            for (let i in cork){
+            for (i in cork){
                 if(cork[i].nodeName == 'path')
                 {
                     cork[i].style.fill = 'rgb(255, 0, 76)'; // when the mouse leaves the cork paths the colours revert to red
@@ -30,7 +30,7 @@ for(let i in cork){
     }
 }
 
-for(let i in cork){
+for(i in cork){
     if(cork[i].nodeName == 'path' || cork[i].nodeName == 'text')
     {
 	    cork[i].addEventListener('click', function(){ // clicking takes the user to the cork page
@@ -41,12 +41,12 @@ for(let i in cork){
 	
 let kerry = document.getElementsByClassName('kerry'); // the same task was completed for the other counties
 
-for(let i in kerry){
+for(i in kerry){
     if(kerry[i].nodeName == 'path' || kerry[i].nodeName == 'text')
     {
         kerry[i].style.cursor = 'pointer'; 
 	    kerry[i].addEventListener('mouseover', function(){
-            for (let i in kerry){
+            for (i in kerry){
                 if(kerry[i].nodeName == 'path')
                 {
                     kerry[i].style.fill = 'yellow';
@@ -56,11 +56,11 @@ for(let i in kerry){
     }
 }
 	
-for(let i in kerry){
+for(i in kerry){
     if(kerry[i].nodeName == 'path' || kerry[i].nodeName == 'text')
     {
 	    kerry[i].addEventListener('mouseleave', function(){
-            for (let i in kerry){
+            for (i in kerry){
                 if(kerry[i].nodeName == 'path')
                 {
                     kerry[i].style.fill = 'rgb(255, 0, 76)';
@@ -70,7 +70,7 @@ for(let i in kerry){
     }
 }
 	
-for(let i in kerry){
+for(i in kerry){
     if(kerry[i].nodeName == 'path' || kerry[i].nodeName == 'text')
     {
 	    kerry[i].addEventListener('click', function(){
@@ -81,12 +81,12 @@ for(let i in kerry){
 
 let clare = document.getElementsByClassName('clare');
 
-for(let i in clare){
+for(i in clare){
     if(clare[i].nodeName == 'path' || clare[i].nodeName == 'text')
     {
         clare[i].style.cursor = 'pointer';
 	    clare[i].addEventListener('mouseover', function(){
-            for (let i in clare){
+            for (i in clare){
                 if(clare[i].nodeName == 'path')
                 {
                     clare[i].style.fill = 'yellow';
@@ -97,11 +97,11 @@ for(let i in clare){
     }
 }
 	
-for(let i in clare){
+for(i in clare){
     if(clare[i].nodeName == 'path' || clare[i].nodeName == 'text')
     {
 	    clare[i].addEventListener('mouseleave', function(){
-            for (let i in clare){
+            for (i in clare){
                 if(clare[i].nodeName == 'path')
                 {
                     clare[i].style.fill = 'rgb(255, 0, 76)';
@@ -111,7 +111,7 @@ for(let i in clare){
     }
 }
 
-for(let i in clare){
+for(i in clare){
     if(clare[i].nodeName == 'path' || clare[i].nodeName == 'text')
     {
 	    clare[i].addEventListener('click', function(){
@@ -122,12 +122,12 @@ for(let i in clare){
 
 let waterford = document.getElementsByClassName('waterford');
 
-for(let i in waterford){
+for(i in waterford){
     if(waterford[i].nodeName == 'path' || waterford[i].nodeName == 'text')
     {
         waterford[i].style.cursor = 'pointer';
 	    waterford[i].addEventListener('mouseover', function(){
-            for (let i in waterford){
+            for (i in waterford){
                 if(waterford[i].nodeName == 'path')
                 {
                     waterford[i].style.fill = 'yellow';
@@ -138,11 +138,11 @@ for(let i in waterford){
     }
 }
 
-for(let i in waterford){
+for(i in waterford){
     if(waterford[i].nodeName == 'path' || waterford[i].nodeName == 'text')
     {
 	    waterford[i].addEventListener('mouseleave', function(){
-            for (let i in waterford){
+            for (i in waterford){
                 if(waterford[i].nodeName == 'path')
                 {
                     waterford[i].style.fill = 'rgb(255, 0, 76)';
@@ -152,7 +152,7 @@ for(let i in waterford){
     }
 }
 
-for(let i in waterford){
+for(i in waterford){
     if(waterford[i].nodeName == 'path' || waterford[i].nodeName == 'text')
     {
 	    waterford[i].addEventListener('click', function(){
@@ -163,22 +163,22 @@ for(let i in waterford){
 
 let limerick = document.getElementsByClassName('limerick');
 
-for(let i in limerick){
+for(i in limerick){
     if(limerick[i].nodeName == 'path' || limerick[i].nodeName == 'text')
     {
 	    limerick[i].addEventListener('mouseover', function(){
-            for (let i in limerick){
+            for (i in limerick){
                     document.getElementsByClassName('no-surfing-notification')[0].style.visibility = 'visible';
             }
 	    });
     }
 }
 
-for(let i in limerick){
+for(i in limerick){
     if(limerick[i].nodeName == 'path' || limerick[i].nodeName == 'text')
     {
 	    limerick[i].addEventListener('mouseleave', function(){
-            for (let i in limerick){
+            for (i in limerick){
                     document.getElementsByClassName('no-surfing-notification')[0].style.visibility = 'hidden';
             }
 	    });
@@ -187,22 +187,22 @@ for(let i in limerick){
 
 let tipperary = document.getElementsByClassName('tipperary');
 
-for(let i in tipperary){
+for(i in tipperary){
     if(tipperary[i].nodeName == 'path' || tipperary[i].nodeName == 'text')
     {
 	    tipperary[i].addEventListener('mouseover', function(){
-            for (let i in tipperary){
+            for (i in tipperary){
                     document.getElementsByClassName('no-surfing-notification')[0].style.visibility = 'visible';
             }
 	    });
     }
 }
 
-for(let i in tipperary){
+for(i in tipperary){
     if(tipperary[i].nodeName == 'path' || tipperary[i].nodeName == 'text')
     {
 	    tipperary[i].addEventListener('mouseleave', function(){
-            for (let i in tipperary){
+            for (i in tipperary){
                     document.getElementsByClassName('no-surfing-notification')[0].style.visibility = 'hidden';
             }
 	    });
@@ -215,7 +215,7 @@ for(let i in tipperary){
 let placeNameColor = 'blue';
 
 let doolin = document.getElementsByClassName('doolin'); // also text and surfboards with classes are targeted
-for(let i in doolin){
+for(i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
 	    doolin[i].addEventListener('mouseover', function(){
@@ -227,7 +227,7 @@ for(let i in doolin){
     }
 }
 
-for(let i in doolin){
+for(i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
 	    doolin[i].addEventListener('mouseleave', function(){ // return to normal on mouse leave
@@ -237,7 +237,7 @@ for(let i in doolin){
     }
 }
 
-for(let i in doolin){
+for(i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
 	    doolin[i].addEventListener('click', function(){
@@ -247,7 +247,7 @@ for(let i in doolin){
 }
 
 let doughmore= document.getElementsByClassName('doughmore');
-for(let i in doolin){
+for(i in doolin){
     if(doughmore[i].nodeName == 'ellipse' || doughmore[i].nodeName == 'text')
     {
 	    doughmore[i].addEventListener('mouseover', function(){
@@ -259,7 +259,7 @@ for(let i in doolin){
     }
 }
 
-for(let i in doughmore){
+for(i in doughmore){
     if(doughmore[i].nodeName == 'ellipse' || doughmore[i].nodeName == 'text')
     {
 	    doughmore[i].addEventListener('mouseleave', function(){
@@ -269,7 +269,7 @@ for(let i in doughmore){
     }
 }
 
-for(let i in doughmore){
+for(i in doughmore){
     if(doughmore[i].nodeName == 'ellipse' || doughmore[i].nodeName == 'text')
     {
 	    doughmore[i].addEventListener('click', function(){
@@ -279,7 +279,7 @@ for(let i in doughmore){
 }
 
 let lahinch= document.getElementsByClassName('lahinch');
-for(let i in lahinch){
+for(i in lahinch){
     if(lahinch[i].nodeName == 'ellipse' || lahinch[i].nodeName == 'text')
     {
 	    lahinch[i].addEventListener('mouseover', function(){
@@ -291,7 +291,7 @@ for(let i in lahinch){
     }
 }
 
-for(let i in lahinch){
+for(i in lahinch){
     if(lahinch[i].nodeName == 'ellipse' || lahinch[i].nodeName == 'text')
     {
 	    lahinch[i].addEventListener('mouseleave', function(){
@@ -301,7 +301,7 @@ for(let i in lahinch){
     }
 }
 
-for(let i in lahinch){
+for(i in lahinch){
     if(lahinch[i].nodeName == 'ellipse' || lahinch[i].nodeName == 'text')
     {
 	    lahinch[i].addEventListener('click', function(){
@@ -311,7 +311,7 @@ for(let i in lahinch){
 }
 
 let spanishPoint= document.getElementsByClassName('spanish-point');
-for(let i in spanishPoint){
+for(i in spanishPoint){
     if(spanishPoint[i].nodeName == 'ellipse' || spanishPoint[i].nodeName == 'text')
     {
 	    spanishPoint[i].addEventListener('mouseover', function(){
@@ -323,7 +323,7 @@ for(let i in spanishPoint){
     }
 }
 
-for(let i in spanishPoint){
+for(i in spanishPoint){
     if(spanishPoint[i].nodeName == 'ellipse' || spanishPoint[i].nodeName == 'text')
     {
 	    spanishPoint[i].addEventListener('mouseleave', function(){
@@ -333,7 +333,7 @@ for(let i in spanishPoint){
     }
 }
 
-for(let i in spanishPoint){
+for(i in spanishPoint){
     if(spanishPoint[i].nodeName == 'ellipse' || spanishPoint[i].nodeName == 'text')
     {
 	    spanishPoint[i].addEventListener('click', function(){
@@ -343,7 +343,7 @@ for(let i in spanishPoint){
 }
 
 let kilkee= document.getElementsByClassName('kilkee');
-for(let i in kilkee){
+for(i in kilkee){
     if(kilkee[i].nodeName == 'ellipse' || kilkee[i].nodeName == 'text')
     {
 	    kilkee[i].addEventListener('mouseover', function(){
@@ -355,7 +355,7 @@ for(let i in kilkee){
     }
 }
 
-for(let i in kilkee){
+for(i in kilkee){
     if(kilkee[i].nodeName == 'ellipse' || kilkee[i].nodeName == 'text')
     {
 	    kilkee[i].addEventListener('mouseleave', function(){
@@ -365,7 +365,7 @@ for(let i in kilkee){
     }
 }
 
-for(let i in kilkee){
+for(i in kilkee){
     if(kilkee[i].nodeName == 'ellipse' || kilkee[i].nodeName == 'text')
     {
 	    kilkee[i].addEventListener('click', function(){
@@ -375,7 +375,7 @@ for(let i in kilkee){
 }
 
 let ballybunion= document.getElementsByClassName('ballybunion');
-for(let i in ballybunion){
+for(i in ballybunion){
     if(ballybunion[i].nodeName == 'ellipse' || ballybunion[i].nodeName == 'text')
     {
 	    ballybunion[i].addEventListener('mouseover', function(){
@@ -387,7 +387,7 @@ for(let i in ballybunion){
     }
 }
 
-for(let i in ballybunion){
+for(i in ballybunion){
     if(ballybunion[i].nodeName == 'ellipse' || ballybunion[i].nodeName == 'text')
     {
 	    ballybunion[i].addEventListener('mouseleave', function(){
@@ -397,7 +397,7 @@ for(let i in ballybunion){
     }
 }
 
-for(let i in ballybunion){
+for(i in ballybunion){
     if(ballybunion[i].nodeName == 'ellipse' || ballybunion[i].nodeName == 'text')
     {
 	    ballybunion[i].addEventListener('click', function(){
@@ -407,7 +407,7 @@ for(let i in ballybunion){
 }
 
 let castlegregory= document.getElementsByClassName('castlegregory');
-for(let i in castlegregory){
+for(i in castlegregory){
     if(castlegregory[i].nodeName == 'ellipse' || castlegregory[i].nodeName == 'text')
     {
 	    castlegregory[i].addEventListener('mouseover', function(){
@@ -419,7 +419,7 @@ for(let i in castlegregory){
     }
 }
 
-for(let i in castlegregory){
+for(i in castlegregory){
     if(castlegregory[i].nodeName == 'ellipse' || castlegregory[i].nodeName == 'text')
     {
 	    castlegregory[i].addEventListener('mouseleave', function(){
@@ -429,7 +429,7 @@ for(let i in castlegregory){
     }
 }
 
-for(let i in castlegregory){
+for(i in castlegregory){
     if(castlegregory[i].nodeName == 'ellipse' || castlegregory[i].nodeName == 'text')
     {
 	    castlegregory[i].addEventListener('click', function(){
@@ -439,7 +439,7 @@ for(let i in castlegregory){
 }
 
 let coumeenole= document.getElementsByClassName('coumeenole');
-for(let i in coumeenole){
+for(i in coumeenole){
     if(coumeenole[i].nodeName == 'ellipse' || coumeenole[i].nodeName == 'text')
     {
 	    coumeenole[i].addEventListener('mouseover', function(){
@@ -451,7 +451,7 @@ for(let i in coumeenole){
     }
 }
 
-for(let i in coumeenole){
+for(i in coumeenole){
     if(coumeenole[i].nodeName == 'ellipse' || coumeenole[i].nodeName == 'text')
     {
 	    coumeenole[i].addEventListener('mouseleave', function(){
@@ -461,7 +461,7 @@ for(let i in coumeenole){
     }
 }
 
-for(let i in coumeenole){
+for(i in coumeenole){
     if(coumeenole[i].nodeName == 'ellipse' || coumeenole[i].nodeName == 'text')
     {
 	    coumeenole[i].addEventListener('click', function(){
@@ -471,7 +471,7 @@ for(let i in coumeenole){
 }
 
 let inchKerry= document.getElementsByClassName('inch-kerry');
-for(let i in inchKerry){
+for(i in inchKerry){
     if(inchKerry[i].nodeName == 'ellipse' || inchKerry[i].nodeName == 'text')
     {
 	    inchKerry[i].addEventListener('mouseover', function(){
@@ -483,7 +483,7 @@ for(let i in inchKerry){
     }
 }
 
-for(let i in inchKerry){
+for(i in inchKerry){
     if(inchKerry[i].nodeName == 'ellipse' || inchKerry[i].nodeName == 'text')
     {
 	    inchKerry[i].addEventListener('mouseleave', function(){
@@ -493,7 +493,7 @@ for(let i in inchKerry){
     }
 }
 
-for(let i in inchKerry){
+for(i in inchKerry){
     if(inchKerry[i].nodeName == 'ellipse' || inchKerry[i].nodeName == 'text')
     {
 	    inchKerry[i].addEventListener('click', function(){
@@ -503,7 +503,7 @@ for(let i in inchKerry){
 }
 
 let ballinskelligs= document.getElementsByClassName('ballinskelligs');
-for(let i in ballinskelligs){
+for(i in ballinskelligs){
     if(ballinskelligs[i].nodeName == 'ellipse' || ballinskelligs[i].nodeName == 'text')
     {
 	    ballinskelligs[i].addEventListener('mouseover', function(){
@@ -515,7 +515,7 @@ for(let i in ballinskelligs){
     }
 }
 
-for(let i in ballinskelligs){
+for(i in ballinskelligs){
     if(ballinskelligs[i].nodeName == 'ellipse' || ballinskelligs[i].nodeName == 'text')
     {
 	    ballinskelligs[i].addEventListener('mouseleave', function(){
@@ -525,7 +525,7 @@ for(let i in ballinskelligs){
     }
 }
 
-for(let i in ballinskelligs){
+for(i in ballinskelligs){
     if(ballinskelligs[i].nodeName == 'ellipse' || ballinskelligs[i].nodeName == 'text')
     {
 	    ballinskelligs[i].addEventListener('click', function(){
@@ -535,7 +535,7 @@ for(let i in ballinskelligs){
 }
 
 let longStrand= document.getElementsByClassName('long-strand');
-for(let i in longStrand){
+for(i in longStrand){
     if(longStrand[i].nodeName == 'ellipse' || longStrand[i].nodeName == 'text')
     {
 	    longStrand[i].addEventListener('mouseover', function(){
@@ -547,7 +547,7 @@ for(let i in longStrand){
     }
 }
 
-for(let i in longStrand){
+for(i in longStrand){
     if(longStrand[i].nodeName == 'ellipse' || longStrand[i].nodeName == 'text')
     {
 	    longStrand[i].addEventListener('mouseleave', function(){
@@ -557,7 +557,7 @@ for(let i in longStrand){
     }
 }
 
-for(let i in longStrand){
+for(i in longStrand){
     if(longStrand[i].nodeName == 'ellipse' || longStrand[i].nodeName == 'text')
     {
 	    longStrand[i].addEventListener('click', function(){
@@ -567,7 +567,7 @@ for(let i in longStrand){
 }
 
 let redStrand= document.getElementsByClassName('red-strand');
-for(let i in redStrand){
+for(i in redStrand){
     if(redStrand[i].nodeName == 'ellipse' || redStrand[i].nodeName == 'text')
     {
 	    redStrand[i].addEventListener('mouseover', function(){
@@ -579,7 +579,7 @@ for(let i in redStrand){
     }
 }
 
-for(let i in redStrand){
+for(i in redStrand){
     if(redStrand[i].nodeName == 'ellipse' || redStrand[i].nodeName == 'text')
     {
 	    redStrand[i].addEventListener('mouseleave', function(){
@@ -589,7 +589,7 @@ for(let i in redStrand){
     }
 }
 
-for(let i in redStrand){
+for(i in redStrand){
     if(redStrand[i].nodeName == 'ellipse' || redStrand[i].nodeName == 'text')
     {
 	    redStrand[i].addEventListener('click', function(){
@@ -599,7 +599,7 @@ for(let i in redStrand){
 }
 
 let inchydoney= document.getElementsByClassName('inchydoney');
-for(let i in inchydoney){
+for(i in inchydoney){
     if(inchydoney[i].nodeName == 'ellipse' || inchydoney[i].nodeName == 'text')
     {
 	    inchydoney[i].addEventListener('mouseover', function(){
@@ -611,7 +611,7 @@ for(let i in inchydoney){
     }
 }
 
-for(let i in inchydoney){
+for(i in inchydoney){
     if(inchydoney[i].nodeName == 'ellipse' || inchydoney[i].nodeName == 'text')
     {
 	    inchydoney[i].addEventListener('mouseleave', function(){
@@ -621,7 +621,7 @@ for(let i in inchydoney){
     }
 }
 
-for(let i in inchydoney){
+for(i in inchydoney){
     if(inchydoney[i].nodeName == 'ellipse' || inchydoney[i].nodeName == 'text')
     {
 	    inchydoney[i].addEventListener('click', function(){
@@ -631,7 +631,7 @@ for(let i in inchydoney){
 }
 
 let garretstown= document.getElementsByClassName('garretstown');
-for(let i in garretstown){
+for(i in garretstown){
     if(garretstown[i].nodeName == 'ellipse' || garretstown[i].nodeName == 'text')
     {
 	    garretstown[i].addEventListener('mouseover', function(){
@@ -643,7 +643,7 @@ for(let i in garretstown){
     }
 }
 
-for(let i in garretstown){
+for(i in garretstown){
     if(garretstown[i].nodeName == 'ellipse' || garretstown[i].nodeName == 'text')
     {
 	    garretstown[i].addEventListener('mouseleave', function(){
@@ -653,7 +653,7 @@ for(let i in garretstown){
     }
 }
 
-for(let i in garretstown){
+for(i in garretstown){
     if(garretstown[i].nodeName == 'ellipse' || garretstown[i].nodeName == 'text')
     {
 	    garretstown[i].addEventListener('click', function(){
@@ -663,7 +663,7 @@ for(let i in garretstown){
 }
 
 let inchCork= document.getElementsByClassName('inch-cork');
-for(let i in inchCork){
+for(i in inchCork){
     if(inchCork[i].nodeName == 'ellipse' || inchCork[i].nodeName == 'text')
     {
 	    inchCork[i].addEventListener('mouseover', function(){
@@ -675,7 +675,7 @@ for(let i in inchCork){
     }
 }
 
-for(let i in inchCork){
+for(i in inchCork){
     if(inchCork[i].nodeName == 'ellipse' || inchCork[i].nodeName == 'text')
     {
 	    inchCork[i].addEventListener('mouseleave', function(){
@@ -685,7 +685,7 @@ for(let i in inchCork){
     }
 }
 
-for(let i in inchCork){
+for(i in inchCork){
     if(inchCork[i].nodeName == 'ellipse' || inchCork[i].nodeName == 'text')
     {
 	    inchCork[i].addEventListener('click', function(){
@@ -695,7 +695,7 @@ for(let i in inchCork){
 }
 
 let ardmore= document.getElementsByClassName('ardmore');
-for(let i in ardmore){
+for(i in ardmore){
     if(ardmore[i].nodeName == 'ellipse' || ardmore[i].nodeName == 'text')
     {
 	    ardmore[i].addEventListener('mouseover', function(){
@@ -707,7 +707,7 @@ for(let i in ardmore){
     }
 }
 
-for(let i in ardmore){
+for(i in ardmore){
     if(ardmore[i].nodeName == 'ellipse' || ardmore[i].nodeName == 'text')
     {
 	    ardmore[i].addEventListener('mouseleave', function(){
@@ -717,7 +717,7 @@ for(let i in ardmore){
     }
 }
 
-for(let i in ardmore){
+for(i in ardmore){
     if(ardmore[i].nodeName == 'ellipse' || ardmore[i].nodeName == 'text')
     {
 	    ardmore[i].addEventListener('click', function(){
@@ -727,7 +727,7 @@ for(let i in ardmore){
 }
 
 let bunmahon= document.getElementsByClassName('bunmahon');
-for(let i in bunmahon){
+for(i in bunmahon){
     if(bunmahon[i].nodeName == 'ellipse' || bunmahon[i].nodeName == 'text')
     {
 	    bunmahon[i].addEventListener('mouseover', function(){
@@ -739,7 +739,7 @@ for(let i in bunmahon){
     }
 }
 
-for(let i in bunmahon){
+for(i in bunmahon){
     if(bunmahon[i].nodeName == 'ellipse' || bunmahon[i].nodeName == 'text')
     {
 	    bunmahon[i].addEventListener('mouseleave', function(){
@@ -749,7 +749,7 @@ for(let i in bunmahon){
     }
 }
 
-for(let i in bunmahon){
+for(i in bunmahon){
     if(bunmahon[i].nodeName == 'ellipse' || bunmahon[i].nodeName == 'text')
     {
 	    bunmahon[i].addEventListener('click', function(){
@@ -759,7 +759,7 @@ for(let i in bunmahon){
 }
 
 let perfectWave= document.getElementsByClassName('perfect-wave');
-for(let i in perfectWave){
+for(i in perfectWave){
     if(perfectWave[i].nodeName == 'ellipse' || perfectWave[i].nodeName == 'text')
     {
 	    perfectWave[i].addEventListener('mouseover', function(){
@@ -771,7 +771,7 @@ for(let i in perfectWave){
     }
 }
 
-for(let i in perfectWave){
+for(i in perfectWave){
     if(perfectWave[i].nodeName == 'ellipse' || perfectWave[i].nodeName == 'text')
     {
 	    perfectWave[i].addEventListener('mouseleave', function(){
@@ -781,7 +781,7 @@ for(let i in perfectWave){
     }
 }
 
-for(let i in perfectWave){
+for(i in perfectWave){
     if(perfectWave[i].nodeName == 'ellipse' || perfectWave[i].nodeName == 'text')
     {
 	    perfectWave[i].addEventListener('click', function(){
@@ -791,7 +791,7 @@ for(let i in perfectWave){
 }
 
 let annestown= document.getElementsByClassName('annestown');
-for(let i in annestown){
+for(i in annestown){
     if(annestown[i].nodeName == 'ellipse' || annestown[i].nodeName == 'text')
     {
 	    annestown[i].addEventListener('mouseover', function(){
@@ -803,7 +803,7 @@ for(let i in annestown){
     }
 }
 
-for(let i in annestown){
+for(i in annestown){
     if(annestown[i].nodeName == 'ellipse' || annestown[i].nodeName == 'text')
     {
 	    annestown[i].addEventListener('mouseleave', function(){
@@ -813,7 +813,7 @@ for(let i in annestown){
     }
 }
 
-for(let i in annestown){
+for(i in annestown){
     if(annestown[i].nodeName == 'ellipse' || annestown[i].nodeName == 'text')
     {
 	    annestown[i].addEventListener('click', function(){
@@ -823,7 +823,7 @@ for(let i in annestown){
 }
 
 let tramore= document.getElementsByClassName('tramore');
-for(let i in tramore){
+for(i in tramore){
     if(tramore[i].nodeName == 'ellipse' || tramore[i].nodeName == 'text')
     {
 	    tramore[i].addEventListener('mouseover', function(){
@@ -835,7 +835,7 @@ for(let i in tramore){
     }
 }
 
-for(let i in tramore){
+for(i in tramore){
     if(tramore[i].nodeName == 'ellipse' || tramore[i].nodeName == 'text')
     {
 	    tramore[i].addEventListener('mouseleave', function(){
@@ -845,7 +845,7 @@ for(let i in tramore){
     }
 }
 
-for(let i in tramore){
+for(i in tramore){
     if(tramore[i].nodeName == 'ellipse' || tramore[i].nodeName == 'text')
     {
 	    tramore[i].addEventListener('click', function(){
@@ -853,3 +853,4 @@ for(let i in tramore){
 	    });
     }
 }
+

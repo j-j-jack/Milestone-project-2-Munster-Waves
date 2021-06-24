@@ -1,35 +1,34 @@
-let beachName = document.getElementsByTagName('title')[0].innerHTML;
+let beachName = document.getElementsByTagName("title")[0].innerHTML;
 
 let beachDict = {
-    'Doolin Point': [53.009012, -9.412298, 52.9045, -8.981], 
-    'Doughmore': [52.806895, -9.499054, 52.9045, -8.981], 
-    'Lahinch': [52.9338, -9.3499, 52.9045, -8.981], 
-    'Spanish Point': [52.806895, -9.499054, 52.9045, -8.981],
-    'Kilkee': [52.681758, -9.648977, 52.9045, -8.981],
-    'Ballybunion': [52.498310, -9.412298, 52, -9.9],
-    'Castlegregory': [52.281091, -10.057973, 52, -9.9],
-    'Coumeenole': [52.100819, -10.464211, 52, -9.9],
-    'Inch(Kerry)': [52.111918, -9.980602, 52, -9.9],
-    'Ballinskelligs': [51.826181, -10.204100, 52, -9.9],
-    'Long Strand': [51.560475, -8.992523, 51.9942, -8.7285],
-    'Red Strand': [51.534426, -8.939241, 51.9942, -8.7285],
-    'Inchydoney': [51.583101, -8.866123, 51.9942, -8.7285],
-    'Garretstown': [51.631213, -8.622963, 51.9942, -8.7285],
-    'Inch(Cork)': [51.786432, -8.183083, 51.9942, -8.7285],
-    'Ardmore': [51.945847, -7.779053, 52.1944, -7.6228],
-    'Bunmahon': [52.135120, -7.366740, 52.1944, -7.6228],
-    'Perfect Wave': [52.127357, -7.259639, 52.1944, -7.6228],
-    'Annestown': [52.129254, -7.294315, 52.1944, -7.6228],
-    'Tramore': [52.148639, -7.131580, 52.1944, -7.6228]
+    "Annestown": [52.129254, -7.294315, 52.1944, -7.6228],
+    "Ardmore": [51.945847, -7.779053, 52.1944, -7.6228],
+    "Ballinskelligs": [51.826181, -10.204100, 52, -9.9],
+    "Ballybunion": [52.498310, -9.412298, 52, -9.9],
+    "Bunmahon": [52.135120, -7.366740, 52.1944, -7.6228],
+    "Castlegregory": [52.281091, -10.057973, 52, -9.9],
+    "Coumeenole": [52.100819, -10.464211, 52, -9.9],
+    "Doolin Point": [53.009012, -9.412298, 52.9045, -8.981],
+    "Doughmore": [52.806895, -9.499054, 52.9045, -8.981],
+    "Garretstown": [51.631213, -8.622963, 51.9942, -8.7285],
+    "Inch(Cork)": [51.786432, -8.183083, 51.9942, -8.7285],
+    "Inch(Kerry)": [52.111918, -9.980602, 52, -9.9],
+    "Inchydoney": [51.583101, -8.866123, 51.9942, -8.7285],
+    "Kilkee": [52.681758, -9.648977, 52.9045, -8.981],
+    "Lahinch": [52.9338, -9.3499, 52.9045, -8.981],
+    "Long Strand": [51.560475, -8.992523, 51.9942, -8.7285],
+    "Perfect Wave": [52.127357, -7.259639, 52.1944, -7.6228],
+    "Red Strand": [51.534426, -8.939241, 51.9942, -8.7285],
+    "Spanish Point": [52.806895, -9.499054, 52.9045, -8.981],
+    "Tramore": [52.148639, -7.131580, 52.1944, -7.6228]
 };
-
-
-//global scope variable
-let lat = beachDict[beachName][0]; // coordinates of current beach using dictionary
+// coordinates of current beach using dictionary
+let lat = beachDict[beachName][0];
 let lng = beachDict[beachName][1];
 let sunriseTimes = [];
 let sunsetTimes = [];
-let stormGlassData = {}; // empty object to be assigned once fetch is complete
+// empty object to be assigned once fetch is complete
+let stormGlassData = {};
 let daysLargeScreen = document.getElementsByClassName('days-large-screen');
 let dayDisplayedSmallScreen = document.getElementsByClassName('day-selector-center')[0];
 let daysArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']; 
@@ -44,10 +43,10 @@ let fetchedStorm = false;
 
 //Api section of script
 
-for (let i = 0; i < 7; i ++)
+for (i = 0; i < 7; i ++)
     {
     let day = i * 86400000; // constructing the full date for the next seven days in the format required by the api to function correctly
-    let today = Date.now()
+    let today = Date.now();
     let date = new Date(today + day);
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
@@ -88,16 +87,16 @@ for (let i = 0; i < 7; i ++)
                 errorHandler(); // if the status gives an error code the errorHandler function is called
             }
         
-}).catch(error => // if the fetch fails otherwise the error handler function is callled
+}).catch((error) => // if the fetch fails otherwise the error handler function is callled
     errorHandler());
 }
 
 // the code below rearranges the day array to have the current day first
-for (let i = firstDayInSelector; i < (firstDayInSelector+7); i ++){
+for (i = firstDayInSelector; i < (firstDayInSelector+7); i ++){
     daysArray.push(daysArray[i%7]);
 }
 
-for(let i = 0; i < 7; i ++){
+for(i = 0; i < 7; i ++){
     daysArray.shift();
 }
 // the code below is based on the example code provided by Stormglass api 
@@ -116,7 +115,7 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
     fetchedStorm = true; // no errors: call the fetch complete object
     fetchComplete();
 }
-}).catch(error => 
+}).catch((error) => 
     errorHandler()); // handling errors if the fetch fails completely
 
 // variables needed for the code below
@@ -207,9 +206,9 @@ dayRight.addEventListener('click', function(){ // same code but for right arrow
 
 daysLargeScreen[0].style.borderBottom = '3px solid yellow'; // showing what day selected when document is opened
 
-for(let i =0; i<7; i++){
+for(i =0; i<7; i++){
     daysLargeScreen[i].addEventListener('click', function(){ //when user clicks a day on large screen
-        for (let i = 0; i < 7; i ++){
+        for (i = 0; i < 7; i ++){
             daysLargeScreen[i].style.borderBottom = 'none'; // removing highlighted day
         }
         currentDaySelected = this.dataset.day;
