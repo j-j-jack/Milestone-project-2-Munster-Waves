@@ -21,7 +21,7 @@ var ballybunionMarker = L.marker([52.498310, -9.412298],{ //coordinates of Bally
     alt: 'surfboard icon showing Ballybunion', 
     opacity: 1.0
     });
-    ballybunionMarker.addTo(kerryMap);
+    ballybunionMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
 
 var castlegregoryMarker = L.marker([52.281091, -10.057973],{ // coordinates of Castlegregory
     icon: myIcon, 
@@ -29,7 +29,7 @@ var castlegregoryMarker = L.marker([52.281091, -10.057973],{ // coordinates of C
     alt: 'surfboard icon showing Castlegregory', 
     opacity: 1.0}
 );
-castlegregoryMarker.addTo(kerryMap);
+castlegregoryMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
 
 var coumeenoleMarker = L.marker([52.100819, -10.464211],{ //coordinates of Coumeenole
     icon: myIcon, 
@@ -37,7 +37,7 @@ var coumeenoleMarker = L.marker([52.100819, -10.464211],{ //coordinates of Coume
     alt: 'surfboard icon showing Coumeenole', 
     opacity: 1.0}
 );
-coumeenoleMarker.addTo(kerryMap);
+coumeenoleMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
 
 var inchKerryMarker = L.marker([52.111918, -9.980602],{ // coordinates of Inch
     icon: myIcon, 
@@ -45,7 +45,7 @@ var inchKerryMarker = L.marker([52.111918, -9.980602],{ // coordinates of Inch
     alt: 'surfboard icon showing Inch', 
     opacity: 1.0}
 );
-inchKerryMarker.addTo(kerryMap);
+inchKerryMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
     
 var ballinskelligsMarker = L.marker([51.826181, -10.204100],{
     icon: myIcon, 
@@ -53,9 +53,10 @@ var ballinskelligsMarker = L.marker([51.826181, -10.204100],{
     alt: 'surfboard icon showing Ballinskelligs', 
     opacity: 1.0}
     );
-ballinskelligsMarker.addTo(kerryMap);
+ballinskelligsMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
 
-//popups
+/* popups where each pop is filled and bound to their respective marker 
+    and filled with the required HTML */
 
 var ballybunionPopup = L.popup();
 ballybunionPopup.setContent("<p>Powerful right handers fire in all tidal conditions</p><a href='ballybunion.html'>View surf forecast for Ballybunion</a>");

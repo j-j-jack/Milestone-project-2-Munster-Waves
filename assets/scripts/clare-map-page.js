@@ -21,7 +21,7 @@ var doolinPointMarker = L.marker([53.009012, -9.412298],{ //coordinates of Dooli
     alt: 'surfboard icon showing Doolin Point', 
     opacity: 1.0
     });
-doolinPointMarker.addTo(clareMap);
+doolinPointMarker.addTo(clareMap); // adding marker to map with id of clareMap
 
 var lahinchMarker = L.marker([52.9338, -9.3499],{ // coordinates of Lahinch
     icon: myIcon, 
@@ -29,7 +29,7 @@ var lahinchMarker = L.marker([52.9338, -9.3499],{ // coordinates of Lahinch
     alt: 'surfboard icon showing Lahinch', 
     opacity: 1.0}
 );
-lahinchMarker.addTo(clareMap);
+lahinchMarker.addTo(clareMap); // adding marker to map with id of clareMap
 
 var spanishPointMarker = L.marker([52.847969, -9.456138],{ //coordinates of Spanish Point
     icon: myIcon, 
@@ -37,7 +37,7 @@ var spanishPointMarker = L.marker([52.847969, -9.456138],{ //coordinates of Span
     alt: 'surfboard icon showing Spanish Point', 
     opacity: 1.0}
 );
-spanishPointMarker.addTo(clareMap);
+spanishPointMarker.addTo(clareMap); // adding marker to map with id of clareMap
 
 var doughmoreMarker = L.marker([52.806895, -9.499054],{ // coordinates of Doughmore
     icon: myIcon, 
@@ -45,7 +45,7 @@ var doughmoreMarker = L.marker([52.806895, -9.499054],{ // coordinates of Doughm
     alt: 'surfboard icon showing Doughmore', 
     opacity: 1.0}
 );
-doughmoreMarker.addTo(clareMap);
+doughmoreMarker.addTo(clareMap); // adding marker to map with id of clareMap
     
 var kilkeeMarker = L.marker([52.681758, -9.648977],{ //coordinates of Kilkee
     icon: myIcon, 
@@ -53,9 +53,10 @@ var kilkeeMarker = L.marker([52.681758, -9.648977],{ //coordinates of Kilkee
     alt: 'surfboard icon showing Kilkee', 
     opacity: 1.0}
     );
-kilkeeMarker.addTo(clareMap);
+kilkeeMarker.addTo(clareMap); // adding marker to map with id of clareMap
 
-//popups
+/* popups where each pop is filled and bound to their respective marker 
+    and filled with the required HTML */
 
 var doolinPointPopup = L.popup();
 doolinPointPopup.setContent("<p>One of Ireland's biggest waves is here under the Cliffs of Moher</p><a href='doolin-point.html'>View surf forecast for Doolin Point</a>");

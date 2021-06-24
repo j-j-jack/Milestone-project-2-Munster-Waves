@@ -21,7 +21,7 @@ var longStrandMarker = L.marker([51.560475, -8.992523],{ //coordinates of Long S
     alt: 'surfboard icon showing Long Strand', 
     opacity: 1.0
     });
-    longStrandMarker.addTo(corkMap);
+    longStrandMarker.addTo(corkMap); // adding marker to map with id of corkMap
 
 var redStrandMarker = L.marker([51.534426, -8.939241],{ // coordinates of Red Strand
     icon: myIcon, 
@@ -29,7 +29,7 @@ var redStrandMarker = L.marker([51.534426, -8.939241],{ // coordinates of Red St
     alt: 'surfboard icon showing Red Strand', 
     opacity: 1.0}
 );
-redStrandMarker.addTo(corkMap);
+redStrandMarker.addTo(corkMap); // adding marker to map with id of corkMap
 
 var inchydoneyMarker = L.marker([51.583101, -8.866123],{ //coordinates of Inchydoney
     icon: myIcon, 
@@ -37,7 +37,7 @@ var inchydoneyMarker = L.marker([51.583101, -8.866123],{ //coordinates of Inchyd
     alt: 'surfboard icon showing Inchydoney', 
     opacity: 1.0}
 );
-inchydoneyMarker.addTo(corkMap);
+inchydoneyMarker.addTo(corkMap); // adding marker to map with id of corkMap
 
 var garretstownMarker = L.marker([51.631213, -8.622963],{ // coordinates of Garretstown
     icon: myIcon, 
@@ -45,7 +45,7 @@ var garretstownMarker = L.marker([51.631213, -8.622963],{ // coordinates of Garr
     alt: 'surfboard icon showing Garretstown', 
     opacity: 1.0}
 );
-garretstownMarker.addTo(corkMap);
+garretstownMarker.addTo(corkMap); // adding marker to map with id of corkMap
     
 var inchCorkMarker = L.marker([51.786432, -8.183083],{ // coordinates of Inch
     icon: myIcon, 
@@ -53,9 +53,10 @@ var inchCorkMarker = L.marker([51.786432, -8.183083],{ // coordinates of Inch
     alt: 'surfboard icon showing Inch', 
     opacity: 1.0}
     );
-    inchCorkMarker.addTo(corkMap);
+    inchCorkMarker.addTo(corkMap); // adding marker to map with id of corkMap
 
-//popups
+/* popups where each pop is filled and bound to their respective marker 
+    and filled with the required HTML */
 
 var longStrandPopup = L.popup();
 longStrandPopup.setContent("<p>Excellent rips and a long, peeling right-hander</p><a href='long-strand.html'>View surf forecast for Long Strand</a>");
