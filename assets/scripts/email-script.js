@@ -12,7 +12,6 @@ document.getElementById('email-form').addEventListener('submit', function(event)
     emailjs.sendForm(
         'service_qcwv5hy', 'template_mwkm1ac', '#email-form', 'user_G4jZs712zju74E5JnCbeM')
     .then(function(response) { //protocol to deal with responses as documented on the emailjs website
-    console.log('SUCCESS!', response.status, response.text);
     
     if(document.getElementById('check').checked){ //checks if the user wants to be emailed
         document.getElementsByClassName('form')[0].innerHTML = // replaces the form with the html below

@@ -74,11 +74,11 @@ for (i = 0; i < 7; i ++)
     fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=${fullDate}`).then((sunResponse) => sunResponse.json()).then((sunData) => {
     
     // getting the api information for the next seven days using the dictionary coordinates and the constructed date
-            let sR = sunData.results.sunrise; // extracting the sunrise info from the api
+            let sR = sunData.results.sunrise;
             let sS = sunData.results.sunset; // extracting the sunset infor from the api
-            sunriseTimes[i] = sR;
-            sunsetTimes[i] = sS;   
-            
+            sunriseTimes.push(sR);
+            sunsetTimes.push(sS);
+            console.log(sunData);
             if(sunData.status=='OK'){ // checking status code supplied by api to check for errors
                 fetchedSun++;
                 fetchComplete(); // if the status ok: fetch was successful; run fetch complete
