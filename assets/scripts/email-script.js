@@ -14,7 +14,7 @@ document.getElementById('email-form').addEventListener('submit', function(event)
     .then(function(response) { //protocol to deal with responses as documented on the emailjs website
     console.log('SUCCESS!', response.status, response.text);
     
-    if(document.getElementById('contact').checked){ //checks if the user wants to be emailed
+    if(document.getElementById('check').checked){ //checks if the user wants to be emailed
         document.getElementsByClassName('form')[0].innerHTML = // replaces the form with the html below
         `<h2>Thank you!</h2><p>Your response has been sent.</p>
         <p>We will send an email to ${pageForm.elements['email'].value} once the shop opensgit  :)</p> 
@@ -29,7 +29,6 @@ document.getElementById('email-form').addEventListener('submit', function(event)
         or click <a href ="index.html">here to go back to home page</a> :)
         `;
     }
-    console.log(pageForm.elements['contact'].value);
     }, function(error) { // if there is an error the user can click the link to resubmit or return home
        document.getElementsByClassName('form')[0].innerHTML = 
        `<h2>Oops... Something went wrong</h2><p>Your response wasn't sent</p> 

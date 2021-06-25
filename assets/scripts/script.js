@@ -82,7 +82,6 @@ when the announcement bar disappears the navbar stays at the top of the screen *
      else{
       document.getElementsByClassName('small-screen-navbar-container')[0].style.top = '0px';
    } 
-   console.log(jQuery(document).height());
    documentHeight = jQuery(document).height(1500);
    });
      
