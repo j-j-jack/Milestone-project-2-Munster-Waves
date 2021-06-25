@@ -6,7 +6,7 @@
   src: url("../fonts/Celtic.ttf") format("woff2"),
     url("../fonts/Celtic.ttf") format("woff");
 }
-/* Root Variables ------------------------------------------------------*/
+
 :root {
   --bg-color: rgb(157, 177, 245);
   --announcement-bar-bg-color: rgb(0, 168, 76);
@@ -36,7 +36,6 @@
   --days-large-screen: salmon;
 }
 
-/* General Styling ----------------------------------------------------*/
 
 body {
   font-family: "original surfer";
@@ -84,13 +83,13 @@ body {
   display: inline;
   margin: 0;
   padding: 0;
-  z-index: 10; /*to appear above home page map */
+  z-index: 10; 
 }
 
 .no-surfing-notification {
   visibility: hidden;
 }
-/* Navbar ------------------------------------------------------------------------*/
+
 
 .active {
   text-decoration: underline;
@@ -113,7 +112,7 @@ body {
   pointer-events: auto;
   min-height: 100%;
   position: relative;
-  padding-bottom: 10%; /* helps to keep footer down past end of content */
+  padding-bottom: 10%; 
   top: 0;
 }
 .small-screen-navbar-dropdown-curtain {
@@ -122,14 +121,14 @@ body {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  z-index: 1099; /* just under the navbar but above the leaflet maps */
+  z-index: 1099; 
   pointer-events: none;
   top: 0;
 }
 .small-screen-navbar-container {
   width: 100%;
   position: fixed;
-  z-index: 1100; /* needed to appear above the zoom bar on leaflet maps */
+  z-index: 1100; 
 }
 .small-nav-munster {
   -webkit-text-stroke-width: 1px;
@@ -234,7 +233,6 @@ body {
   cursor: pointer;
 }
 
-/* Beach pages --------------------------------------------------------------------------------*/
 
 .wave-height-icon {
   height: 100%;
@@ -266,7 +264,6 @@ body {
 }
 
 .beach-page-container {
-  /* using css gruds for page layout to match wireframes */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -292,7 +289,7 @@ body {
 }
 .day-selector {
   grid-area: E;
-  pointer-events: none; /* make the selector unclickable until the apis load */
+  pointer-events: none; 
 }
 .beach-info {
   grid-area: B;
@@ -300,7 +297,7 @@ body {
 }
 .time-selector {
   grid-area: F;
-  pointer-events: none; /* make the selector unclickable until the apis load */
+  pointer-events: none; 
 }
 .beach-photo-box {
   grid-area: C;
@@ -486,7 +483,6 @@ body {
   grid-area: J;
 }
 
-/* footer ------------------------------------------------------------------------*/
 .footer {
   background: var(--footer-color);
   position: absolute;
@@ -552,7 +548,6 @@ body {
   text-align: center;
 }
 
-/* Maps------------------------------------------------------------*/
 #clare-map {
   height: 45vw;
   border: 5px solid var(--map-outline-color);
@@ -615,7 +610,7 @@ body {
   font-size: 400%;
   text-shadow: 2px 2px black;
 }
-/* signup page -------------------------------------- */
+
 .signup-page-container {
   margin-top: 3vw;
   display: grid;
@@ -652,8 +647,6 @@ body {
 textarea {
   width: 80%;
 }
-
-/* media queries -------------------------------------- */
 
 @media only screen and (max-width: 992px) {
   .beach-page-container {
@@ -728,7 +721,6 @@ textarea {
 
 @media only screen and (min-width: 769px) {
   .small-screen-navbar-container {
-    display: none; /* for cases when the screen is resized and the small screen navbar disappears
-                          while the dropdown is open */
+    display: none; 
   }
 }
