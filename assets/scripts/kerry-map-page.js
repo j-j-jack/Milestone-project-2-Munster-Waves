@@ -1,5 +1,4 @@
 var kerryMap = L.map('kerry-map').setView([52, -9.9], 7);
-// code taken from the leaflet provider tool 
 var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     subdomains: 'abcd',
@@ -9,43 +8,42 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 }).addTo(kerryMap);
 
  var myIcon = L.icon({
-    iconUrl: 'assets/images/surfboard.png', // creating a custom surfboard icon to be used as a marker
-    iconSize: [96, 38],
+    iconUrl: 'assets/images/surfboard.png', 
     iconAnchor: [48, 19],
     popupAnchor: [0, 0]
 });
 
-var ballybunionMarker = L.marker([52.498310, -9.412298],{ //coordinates of Ballybunion
+var ballybunionMarker = L.marker([52.498310, -9.412298],{ 
     icon: myIcon, 
     title: 'Ballybunion',
     alt: 'surfboard icon showing Ballybunion', 
     opacity: 1.0
     });
-    ballybunionMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
+    ballybunionMarker.addTo(kerryMap); 
 
-var castlegregoryMarker = L.marker([52.281091, -10.057973],{ // coordinates of Castlegregory
+var castlegregoryMarker = L.marker([52.281091, -10.057973],{ 
     icon: myIcon, 
     title: 'Castlegregory',
     alt: 'surfboard icon showing Castlegregory', 
     opacity: 1.0}
 );
-castlegregoryMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
+castlegregoryMarker.addTo(kerryMap); 
 
-var coumeenoleMarker = L.marker([52.100819, -10.464211],{ //coordinates of Coumeenole
+var coumeenoleMarker = L.marker([52.100819, -10.464211],{ 
     icon: myIcon, 
     title: 'Coumeenole',
     alt: 'surfboard icon showing Coumeenole', 
     opacity: 1.0}
 );
-coumeenoleMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
+coumeenoleMarker.addTo(kerryMap); 
 
-var inchKerryMarker = L.marker([52.111918, -9.980602],{ // coordinates of Inch
+var inchKerryMarker = L.marker([52.111918, -9.980602],{ 
     icon: myIcon, 
     title: 'Inch',
     alt: 'surfboard icon showing Inch', 
     opacity: 1.0}
 );
-inchKerryMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
+inchKerryMarker.addTo(kerryMap);
     
 var ballinskelligsMarker = L.marker([51.826181, -10.204100],{
     icon: myIcon, 
@@ -53,10 +51,7 @@ var ballinskelligsMarker = L.marker([51.826181, -10.204100],{
     alt: 'surfboard icon showing Ballinskelligs', 
     opacity: 1.0}
     );
-ballinskelligsMarker.addTo(kerryMap); // adding marker to map with id of kerryMap
-
-/* popups where each pop is filled and bound to their respective marker 
-    and filled with the required HTML */
+ballinskelligsMarker.addTo(kerryMap); 
 
 var ballybunionPopup = L.popup();
 ballybunionPopup.setContent("<p>Powerful right handers fire in all tidal conditions</p><a href='ballybunion.html'>View surf forecast for Ballybunion</a>");

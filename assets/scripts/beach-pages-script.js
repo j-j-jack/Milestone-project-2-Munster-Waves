@@ -22,30 +22,22 @@ let beachDict = {
     "Spanish Point": [52.806895, -9.499054, 52.9045, -8.981],
     "Tramore": [52.148639, -7.131580, 52.1944, -7.6228]
 };
-// coordinates of current beach using dictionary
 let lat = beachDict[beachName][0];
 let lng = beachDict[beachName][1];
 let sunriseTimes = [];
 let sunsetTimes = [];
-// empty object to be assigned once fetch is complete
 let stormGlassData = {};
 let daysLargeScreen = document.getElementsByClassName('days-large-screen');
 let dayDisplayedSmallScreen = document.getElementsByClassName('day-selector-center')[0];
 let daysArray = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']; 
 let dateArray = [];
 let firstDayInSelector;
-/* when the fetchedSun variable is 7 (the sunrise sunset api needs to be contacted 7 times succsessfully 
-for this to occur) and the fetchedStorm variable is true (the stormGlass api is contacted successfully)
-    the page is given its default values and the functionality is turned on using the fetchComplete funciton
-    */
 let fetchedSun = 0;
 let fetchedStorm = false;
 
-//Api section of script
-
 for (i = 0; i < 7; i ++)
     {
-    let day = i * 86400000; // constructing the full date for the next seven days in the format required by the api to function correctly
+    let day = i * 86400000; 
     let today = Date.now();
     let date = new Date(today + day);
     let year = date.getFullYear();
@@ -64,34 +56,29 @@ for (i = 0; i < 7; i ++)
     dateArray.push(monthDate);
     dayOfWeek = daysArray[dayOfWeek]; 
     if(i == 0){
-        // initialising contenct of small screen interface
         dayDisplayedSmallScreen.innerHTML = `${dayOfWeek}<br>${monthDate}`;
     }
-    //populating the large screen interface
     daysLargeScreen[i].innerHTML = `${dayOfWeek}<br>${monthDate}`;
 
     let fullDate = `${year}-${month}-${monthDate}`;
     fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${lng}&date=${fullDate}`).then((sunResponse) => sunResponse.json()).then((sunData) => {
-    
-    // getting the api information for the next seven days using the dictionary coordinates and the constructed date
             let sR = sunData.results.sunrise;
-            let sS = sunData.results.sunset; // extracting the sunset infor from the api
+            let sS = sunData.results.sunset; 
             sunriseTimes.push(sR);
             sunsetTimes.push(sS);
             console.log(sunData);
-            if(sunData.status=='OK'){ // checking status code supplied by api to check for errors
+            if(sunData.status=='OK'){ 
                 fetchedSun++;
-                fetchComplete(); // if the status ok: fetch was successful; run fetch complete
+                fetchComplete(); 
             }
             else{
-                errorHandler(); // if the status gives an error code the errorHandler function is called
+                errorHandler(); 
             }
         
-}).catch((error) => // if the fetch fails otherwise the error handler function is callled
+}).catch((error) => 
     errorHandler());
 }
 
-// the code below rearranges the day array to have the current day first
 for (i = firstDayInSelector; i < (firstDayInSelector+7); i ++){
     daysArray.push(daysArray[i%7]);
 }
@@ -99,7 +86,7 @@ for (i = firstDayInSelector; i < (firstDayInSelector+7); i ++){
 for(i = 0; i < 7; i ++){
     daysArray.shift();
 }
-// the code below is based on the example code provided by Stormglass api 
+
 const params = 'airTemperature,waterTemperature,precipitation,swellHeight,waveHeight,waveDirection,windSpeed,windDirection';
 
 fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
@@ -109,20 +96,20 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
 }).then((WeatherResponse) => WeatherResponse.json()).then((weatherData) => {
     stormGlassData = weatherData;
     if('errors' in weatherData){
-        errorHandler(); // checking for errors in the object. 
+        errorHandler();  
     }
     else{
-    fetchedStorm = true; // no errors: call the fetch complete object
+    fetchedStorm = true; 
     fetchComplete();
 }
 }).catch((error) => 
-    errorHandler()); // handling errors if the fetch fails completely
+    errorHandler()); 
 
-// variables needed for the code below
+
 let currentDaySelected = 0;
-let currentHourSelected = 12; // the weather will be shown for 12 o clock today by default
-let timeReachedStart = false; // used to monitor if the time displayed on screen has reached the first time
-let timeReachedEnd = false; // used to monitor if the time displayed on screen has reached the last time
+let currentHourSelected = 12; 
+let timeReachedStart = false; 
+let timeReachedEnd = false; 
 
 let timesList = ['12am', '1am', '2am', '3am', '4am', '5am', '6am', '7am', '8am',
                   '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm',
@@ -133,10 +120,8 @@ let dayLeft = document.getElementsByClassName('day-left')[0];
 let dayRight = document.getElementsByClassName('day-right')[0];
 let timeDisplayed = document.getElementsByClassName('time-selector-center')[0];
 hoursLeft.addEventListener('click', function(){
-    /*code for the arrows functioning as the user selects the time. If the user reaches the last time
-    available the right arrow disappears and the pointer is disabled. */
         currentHourSelected--;
-        if(timeReachedEnd){ // this is for turning the arrow back on after it was turned of by the other arrow
+        if(timeReachedEnd){ 
             hoursRight.style.pointerEvents='auto';
             hoursRight.innerHTML='<i class="fas fa-caret-right"></i>';
             timeReachedEnd=false;
@@ -147,13 +132,13 @@ hoursLeft.addEventListener('click', function(){
             timeReachedStart='true';
         }
         timeDisplayed.innerHTML = timesList[currentHourSelected];
-        setWeatherDataOnPage(); // clicking the arrows also calls the function for setting the weather on screen
+        setWeatherDataOnPage();  
 });
 
 hoursRight.addEventListener('click', function(){
-    // same code as above but for the first time and the left arrow
+    
     currentHourSelected++;
-    if(timeReachedStart){ // this is for turning the arrow back on after it was turned of by the other arrow
+    if(timeReachedStart){ 
         hoursLeft.style.pointerEvents='auto';
         hoursLeft.innerHTML='<i class="fas fa-caret-left"></i>';
         timeReachedStart=false; 
@@ -165,12 +150,10 @@ hoursRight.addEventListener('click', function(){
         timeReachedEnd=true;
         }
     timeDisplayed.innerHTML = timesList[currentHourSelected];
-    setWeatherDataOnPage(); // clicking the arrows also sets the weather data displayed on the page
+    setWeatherDataOnPage(); 
 });
 
-dayLeft.addEventListener('click', function(){ // left day arrow on small screen
-    /* this code works in a similar manner to the code in the time selector but for the days selection
-    on the smaller size screens */
+dayLeft.addEventListener('click', function(){ 
     if (currentDaySelected==0){
         dayLeft.style.pointerEvents = 'none';
             dayLeft.innerHTML = '';
@@ -184,10 +167,10 @@ dayLeft.addEventListener('click', function(){ // left day arrow on small screen
     dayRight.style.pointerEvents = 'auto';
     dayDisplayedSmallScreen.innerHTML = `${daysArray[currentDaySelected]} <br>
             ${dateArray[currentDaySelected]}`;
-    setWeatherDataOnPage(); // changing the day also changes the weather data displayed on screen
+    setWeatherDataOnPage(); 
 });
 
-dayRight.addEventListener('click', function(){ // same code but for right arrow
+dayRight.addEventListener('click', function(){
     if (currentDaySelected==6){
         dayRight.style.pointerEvents = 'none';
             dayRight.innerHTML = '';
@@ -204,20 +187,17 @@ dayRight.addEventListener('click', function(){ // same code but for right arrow
     setWeatherDataOnPage();
 });
 
-daysLargeScreen[0].style.borderBottom = '3px solid yellow'; // showing what day selected when document is opened
-
+daysLargeScreen[0].style.borderBottom = '3px solid yellow';  
 for(i =0; i<7; i++){
-    daysLargeScreen[i].addEventListener('click', function(){ //when user clicks a day on large screen
+    daysLargeScreen[i].addEventListener('click', function(){ 
         for (i = 0; i < 7; i ++){
-            daysLargeScreen[i].style.borderBottom = 'none'; // removing highlighted day
+            daysLargeScreen[i].style.borderBottom = 'none'; 
         }
         currentDaySelected = this.dataset.day;
-        daysLargeScreen[currentDaySelected].style.borderBottom = '4px solid yellow'; //higlighting day clicked for feedback to the user
+        daysLargeScreen[currentDaySelected].style.borderBottom = '4px solid yellow'; 
         dayDisplayedSmallScreen.innerHTML = `${daysArray[currentDaySelected]} <br>
             ${dateArray[currentDaySelected]}`;
        
-       /* the code below was added to update the smaller screen days interface even though it is not seen
-       this is incase of a screen resize such as a table rotating */
         if (currentDaySelected == 0){
             dayLeft.style.pointerEvents = 'none';
             dayLeft.innerHTML = '';
@@ -234,20 +214,17 @@ for(i =0; i<7; i++){
             dayRight.style.pointerEvents = 'auto';
             dayRight.innerHTML = '<i class="fas fa-caret-right"></i>'
         }
-        setWeatherDataOnPage(); // clicking the large screen days interface also updates the weather
+        setWeatherDataOnPage(); 
     });
 }
 function fetchComplete(){
-    if(fetchedSun == 7 && fetchedStorm == true){ // once fetch has worked correctly for both apis
-        document.getElementsByClassName('day-selector')[0].style.pointerEvents = 'auto'; // allow the interface to be clicked
+    if(fetchedSun == 7 && fetchedStorm == true){ 
+        document.getElementsByClassName('day-selector')[0].style.pointerEvents = 'auto'; 
         document.getElementsByClassName('time-selector')[0].style.pointerEvents = 'auto';
         setWeatherDataOnPage(); 
     }
 }
 function setWeatherDataOnPage(){
-    /* this function uses the objects fetched from the apis to fill the spans on the page. The sunrise 
-    and sunset data are taken from the sunrise-sunset.org api and the rest are taken from the stormGlass api
-    */
     document.getElementsByClassName('sunrise-value')[0].innerHTML = sunriseTimes[currentDaySelected];
     document.getElementsByClassName('sunset-value')[0].innerHTML = sunsetTimes[currentDaySelected];
     document.getElementsByClassName('temperature-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].airTemperature.sg;
@@ -260,12 +237,12 @@ function setWeatherDataOnPage(){
     document.getElementsByClassName('wind-speed-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windDirection.sg; 
 }
 
-function errorHandler(){ // this is called if the fetches fails or there is an error within the fetches
+function errorHandler(){ 
     document.getElementsByClassName('day-selector')[0].innerHTML = 
-    '<h2 style="text-align: center;">Oops... there was a problem :(</h2>'; // fills the day selector with an error notification
+    '<h2 style="text-align: center;">Oops... there was a problem :(</h2>'; 
     document.getElementsByClassName('time-selector')[0].innerHTML = 
-    '<h2 style="text-align: center;">We\'re really sorry, we\'re working on it.</h2>'; //fills the time selector with the notification
-    document.getElementsByClassName('sunset-value')[0].innerHTML = 'unavailable'; //sets data to show unavailable
+    '<h2 style="text-align: center;">We\'re really sorry, we\'re working on it.</h2>'; 
+    document.getElementsByClassName('sunset-value')[0].innerHTML = 'unavailable'; 
         document.getElementsByClassName('temperature-value')[0].innerHTML = 'unavailable';
         document.getElementsByClassName('water-temperature-value')[0].innerHTML = 'unavailable';
         document.getElementsByClassName('precipitation-value')[0].innerHTML = 'unavailable';
@@ -275,10 +252,9 @@ function errorHandler(){ // this is called if the fetches fails or there is an e
         document.getElementsByClassName('wind-direction-value')[0].innerHTML = 'unavailable';
         document.getElementsByClassName('wind-speed-value')[0].innerHTML = 'unavailable';
 }
-/* Map section of script------------------------------------------------------------------------ */
+
 
 var beachMap = L.map('beach-map').setView([beachDict[beachName][2],beachDict[beachName][3]], 7);
-// code taken from the leaflet provider tool 
 var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     subdomains: 'abcd',
@@ -288,13 +264,13 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 }).addTo(beachMap);
 
 var myIcon = L.icon({
-    iconUrl: 'assets/images/surfboard.png', // creating a custom surfboard icon to be used as a marker
+    iconUrl: 'assets/images/surfboard.png', 
     iconSize: [96, 38],
     iconAnchor: [48, 19],
     popupAnchor: [0, 0]
 });
 
-var beachMarker = L.marker([lat, lng],{ //coordinates of Doolin Point
+var beachMarker = L.marker([lat, lng],{ 
     icon: myIcon, 
     title: beachName,
     alt: `surfboard icon showing ${beachName}`, 

@@ -1,5 +1,4 @@
 var clareMap = L.map('clare-map').setView([52.9045, -8.981], 7);
-// code taken from the leaflet provider tool 
 var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     subdomains: 'abcd',
@@ -9,54 +8,51 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 }).addTo(clareMap);
 
  var myIcon = L.icon({
-    iconUrl: 'assets/images/surfboard.png', // creating a custom surfboard icon to be used as a marker
+    iconUrl: 'assets/images/surfboard.png', 
     iconSize: [96, 38],
     iconAnchor: [48, 19],
     popupAnchor: [0, 0]
 });
 
-var doolinPointMarker = L.marker([53.009012, -9.412298],{ //coordinates of Doolin Point
+var doolinPointMarker = L.marker([53.009012, -9.412298],{ 
     icon: myIcon, 
     title: 'Doolin Point',
     alt: 'surfboard icon showing Doolin Point', 
     opacity: 1.0
     });
-doolinPointMarker.addTo(clareMap); // adding marker to map with id of clareMap
+doolinPointMarker.addTo(clareMap); 
 
-var lahinchMarker = L.marker([52.9338, -9.3499],{ // coordinates of Lahinch
+var lahinchMarker = L.marker([52.9338, -9.3499],{ 
     icon: myIcon, 
     title: 'Lahinch',
     alt: 'surfboard icon showing Lahinch', 
     opacity: 1.0}
 );
-lahinchMarker.addTo(clareMap); // adding marker to map with id of clareMap
+lahinchMarker.addTo(clareMap); 
 
-var spanishPointMarker = L.marker([52.847969, -9.456138],{ //coordinates of Spanish Point
+var spanishPointMarker = L.marker([52.847969, -9.456138],{ 
     icon: myIcon, 
     title: 'Spanish Point',
     alt: 'surfboard icon showing Spanish Point', 
     opacity: 1.0}
 );
-spanishPointMarker.addTo(clareMap); // adding marker to map with id of clareMap
+spanishPointMarker.addTo(clareMap); 
 
-var doughmoreMarker = L.marker([52.806895, -9.499054],{ // coordinates of Doughmore
+var doughmoreMarker = L.marker([52.806895, -9.499054],{ 
     icon: myIcon, 
     title: 'Doughmore',
     alt: 'surfboard icon showing Doughmore', 
     opacity: 1.0}
 );
-doughmoreMarker.addTo(clareMap); // adding marker to map with id of clareMap
+doughmoreMarker.addTo(clareMap); 
     
-var kilkeeMarker = L.marker([52.681758, -9.648977],{ //coordinates of Kilkee
+var kilkeeMarker = L.marker([52.681758, -9.648977],{ 
     icon: myIcon, 
     title: 'Kilkee',
     alt: 'surfboard icon showing Kilkee', 
     opacity: 1.0}
     );
-kilkeeMarker.addTo(clareMap); // adding marker to map with id of clareMap
-
-/* popups where each pop is filled and bound to their respective marker 
-    and filled with the required HTML */
+kilkeeMarker.addTo(clareMap); 
 
 var doolinPointPopup = L.popup();
 doolinPointPopup.setContent("<p>One of Ireland's biggest waves is here under the Cliffs of Moher</p><a href='doolin-point.html'>View surf forecast for Doolin Point</a>");

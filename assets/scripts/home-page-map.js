@@ -1,15 +1,14 @@
- // targeting the paths in the svg with the class name of cork
 let i;
 let cork = document.getElementsByClassName('cork');
 for(i in cork){
     if(cork[i].nodeName == 'path' || cork[i].nodeName == 'text')
     {
         cork[i].style.cursor = 'pointer';
-	    cork[i].addEventListener('mouseover', function(){ // adds a mouseover event listener to each path with the class of cork
+	    cork[i].addEventListener('mouseover', function(){ 
             for (i in cork){
                 if(cork[i].nodeName == 'path')
                 {
-                    cork[i].style.fill = 'yellow'; // when the mouse is over cork it lights up in yellow
+                    cork[i].style.fill = 'yellow'; 
                 }
             }
 	    });
@@ -23,7 +22,7 @@ for(i in cork){
             for (i in cork){
                 if(cork[i].nodeName == 'path')
                 {
-                    cork[i].style.fill = 'rgb(255, 0, 76)'; // when the mouse leaves the cork paths the colours revert to red
+                    cork[i].style.fill = 'rgb(255, 0, 76)'; 
                 }
             }
 	    });
@@ -33,13 +32,13 @@ for(i in cork){
 for(i in cork){
     if(cork[i].nodeName == 'path' || cork[i].nodeName == 'text')
     {
-	    cork[i].addEventListener('click', function(){ // clicking takes the user to the cork page
+	    cork[i].addEventListener('click', function(){ 
             window.location.href = "cork.html";
 	    });
     }
 }
 	
-let kerry = document.getElementsByClassName('kerry'); // the same task was completed for the other counties
+let kerry = document.getElementsByClassName('kerry'); 
 
 for(i in kerry){
     if(kerry[i].nodeName == 'path' || kerry[i].nodeName == 'text')
@@ -214,15 +213,15 @@ for(i in tipperary){
 
 let placeNameColor = 'blue';
 
-let doolin = document.getElementsByClassName('doolin'); // also text and surfboards with classes are targeted
+let doolin = document.getElementsByClassName('doolin'); 
 for(i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
 	    doolin[i].addEventListener('mouseover', function(){
-            doolin[0].style="paint-order: stroke markers; fill: url(#alt-surfboard-gradient);" //highlight board
-            doolin[0].style.cursor="pointer" //cursor to pointer
-            doolin[1].style.fill=placeNameColor;  //highlight the text
-            doolin[1].style.cursor="pointer"; //hover over text is pointer
+            doolin[0].style="paint-order: stroke markers; fill: url(#alt-surfboard-gradient);" 
+            doolin[0].style.cursor="pointer" 
+            doolin[1].style.fill=placeNameColor;  
+            doolin[1].style.cursor="pointer"; 
 	    });
     }
 }
@@ -230,7 +229,7 @@ for(i in doolin){
 for(i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
-	    doolin[i].addEventListener('mouseleave', function(){ // return to normal on mouse leave
+	    doolin[i].addEventListener('mouseleave', function(){ 
             doolin[0].style="paint-order: stroke markers; fill: url(#gradient-2);"
             doolin[1].style.fill='rgb(51, 51, 51)'; 
 	    });
@@ -241,7 +240,7 @@ for(i in doolin){
     if(doolin[i].nodeName == 'ellipse' || doolin[i].nodeName == 'text')
     {
 	    doolin[i].addEventListener('click', function(){
-            window.location.href = "doolin-point.html"; //clicking takes user to page
+            window.location.href = "doolin-point.html"; 
 	    });
     }
 }

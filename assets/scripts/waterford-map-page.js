@@ -9,54 +9,51 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 }).addTo(waterfordMap); 
 
  var myIcon = L.icon({
-    iconUrl: 'assets/images/surfboard.png', // creating a custom surfboard icon to be used as a marker
+    iconUrl: 'assets/images/surfboard.png',
     iconSize: [96, 38],
     iconAnchor: [48, 19],
     popupAnchor: [0, 0]
 });
 
-var ardmoreMarker = L.marker([51.945847, -7.779053],{ //coordinates of Ardmore
+var ardmoreMarker = L.marker([51.945847, -7.779053],{ 
     icon: myIcon, 
     title: 'Ardmore',
     alt: 'surfboard icon showing Ardmore', 
     opacity: 1.0
     });
-    ardmoreMarker.addTo(waterfordMap); // adding marker to map with id of waterfordMap
+    ardmoreMarker.addTo(waterfordMap); 
 
-var bunmahonMarker = L.marker([52.135120, -7.366740],{ // coordinates of Bunmahon
+var bunmahonMarker = L.marker([52.135120, -7.366740],{ 
     icon: myIcon, 
     title: 'Bunmahon',
     alt: 'surfboard icon showing Bunmahon', 
     opacity: 1.0}
 );
-bunmahonMarker.addTo(waterfordMap); // adding marker to map with id of waterfordMap
+bunmahonMarker.addTo(waterfordMap); 
 
-var perfectWaveMarker = L.marker([52.127357, -7.259639],{ //coordinates of Perfect Wave
+var perfectWaveMarker = L.marker([52.127357, -7.259639],{ 
     icon: myIcon, 
     title: 'Perfect Wave',
     alt: 'surfboard icon showing Perfect Wave', 
     opacity: 1.0}
 );
-perfectWaveMarker.addTo(waterfordMap); // adding marker to map with id of waterfordMap
+perfectWaveMarker.addTo(waterfordMap); 
 
-var annestownMarker = L.marker([52.129254, -7.294315],{ // coordinates of Annestown
+var annestownMarker = L.marker([52.129254, -7.294315],{ 
     icon: myIcon, 
     title: 'Annestown',
     alt: 'surfboard icon showing Annestown', 
     opacity: 1.0}
 );
-annestownMarker.addTo(waterfordMap); // adding marker to map with id of waterfordMap
+annestownMarker.addTo(waterfordMap); 
     
-var tramoreMarker = L.marker([52.148639, -7.131580],{ // coordinates of Tramore
+var tramoreMarker = L.marker([52.148639, -7.131580],{ 
     icon: myIcon, 
     title: 'Tramore',
     alt: 'surfboard icon showing Tramore', 
     opacity: 1.0}
     );
-    tramoreMarker.addTo(waterfordMap); // adding marker to map with id of waterfordMap
-
-/* popups where each pop is filled and bound to their respective marker 
-    and filled with the required HTML */
+    tramoreMarker.addTo(waterfordMap); 
 
 var ardmorePopup = L.popup();
 ardmorePopup.setContent("<p>Gentler breaks for the whole family here most of the time</p><a href='ardmore.html'>View surf forecast for Ardmore</a>");
