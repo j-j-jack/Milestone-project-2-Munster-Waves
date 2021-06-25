@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
-    <!-- leaflets script file taken from its site online-->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
@@ -68,9 +67,7 @@
         </header>
     <main>
         <div class='beach-page-container'>
-            <!--used as grid container-->
             <div class="beach-title">
-                <!--to select between beaches-->
                 <div class="beach-title-content-container">
                     <div class='beach-title-left'>
                         <a href="long-strand.html"><i class="fas fa-caret-left"></i> Previous Beach</a>
@@ -98,14 +95,10 @@
                     is courtesy of Tripavisor">
             </div>
             <div id="beach-map">
-                <!--unique id to be populated by leaflet api-->
-
             </div>
 
             <div class="day-selector">
                 <div class="days-large-screen-container">
-                    <!--large screen container. Only visible on larger screens data-day is important
-                in the javascript code to change the data displayed on the screen-->
                     <div class="days-large-screen" data-day="0"></div>
                     <div class="days-large-screen" data-day="1"></div>
                     <div class="days-large-screen" data-day="2"></div>
@@ -115,8 +108,6 @@
                     <div class="days-large-screen" data-day="6"></div>
                 </div>
                 <div class="days-small-screen-container">
-                    <!--smaller screen container. only visible on smaller screens. can be used
-                to navigate left and right between the days-->
                     <div class='day-selector-left'><span class="day-left"></span></div>
                     <div class='day-selector-center'></div>
                     <div class='day-selector-right'><span class="day-right"><i class="fas fa-caret-right"></i></span>
@@ -124,8 +115,6 @@
                 </div>
             </div>
             <div class="time-selector">
-                <!--time selector that can be used to navigate between the times using the left and right
-            arrow icons-->
                 <div class="time-selector-content-container">
                     <div class='time-selector-left'><span class="hours-left"><i class="fas fa-caret-left"></i></span>
                     </div>
@@ -137,8 +126,6 @@
             <div class="surf-forecast">
                 <div>
                     <div class="forecast-icons-container">
-                        <!-- the icons are sourced from font awesome and also from iconify.design the spans adjacent to the 
-                icons are populated in the script using the data fetched from the apis-->
                         <div class="sunrise"><i class="fas fa-sun"></i><span class="sunrise-value">Loading...</span>
                         </div>
                         <div class="sunset"><i class="fas fa-moon"></i><span class="sunset-value">Loading...</span>
@@ -153,7 +140,6 @@
                                 class="swell-height-value">Loading...</span></div>
                         <div class="wave-height"><img class='wave-height-icon' src='assets/images/wave-height.svg' alt='wave-height-icon'><span
                                 class="wave-height-value">Loading...</span></div>
-                        <!--https://iconify.design/-->
                         <div class="wave-direction"><img class='wave-direction-icon'
                                 src='assets/images/wave-direction.svg' alt='wave-direction-icon'><span
                                 class="wave-direction-value">Loading...</span></div>
