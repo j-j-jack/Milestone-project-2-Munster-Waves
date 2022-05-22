@@ -63,18 +63,26 @@ body {
   padding-left: 15vw;
   padding-right: 15vw;
   margin: 0;
+  padding-top: 1.5rem;
+}
+
+.home-page-map-outer {
+  position: relative;
+  height: max(59vw, 20vh);
+  margin-bottom: 20rem;
 }
 
 .home-page-map {
-  padding: 2vw 15vw 2vw 2vw;
-  left: 11vw;
+  padding: 2vw 9vw 2vw 2vw;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
   border: 5px solid var(--map-outline-color);
   display: inline-block;
-  margin: 2vw;
-  width: 56vw;
+  width: 80vw;
   position: relative;
-  margin-bottom: 20vh;
 }
+
 
 .click-icon {
   position: absolute;
@@ -156,41 +164,41 @@ body {
 }
 
 .large-screen-navbar > div {
-  border: 3px ridge white;
-  border-radius: 1vw;
-  margin: 0.15vw;
+  border-top: 3px ridge white;
+  border-bottom: 3px ridge white;
 }
 
 .clare-nav {
-  font-family: "Celtic";
-  font-size: 3vw;
-  font-weight: bold;
+  border-left: 3px ridge white;
+  font-family: "Pacifico";
+  font-size: 2.5vw;
+  font-weight: 100;
   background: var(--clare-yellow);
   flex: 1;
   text-align: center;
-  padding: 2%;
+  padding: 1%;
   cursor: pointer;
 }
 
 .kerry-nav {
-  font-family: "Celtic";
-  font-size: 3vw;
-  font-weight: bold;
+  font-family: "Pacifico";
+  font-size: 2.5vw;
+  font-weight: 100;
   background: var(--kerry-green);
   flex: 1;
   text-align: center;
-  padding: 2%;
+  padding: 1%;
   cursor: pointer;
 }
 
 .cork-nav {
-  font-family: "Celtic";
-  font-size: 3vw;
-  font-weight: bold;
+  font-family: "Pacifico";
+  font-size: 2.5vw;
+  font-weight: 100;
   background: var(--cork-red);
   flex: 1;
   text-align: center;
-  padding: 2%;
+  padding: 1%;
   cursor: pointer;
 }
 
@@ -212,24 +220,25 @@ body {
 }
 
 .waterford-nav {
-  font-family: "Celtic";
-  font-size: 3vw;
-  font-weight: bold;
+  font-family: "Pacifico";
+  font-size: 2.5vw;
+  font-weight: 100;
   background: var(--waterford-blue);
   flex: 1;
   text-align: center;
-  padding: 2%;
+  padding: 1%;
   cursor: pointer;
 }
 
 .signup-nav {
-  font-family: "Celtic";
-  font-size: 3vw;
-  font-weight: bold;
+  border-right: 3px ridge white;
+  font-family: "Pacifico";
+  font-size: 2.5vw;
+  font-weight: 100;
   background: silver;
   flex: 1;
   text-align: center;
-  padding: 2%;
+  padding: 1%;
   cursor: pointer;
 }
 
