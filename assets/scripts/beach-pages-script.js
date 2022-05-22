@@ -227,14 +227,14 @@ function fetchComplete(){
 function setWeatherDataOnPage(){
     document.getElementsByClassName('sunrise-value')[0].innerHTML = sunriseTimes[currentDaySelected];
     document.getElementsByClassName('sunset-value')[0].innerHTML = sunsetTimes[currentDaySelected];
-    document.getElementsByClassName('temperature-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].airTemperature.sg;
-    document.getElementsByClassName('water-temperature-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waterTemperature.sg;
-    document.getElementsByClassName('precipitation-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].precipitation.sg;
-    document.getElementsByClassName('swell-height-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].swellHeight.sg;
-    document.getElementsByClassName('wave-height-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveHeight.sg;
-    document.getElementsByClassName('wave-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveDirection.sg;
-    document.getElementsByClassName('wind-direction-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windSpeed.sg;
-    document.getElementsByClassName('wind-speed-value')[0].innerHTML = stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windDirection.sg; 
+    document.getElementsByClassName('temperature-value')[0].innerHTML = `${stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].airTemperature.sg} °C`;
+    document.getElementsByClassName('water-temperature-value')[0].innerHTML = `${stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waterTemperature.sg} °C`;
+    document.getElementsByClassName('precipitation-value')[0].innerHTML = `${stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].precipitation.sg} CM`;
+    document.getElementsByClassName('swell-height-value')[0].innerHTML = `${stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].swellHeight.sg} M`;
+    document.getElementsByClassName('wave-height-value')[0].innerHTML = `${stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveHeight.sg} M`;
+    document.getElementsByClassName('wave-direction-value')[0].innerHTML = `${stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].waveDirection.sg} °`;
+    document.getElementsByClassName('wind-speed-value')[0].innerHTML =`${stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windSpeed.sg} KMPH`;
+    document.getElementsByClassName('wind-direction-value')[0].innerHTML = `${stormGlassData.hours[(currentDaySelected*24)+currentHourSelected].windDirection.sg} °`
 }
 
 function errorHandler(){ 

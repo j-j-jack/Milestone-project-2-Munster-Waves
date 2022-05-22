@@ -289,10 +289,10 @@ body {
     "D D G G G";
 }
 .beach-title {
-  font-family: "Celtic";
+  font-family: "Pacifico";
   color: var(--beach-title-color);
-  font-size: 200%;
-  font-weight: 600;
+  font-size:180%;
+  font-weight: 100;
   text-shadow: 1px 1px black;
   grid-area: A;
 }
